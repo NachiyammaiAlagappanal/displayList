@@ -2,8 +2,9 @@ import { React } from 'react';
 
 const addTodo = (context) =>
 	<button
+		disabled={ context.state.input === '' }
 		onClick={ () => context.actions.addTodo() }
-	> Add
+	> +
 	</button>;
 
 export default addTodo;
