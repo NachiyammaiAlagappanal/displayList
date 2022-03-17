@@ -15,6 +15,9 @@ const removeTodo = (context) => ({
 const toggleAll = (context, isSelected) => ({
 	todos: todoManager.toggleAll(context.state.todos, isSelected),
 });
+const ClearCompleted = (context) => ({
+	todos: todoManager.ClearCompleted(context.state.todos),
+});
 
 const actions = {
 	updateInput,
@@ -22,6 +25,7 @@ const actions = {
 	toggleTodo,
 	removeTodo,
 	toggleAll,
+	ClearCompleted,
 
 };
 

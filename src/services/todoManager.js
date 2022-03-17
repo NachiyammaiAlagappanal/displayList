@@ -24,11 +24,14 @@ const toggleAll = (todos, isSelected) => todos.map((todo) => ({
 	completed: !isSelected,
 }));
 
+const ClearCompleted = (todos) => todos.filter((todo) => !todo.completed);
+
 const todoManager = {
 	AddTodo,
 	toggleTodo,
 	removeTodo,
 	toggleAll,
+	ClearCompleted,
 };
 
 export default todoManager;
