@@ -1,10 +1,8 @@
-// import config from './config';
 import { rndString } from '@laufire/utils/random';
-
-const refreshIDLength = 4;
+import config from './config.js';
 
 const seed = {
-	refreshID: rndString(refreshIDLength),
+	refreshID: rndString(config.refreshIDLength),
 	input: '',
 	todos: [],
 };
