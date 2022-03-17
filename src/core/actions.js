@@ -12,12 +12,16 @@ const toggleTodo = (context) => ({
 const removeTodo = (context) => ({
 	todos: todoManager.removeTodo(context.state.todos, context.data),
 });
+const toggleAll = (context, isSelected) => ({
+	todos: todoManager.toggleAll(context.state.todos, isSelected),
+});
 
 const actions = {
 	updateInput,
 	addTodo,
 	toggleTodo,
 	removeTodo,
+	toggleAll,
 
 };
 
