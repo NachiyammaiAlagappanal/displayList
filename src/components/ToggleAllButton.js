@@ -1,18 +1,20 @@
+/* eslint-disable no-mixed-spaces-and-tabs */
+/* eslint-disable indent */
 import { React } from 'react';
 import context from '../core/context.js';
-const getActiveCount = ({ todos }) =>
-	todos.filter((todo) => !todo.completed).length;
+import todoManager from '../services/todoManager.js';
 
 const ToggleAllButton = () => {
-	const isSelected = getActiveCount(context.state) === 0;
+	const isSelected = todoManager.getActiveCount(context.state.todos) === 0;
+	const noToggleButton = todoManager.getTodosCount(context.state.todos) === 0;
 
-	return (
-		<input
-			type="checkbox"
-			checked={ isSelected }
-			onChange={ () => context.actions.toggleAll(!isSelected) }
-		/>
-	);
+	return noToggleButton
+		? null
+		:	<input
+				type="checkbox"
+				checked={ isSelected }
+				onChange={ () => context.actions.toggleAll(!isSelected) }
+		  />;
 };
 
 export default ToggleAllButton;
