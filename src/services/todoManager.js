@@ -37,8 +37,7 @@ const filters = {
 	completed: (todos) => todos.completed,
 };
 
-const filterTodos = (todos, filter) => todos.filter((todo) =>
-	filters[filter(todo)]);
+const filterTodos = (todos, filter) => todos.filter(filters[filter]);
 
 const todoManager = {
 	AddTodo,
