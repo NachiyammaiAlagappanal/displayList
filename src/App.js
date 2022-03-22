@@ -6,6 +6,7 @@ import getInput from './components/getInput.js';
 import TodoList from './components/todoList.js';
 import ToggleAllButton from './components/ToggleAllButton.js';
 import ClearButton from './components/clearButton.js';
+import filterBar from './components/filterBar.js';
 
 const App = (context) => {
 	// eslint-disable-next-line no-console
@@ -17,6 +18,7 @@ const App = (context) => {
 			<div>{ addTodo(context) }</div>
 			<div>{ TodoList() }</div>
 			<div>{ ClearButton() }</div>
+			<div>{ filterBar() }</div>
 		</div>
 	);
 };

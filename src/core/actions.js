@@ -18,6 +18,9 @@ const toggleAll = (context, isSelected) => ({
 const ClearCompleted = (context) => ({
 	todos: todoManager.ClearCompleted(context.state.todos),
 });
+const setFilter = ({ data }) => ({
+	filter: data,
+});
 
 const actions = {
 	updateInput,
@@ -26,6 +29,7 @@ const actions = {
 	removeTodo,
 	toggleAll,
 	ClearCompleted,
+	setFilter,
 
 };
 
