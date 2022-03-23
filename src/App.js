@@ -18,7 +18,7 @@ const App = (context) => {
 			<div>{ addTodo(context) }</div>
 			<div>{ TodoList(context) }</div>
 			<div>{ ClearButton(context) }</div>
-			<div>{ filterBar() }</div>
+			<div>{ filterBar(context) }</div>
 		</div>
 	);
 };

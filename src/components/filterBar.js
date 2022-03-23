@@ -1,12 +1,17 @@
 import { React } from 'react';
-import context from '../core/context.js';
+import todoManager from '../services/todoManager';
 
-const filterButton = (filter) =>
-	<button
-		onClick={ () => context.actions.setFilter(filter) }
-	>{ filter }</button>;
+const filterButton = (context) => {
+	const { state, actions, data } = context;
+	const noFilterTodo = todoManager.getTodosCount(state.todos) === 0;
 
-const filterBar = () =>
-	context.config.filters.map(filterButton);
+	return noFilterTodo
+		? null
+		:	<button onClick={ () => actions.setFilter(data.filter) }>
+			{ data.filter }</button>;
+};
+
+const filterBar = (context) => context.config.filters.map((filter) =>
+	filterButton({ ...context, data: { filter }}));
 
 export default filterBar;

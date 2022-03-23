@@ -1,4 +1,3 @@
-/* eslint-disable max-lines-per-function */
 import { React } from 'react';
 import context from '../core/context.js';
 
@@ -14,13 +13,17 @@ const activeStyle = {
 	color: 'blue',
 };
 
-const CheckBox = (todo) =>
-	<input
-		type="checkbox"
-		// eslint-disable-next-line react/destructuring-assignment
-		checked={ todo.completed }
-		onChange={ () => context.actions.toggleTodo(todo) }
-	/>;
+const CheckBox = (todo) => {
+	const { completed } = todo;
+
+	return (
+		<input
+			type="checkbox"
+			checked={ completed }
+			onChange={ () => context.actions.toggleTodo(todo) }
+		/>
+	);
+};
 const removeTodo = (todo) =>
 	<button
 		onClick={ () => context.actions.removeTodo(todo) }
