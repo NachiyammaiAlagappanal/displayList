@@ -1,12 +1,12 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
 /* eslint-disable indent */
 import { React } from 'react';
-import context from '../core/context.js';
 import todoManager from '../services/todoManager.js';
 
-const ToggleAllButton = () => {
-	const isSelected = todoManager.getActiveCount(context.state.todos) === 0;
-	const noToggleButton = todoManager.getTodosCount(context.state.todos) === 0;
+const ToggleAllButton = (context) => {
+	const { state } = context;
+	const isSelected = todoManager.getActiveCount(state.todos) === 0;
+	const noToggleButton = todoManager.getTodosCount(state.todos) === 0;
 
 	return noToggleButton
 		? null

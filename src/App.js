@@ -13,11 +13,11 @@ const App = (context) => {
 	console.log(context.state);
 	return (
 		<div className="App" role="App">
-			<div>{ 	ToggleAllButton() }
+			<div>{ 	ToggleAllButton(context) }
 				{ inputTextBox(context) }</div>
 			<div>{ addTodo(context) }</div>
-			<div>{ TodoList() }</div>
-			<div>{ ClearButton() }</div>
+			<div>{ TodoList(context) }</div>
+			<div>{ ClearButton(context) }</div>
 			<div>{ filterBar() }</div>
 		</div>
 	);
