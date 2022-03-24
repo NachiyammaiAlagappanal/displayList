@@ -21,6 +21,17 @@ const ClearCompleted = (context) => ({
 const setFilter = ({ data }) => ({
 	filter: data,
 });
+const setEditing = ({ data }) => ({
+	editing: data,
+	input: data.text,
+});
+const editTodo = ({ state }) => ({
+	input: '',
+	editing: 'null',
+	todos: todoManager.editTodo(
+		state.todos, state.editing, state.input
+	),
+});
 
 const actions = {
 	updateInput,
@@ -30,6 +41,8 @@ const actions = {
 	toggleAll,
 	ClearCompleted,
 	setFilter,
+	setEditing,
+	editTodo,
 
 };
 
