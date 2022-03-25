@@ -1,5 +1,4 @@
 import { React } from 'react';
-import context from '../core/context.js';
 
 const sharedStyle = {
 	height: '1em',
@@ -13,7 +12,8 @@ const activeStyle = {
 	color: 'blue',
 };
 
-const CheckBox = (todo) => {
+const CheckBox = (context) => {
+	const { data: { todo }} = context;
 	const { completed } = todo;
 
 	return (
@@ -24,22 +24,28 @@ const CheckBox = (todo) => {
 		/>
 	);
 };
-const removeTodo = (todo) =>
-	<button
-		onClick={ () => context.actions.removeTodo(todo) }
-	>X
-	</button>;
+const removeTodo = (context) => {
+	const { data: { todo }} = context;
 
-const Todo = (todo) => {
+	return (
+		<button
+			onClick={ () => context.actions.removeTodo(todo) }
+		>X
+		</button>
+	);
+};
+
+const Todo = (context) => {
+	const { data: { todo }} = context;
 	const { id, text, completed } = todo;
 	const style = completed ? completedStyle : activeStyle;
 
 	return (
 		<div key={ id } style={ style }>
-			<span>{ CheckBox(todo) }</span>
+			<span>{ CheckBox(context) }</span>
 			<span onClick={ () => context.actions.setEditing(todo) }>
 				{ text }</span>
-			<span>{ removeTodo(todo) }</span>
+			<span>{ removeTodo(context) }</span>
 		</div>
 	);
 };

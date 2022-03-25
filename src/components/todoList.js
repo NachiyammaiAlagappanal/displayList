@@ -9,7 +9,10 @@ const TodoList = (context) => {
 
 	return (
 		<div>
-			{ filteredTodo.map(Todo) }
+			{ filteredTodo.map((todo) => Todo({
+				...context,
+				data: { todo },
+			})) }
 		</div>
 	);
 };
