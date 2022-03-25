@@ -3,7 +3,6 @@ import todoManager from '../services/todoManager';
 
 const filterButton = (context) => {
 	const { state, actions, data } = context;
-	const noFilterTodo = todoManager.getTodosCount(state.todos) === 0;
 	const Button = () =>
 		<button
 			key={ data.filter }
@@ -11,9 +10,11 @@ const filterButton = (context) => {
 		>
 			{ data.filter }</button>;
 
-	return noFilterTodo
-		? null
-		: Button();
+	return (
+		todoManager.hasNoTodos(state.todos)
+			? null
+			: Button()
+	);
 };
 
 const filterBar = (context) => context.config.filters.map((filter) =>
