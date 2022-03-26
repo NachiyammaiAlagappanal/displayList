@@ -2,6 +2,7 @@
 import { React } from 'react';
 import TodoPane from './components/TodoPane/index.js';
 import './App.scss';
+import TaskPane from './components/TaskPane/index.js';
 
 const App = (context) => {
 	// eslint-disable-next-line no-console
@@ -9,6 +10,7 @@ const App = (context) => {
 	return (
 		<div className="App" role="App">
 			<div>{ TodoPane(context) }</div>
+			<div>{ TaskPane() }</div>
 		</div>
 	);
 };
