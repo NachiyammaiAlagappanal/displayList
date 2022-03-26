@@ -1,9 +1,8 @@
 import { React } from 'react';
-import todoManager from '../services/todoManager.js';
+import TodoManager from '../../../services/TodoManager';
 
 const ToggleAllButton = (context) => {
-	const { state } = context;
-	const isSelected = todoManager.hasActiveCount(state.todos);
+	const isSelected = TodoManager.hasActiveCount(context);
 	const Checkbox = () =>
 		<input
 			type="checkbox"
@@ -12,7 +11,7 @@ const ToggleAllButton = (context) => {
 		/>;
 
 	return (
-		todoManager.hasNoTodos(state.todos)
+		TodoManager.hasNoTodos(context)
 			? null
 			:	Checkbox()
 	);

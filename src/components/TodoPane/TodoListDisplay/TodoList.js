@@ -1,11 +1,9 @@
 import { React } from 'react';
-import Todo from './todo';
-import todoManager from '../services/todoManager';
+import Todo from './Todo';
+import TodoManager from '../../../services/TodoManager';
 
 const TodoList = (context) => {
-	const { state } = context;
-	const { todos, filter } = state;
-	const filteredTodo = todoManager.filterTodos(todos, filter);
+	const filteredTodo = TodoManager.filterTodos(context);
 
 	return (
 		<div>

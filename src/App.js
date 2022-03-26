@@ -1,6 +1,6 @@
 /* eslint-disable react/destructuring-assignment */
 import { React } from 'react';
-import TodoPane from './components/TodoPane.js';
+import TodoPane from './components/TodoPane/index.js';
 import './App.scss';
 
 const App = (context) => {

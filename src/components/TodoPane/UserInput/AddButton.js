@@ -1,15 +1,15 @@
 import { React } from 'react';
 
-const TodoAdding = (context) => {
-	const { state } = context;
+const AddButton = (context) => {
+	const { state: { input }} = context;
 
 	return (
 		<button
-			disabled={ state.input === '' }
+			disabled={ input === '' }
 			onClick={ () => context.actions.addTodo() }
 		> +
 		</button>
 	);
 };
 
-export default TodoAdding;
+export default AddButton;

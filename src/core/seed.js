@@ -6,7 +6,7 @@ const seed = {
 	input: '',
 	todos: [],
 	filter: 'all',
-	editing: 'null',
+	editing: null,
 };
 
 export default seed;

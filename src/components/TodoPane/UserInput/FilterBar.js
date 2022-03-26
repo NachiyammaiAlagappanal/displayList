@@ -1,8 +1,8 @@
 import { React } from 'react';
-import todoManager from '../services/todoManager';
+import TodoManager from '../../../services/TodoManager';
 
 const filterButton = (context) => {
-	const { state, actions, data } = context;
+	const { actions, data } = context;
 	const Button = () =>
 		<button
 			key={ data.filter }
@@ -11,7 +11,7 @@ const filterButton = (context) => {
 			{ data.filter }</button>;
 
 	return (
-		todoManager.hasNoTodos(state.todos)
+		TodoManager.hasNoTodos(context)
 			? null
 			: Button()
 	);
