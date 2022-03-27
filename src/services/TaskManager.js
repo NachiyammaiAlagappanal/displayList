@@ -10,6 +10,9 @@ const TaskManager = {
 
 	init: (context) => context.actions.setTasks(tasks.map((task) =>
 		TaskManager.getTask({ ...context, data: task })),),
+
+	removeTask: (Tasks, data) => Tasks.filter((task) => task.id !== data.id),
+
 };
 
 export default TaskManager;

@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+import TaskManager from '../services/TaskManager.js';
 import TodoManager from '../services/TodoManager.js';
 
 const updateInput = ({ data }) => ({
@@ -36,6 +37,9 @@ const editTodo = ({ state }) => ({
 const setTasks = ({ data }) => ({
 	Tasks: data,
 });
+const removeTask = (context) => ({
+	Tasks: TaskManager.removeTask(context.state.Tasks, context.data),
+});
 
 const actions = {
 	updateInput,
@@ -48,6 +52,7 @@ const actions = {
 	setEditing,
 	editTodo,
 	setTasks,
+	removeTask,
 
 };
 
