@@ -5,7 +5,7 @@ const sharedStyle = {
 };
 const completedStyle = {
 	...sharedStyle,
-	color: 'pink',
+	color: 'yellow',
 };
 const activeStyle = {
 	...sharedStyle,
