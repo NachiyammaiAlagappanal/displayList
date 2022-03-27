@@ -1,14 +1,8 @@
 import { React } from 'react';
 
-const EditButton = (context) => {
-	const { state: { input }, actions } = context;
-
-	return (
-		<button
-			disabled={ input === '' }
-			onClick={ actions.editTodo }
-		>EDIT</button>
-	);
-};
+const EditButton = ({ actions: { editTodo }}) =>
+	<button
+		onClick={ editTodo }
+	>EDIT</button>;
 
 export default EditButton;
