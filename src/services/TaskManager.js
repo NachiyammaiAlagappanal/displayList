@@ -1,17 +1,15 @@
 import { rndString } from '@laufire/utils/random';
 
+const tasks = ['Task1', 'Task2', 'Task3'];
+
 const TaskManager = {
 	getTask: ({ config, data: text }) => ({
 		id: rndString(config.idLength),
 		text: text,
 	}),
 
-	init: (context) => context.actions.setTasks([
-		TaskManager.getTask({ ...context, data: 'Task1' }),
-		TaskManager.getTask({ ...context, data: 'Task2' }),
-		TaskManager.getTask({ ...context, data: 'Task3' }),
-	]),
-
+	init: (context) => context.actions.setTasks(tasks.map((task) =>
+		TaskManager.getTask({ ...context, data: task })),),
 };
 
 export default TaskManager;
