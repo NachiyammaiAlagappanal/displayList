@@ -7,7 +7,7 @@ const seed = {
 	todos: [],
 	filter: 'all',
 	editing: null,
-
+	Tasks: [],
 };
 
 export default seed;

@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import TodoManager from '../services/TodoManager.js';
 
 const updateInput = ({ data }) => ({
@@ -27,10 +28,13 @@ const setEditing = ({ data }) => ({
 });
 const editTodo = ({ state }) => ({
 	input: '',
-	editing: 'null',
+	editing: null,
 	todos: TodoManager.editTodo(
 		state.todos, state.editing, state.input
 	),
+});
+const setTasks = ({ data }) => ({
+	Tasks: data,
 });
 
 const actions = {
@@ -43,6 +47,7 @@ const actions = {
 	setFilter,
 	setEditing,
 	editTodo,
+	setTasks,
 
 };
 
