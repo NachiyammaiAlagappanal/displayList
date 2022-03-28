@@ -5,6 +5,18 @@
 		font-weight: bold;
 	}
 }
+.sharedStyle {
+	height: '1em',
+};
+
+.completedStyle  {
+	color: yellow,
+};
+
+.activeStyle {
+		color: blue,
+};
+
 .TodoPane{
 	position: absolute;
 	height: 100%;
@@ -22,3 +34,4 @@
 	right: 0;
 	background-color: lightgreen;
 }
+

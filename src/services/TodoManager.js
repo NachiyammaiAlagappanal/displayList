@@ -33,9 +33,9 @@ const TodoManager = {
 
 	removeTodo: (todos, data) => todos.filter((todo) => todo.id !== data.id),
 
-	toggleAll: (todos, isSelected) => todos.map((todo) => ({
+	toggleAll: (todos, data) => todos.map((todo) => ({
 		...todo,
-		completed: !isSelected,
+		completed: !data,
 	})),
 
 	ClearCompleted: (todos) => todos.filter((todo) => !todo.completed),

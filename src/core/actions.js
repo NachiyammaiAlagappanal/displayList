@@ -15,8 +15,8 @@ const toggleTodo = (context) => ({
 const removeTodo = (context) => ({
 	todos: TodoManager.removeTodo(context.state.todos, context.data),
 });
-const toggleAll = (context, isSelected) => ({
-	todos: TodoManager.toggleAll(context.state.todos, isSelected),
+const toggleAll = (context) => ({
+	todos: TodoManager.toggleAll(context.state.todos, context.data),
 });
 const ClearCompleted = (context) => ({
 	todos: TodoManager.ClearCompleted(context.state.todos),
