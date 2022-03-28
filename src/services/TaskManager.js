@@ -13,6 +13,9 @@ const TaskManager = {
 
 	removeTask: (Tasks, data) => Tasks.filter((task) => task.id !== data.id),
 
+	AddTask: (context) =>
+		context.state.Tasks.concat(TaskManager.getTask(context)),
+
 };
 
 export default TaskManager;

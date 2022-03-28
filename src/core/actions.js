@@ -35,14 +35,17 @@ const editTodo = ({ state }) => ({
 		state.todos, state.editing, state.input
 	),
 });
-const setTasks = ({ data }) => ({
-	Tasks: data,
+const setTasks = (context) => ({
+	Tasks: context.data,
 });
 const removeTask = (context) => ({
 	Tasks: TaskManager.removeTask(context.state.Tasks, context.data),
 });
 const addTask = (context) => ({
 	todos: TodoManager.AddTodo(context),
+});
+const AddTasks = (context) => ({
+	Tasks: TaskManager.AddTask({ ... context, task: context.data }),
 });
 
 const actions = {
@@ -58,6 +61,7 @@ const actions = {
 	setTasks,
 	removeTask,
 	addTask,
+	AddTasks,
 
 };
 
