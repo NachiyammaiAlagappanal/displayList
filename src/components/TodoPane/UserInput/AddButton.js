@@ -1,12 +1,12 @@
 import { React } from 'react';
 
 const AddButton = (context) => {
-	const { state: { input }} = context;
+	const { actions, state: { input }} = context;
 
 	return (
 		<button
 			disabled={ input === '' }
-			onClick={ () => context.actions.addTodo() }
+			onClick={ () => actions.addTodo() }
 		> +
 		</button>
 	);

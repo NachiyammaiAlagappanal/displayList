@@ -1,14 +1,14 @@
 import { React } from 'react';
 
 const CheckBox = (context) => {
-	const { data: { todo }} = context;
+	const { actions, data: { todo }} = context;
 	const { completed } = todo;
 
 	return (
 		<input
 			type="checkbox"
 			checked={ completed }
-			onChange={ () => context.actions.toggleTodo(todo) }
+			onChange={ () => actions.toggleTodo(todo) }
 		/>
 	);
 };
@@ -24,7 +24,7 @@ const removeTodo = (context) => {
 };
 
 const Todo = (context) => {
-	const { data: { todo }} = context;
+	const { actions, data: { todo }} = context;
 	const { id, text, completed } = todo;
 	const style = completed ? 'completedStyle' : 'activeStyle';
 
@@ -33,7 +33,7 @@ const Todo = (context) => {
 			<span>{ CheckBox(context) }</span>
 			<span
 				className={ style }
-				onClick={ () => context.actions.setEditing(todo) }
+				onClick={ () => actions.setEditing(todo) }
 			>
 				{ text }</span>
 			<span>{ removeTodo(context) }</span>

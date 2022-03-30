@@ -1,20 +1,23 @@
 import { React } from 'react';
 import TodoManager from '../../../services/TodoManager';
 
-const ToggleAllButton = (context) => {
+const Checkbox = (context) => {
+	const { actions } = context;
 	const isSelected = TodoManager.hasActiveCount(context);
-	const Checkbox = () =>
+
+	return (
 		<input
 			type="checkbox"
 			checked={ isSelected }
-			onChange={ () => context.actions.toggleAll(!isSelected) }
-		/>;
-
-	return (
-		TodoManager.hasNoTodos(context)
-			? null
-			:	Checkbox()
+			onChange={ () => actions.toggleAll(!isSelected) }
+		/>
 	);
 };
+
+const ToggleAllButton = (context) => (
+	TodoManager.hasNoTodos(context)
+		? null
+		:	Checkbox(context)
+);
 
 export default ToggleAllButton;
