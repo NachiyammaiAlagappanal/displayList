@@ -11,6 +11,9 @@ const TodoManager = {
 
 	hasInput: (input) => input === '',
 
+	hasCompletedCount: (todos) =>
+		todos.filter((todo) => todo.completed).length === 0,
+
 	getTodosCount: (todos) => todos.length,
 
 	getActiveCount: (todos) =>
