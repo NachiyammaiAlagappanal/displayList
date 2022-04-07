@@ -32,7 +32,7 @@ describe('TaskManager', () => {
 	const existingTask = context.state.Tasks;
 	const [changedTask, unChangedTask] = existingTask;
 
-	test('getTask', () => {
+	test('getTask To get task', () => {
 		jest.spyOn(random, 'rndString').mockReturnValue(randomStringOne);
 
 		const result = getTask(context);
@@ -41,12 +41,12 @@ describe('TaskManager', () => {
 			text: randomTextThree });
 		expect(random.rndString).toHaveBeenCalledWith(context.config.idLength);
 	});
-	test('removeTask', () => {
+	test('removeTask - to remove the task', () => {
 		const result = removeTask(existingTask, changedTask);
 
 		expect(result).toEqual([unChangedTask]);
 	});
-	test('AddTask', () => {
+	test('AddTask - to add the task ', () => {
 		jest.spyOn(TaskManager, 'getTask').mockReturnValue(context.data);
 		const result = AddTask(context);
 

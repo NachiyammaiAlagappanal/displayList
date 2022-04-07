@@ -1,4 +1,3 @@
-/* eslint-disable no-magic-numbers */
 import TodoManager from './TodoManager';
 import * as random from '@laufire/utils/random';
 
@@ -40,7 +39,7 @@ describe('TodoManager', () => {
 	const existingTodos = context.state.todos;
 	const [changedTodo, unChangedTodo] = existingTodos;
 
-	test('getText', () => {
+	test('getText - to get the Text', () => {
 		jest.spyOn(random, 'rndString').mockReturnValue(randomStringOne);
 
 		const result = getText({ config: { idLength: 16 },
@@ -51,18 +50,18 @@ describe('TodoManager', () => {
 		expect(random.rndString).toHaveBeenCalledWith(context.config.idLength);
 	});
 
-	test('getTodosCount', () => {
+	test('getTodosCount To check the todos count', () => {
 		const result = getTodosCount(context.state.todos);
 
-		expect(result).toEqual(2);
+		expect(result).toEqual(existingTodos.length);
 	});
 
-	test('getActiveCount', () => {
+	test('getActiveCount to check the active todos count', () => {
 		const result = getActiveCount(context.state.todos);
 
-		expect(result).toEqual(2);
+		expect(result).toEqual(existingTodos.length);
 	});
-	test('AddTodo', () => {
+	test('AddTodo - adding the Todos', () => {
 		jest.spyOn(TodoManager, 'getText').mockReturnValue(context.data);
 		const result = AddTodo(context);
 
@@ -71,7 +70,7 @@ describe('TodoManager', () => {
 		expect(result).toEqual(expectedResult);
 	});
 
-	test('toggleTodo', () => {
+	test('toggleTodo = toggle the todos', () => {
 		const result = toggleTodo(existingTodos, changedTodo);
 
 		const expectation = [{ ...changedTodo,
@@ -80,18 +79,18 @@ describe('TodoManager', () => {
 		expect(result).toEqual(expectation);
 	});
 
-	test('removeTodo', () => {
+	test('removeTodo - remove the todo', () => {
 		const result = removeTodo(existingTodos, changedTodo);
 
 		expect(result).toEqual([unChangedTodo]);
 	});
-	test('toggleAll', () => {
+	test('toggleAll - to toggleAll the todos', () => {
 		const completed = true;
 		const result = toggleAll(existingTodos, completed);
 
 		expect(result).toEqual(existingTodos);
 	});
-	test('ClearCompleted', () => {
+	test('ClearCompleted -  clearing the completed todos', () => {
 		const todos = [{ ...changedTodo,
 			completed: !changedTodo.completed }, unChangedTodo];
 		const result = ClearCompleted(todos);
@@ -99,7 +98,7 @@ describe('TodoManager', () => {
 		expect(result).toEqual([unChangedTodo]);
 	});
 
-	describe('ActiveCountCheck', () => {
+	describe('ActiveCountCheck - To count the Active Todos', () => {
 		test('hasActiveCount FalseCondition', () => {
 			const result = hasActiveCount(context);
 
@@ -119,7 +118,7 @@ describe('TodoManager', () => {
 		});
 	});
 
-	describe('all', () => {
+	describe('all - filter all todos', () => {
 		test('filteringAllTodos', () => {
 			const state = {
 				...context.state,
@@ -129,7 +128,7 @@ describe('TodoManager', () => {
 
 			expect(result).toEqual(context.state.todos);
 		});
-		test('filteringActiveTodos', () => {
+		test('Active - filtering the active todos', () => {
 			const ModifiedContext = {
 				state: {
 					todos: [{ ...changedTodo,
@@ -141,7 +140,7 @@ describe('TodoManager', () => {
 
 			expect(result).toEqual([unChangedTodo]);
 		});
-		test('filteringActiveTodos', () => {
+		test('completed - filtering the completedTodos', () => {
 			const ModifiedContext = {
 				state: {
 					todos: [{ ...changedTodo,
@@ -157,7 +156,7 @@ describe('TodoManager', () => {
 		});
 	});
 
-	describe('TodosCountCheck', () => {
+	describe('TodosCountCheck - to check the count of active Todos', () => {
 		test('hasNoTodos FalseCondition', () => {
 			const result = hasNoTodos(context);
 
