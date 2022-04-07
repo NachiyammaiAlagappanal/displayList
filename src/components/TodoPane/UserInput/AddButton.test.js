@@ -6,7 +6,9 @@ describe('Add the text to the Todos', () => {
 		actions: {
 			addTodo: jest.fn(),
 		},
-		state: Symbol('text'),
+		state: {
+			input: Symbol('text'),
+		},
 	};
 
 	test('Add the text if text available', () => {

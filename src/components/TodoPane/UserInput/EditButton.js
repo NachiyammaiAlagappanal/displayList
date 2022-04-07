@@ -1,9 +1,9 @@
 import { React } from 'react';
 
-const EditButton = ({ actions: { editTodo }}) =>
+const EditButton = ({ actions }) =>
 	<button
 		role="editButton"
-		onClick={ editTodo }
+		onClick={ () => actions.editTodo() }
 	>EDIT</button>;
 
 export default EditButton;
