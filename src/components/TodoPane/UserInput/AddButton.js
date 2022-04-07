@@ -5,6 +5,7 @@ const AddButton = (context) => {
 
 	return (
 		<button
+			role="AddButton"
 			disabled={ input === '' }
 			onClick={ () => actions.addTodo() }
 		> +
