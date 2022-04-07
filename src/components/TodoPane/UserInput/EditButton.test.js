@@ -1,5 +1,6 @@
 import { render, fireEvent } from '@testing-library/react';
 import EditButton from './EditButton';
+import TodoManager from '../../../services/TodoManager';
 
 describe('Edit the todos', () => {
 	const context = {
@@ -7,7 +8,7 @@ describe('Edit the todos', () => {
 			editTodo: jest.fn(),
 		},
 		state: {
-			editing: Symbol('text'),
+			input: Symbol('text'),
 		},
 
 	};
@@ -24,5 +25,26 @@ describe('Edit the todos', () => {
 
 		fireEvent.click(component);
 		expect(context.actions.editTodo).toHaveBeenCalledWith();
+	});
+
+	describe('check add Button in able or disable condition', () => {
+		test('disable condition', () => {
+			jest.spyOn(TodoManager, 'hasInput').mockReturnValue(true);
+			const component = render(EditButton(context))
+				.getByRole('editButton');
+
+			expect(component).toBeDisabled();
+			expect(TodoManager.hasInput)
+				.toHaveBeenCalledWith(context.state.input);
+		});
+		test('enable condition', () => {
+			jest.spyOn(TodoManager, 'hasInput').mockReturnValue(false);
+			const component = render(EditButton(context))
+				.getByRole('editButton');
+
+			expect(component).not.toBeDisabled();
+			expect(TodoManager.hasInput)
+				.toHaveBeenCalledWith(context.state.input);
+		});
 	});
 });

@@ -9,6 +9,8 @@ const TodoManager = {
 		completed: false,
 	}),
 
+	hasInput: (input) => input === '',
+
 	getTodosCount: (todos) => todos.length,
 
 	getActiveCount: (todos) =>
