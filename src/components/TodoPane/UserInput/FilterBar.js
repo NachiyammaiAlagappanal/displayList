@@ -6,6 +6,7 @@ const filterButton = (context) => {
 	const Button = () =>
 		<button
 			key={ data.filter }
+			role="FilterButton"
 			onClick={ () => actions.setFilter(data.filter) }
 		>
 			{ data.filter }</button>;

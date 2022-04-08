@@ -7,6 +7,7 @@ const Checkbox = (context) => {
 
 	return (
 		<input
+			role="checkbox"
 			type="checkbox"
 			checked={ isSelected }
 			onChange={ () => actions.toggleAll(!isSelected) }

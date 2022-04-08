@@ -6,7 +6,7 @@ import ToggleAllButton from './ToggleAllButton.js';
 import ActionButton from './ActionButton.js';
 
 const UserInput = (context) =>
-	<div>
+	<div role="UserInput">
 		<div>	{ ToggleAllButton(context) }
 			{	TodoInput(context) }
 			{ ActionButton(context) }

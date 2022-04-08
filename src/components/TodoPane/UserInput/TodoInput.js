@@ -9,6 +9,7 @@ const actionKeys = {
 
 const inputTextBox = (context) =>
 	<input
+		role="textBox"
 		value={ context.state.input }
 		onChange={ (evt) => context.actions.updateInput(evt.target.value) }
 		onKeyUp={ (evt) =>
