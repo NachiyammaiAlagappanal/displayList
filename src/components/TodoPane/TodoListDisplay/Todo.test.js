@@ -1,5 +1,4 @@
 import Todo from './Todo';
-import { React } from 'react';
 import { render, fireEvent } from '@testing-library/react';
 
 const todo = {
