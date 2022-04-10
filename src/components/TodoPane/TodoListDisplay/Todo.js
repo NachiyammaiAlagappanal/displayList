@@ -6,6 +6,7 @@ const CheckBox = (context) => {
 
 	return (
 		<input
+			role="CheckBox"
 			type="checkbox"
 			checked={ completed }
 			onChange={ () => actions.toggleTodo(todo) }
@@ -17,6 +18,7 @@ const removeTodo = (context) => {
 
 	return (
 		<button
+			role="removeButton"
 			onClick={ () => context.actions.removeTodo(todo) }
 		>X
 		</button>
@@ -29,13 +31,17 @@ const Todo = (context) => {
 	const style = completed ? 'completedStyle' : 'activeStyle';
 
 	return (
-		<div key={ id } className="sharedStyle">
+		<div
+			key={ id }
+			role="TodoList"
+			className="sharedStyle"
+		>
 			<span>{ CheckBox(context) }</span>
 			<span
 				className={ style }
+				role="setEditing"
 				onClick={ () => actions.setEditing(todo) }
-			>
-				{ text }</span>
+			>	{ text }</span>
 			<span>{ removeTodo(context) }</span>
 		</div>
 	);
