@@ -16,10 +16,10 @@ const context = {
 };
 
 test('To check presence of addButton, task, removeButton', () => {
-	const TaskList = render(Task(context)).getByRole('TaskList');
+	const { getByRole } = render(Task(context));
 
-	expect(TaskList).toBeInTheDocument();
-	expect(TaskList).toHaveTextContent(task.text);
+	expect(getByRole('Task')).toBeInTheDocument();
+	expect(getByRole('Task')).toHaveTextContent(task.text);
 });
 
 test('remove the task, when clicked on the removeButton', () => {

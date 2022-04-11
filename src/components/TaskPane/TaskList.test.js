@@ -10,13 +10,13 @@ test('To check the Task List display in proper manner', () => {
 		},
 	};
 
-	jest.spyOn(Task, 'default').mockReturnValue(<div role="TaskList"/>);
+	jest.spyOn(Task, 'default').mockReturnValue(<div role="Task"/>);
 
 	const { getAllByRole } = render(TaskList(context));
 
 	context.state.Tasks.map((task, index) => {
 		expect(Task.default)
 			.toHaveBeenCalledWith({ ...context, data: task });
-		expect(getAllByRole('ListOfTasks')[index]).toBeInTheDocument();
+		expect(getAllByRole('TaskList')[index]).toBeInTheDocument();
 	});
 });

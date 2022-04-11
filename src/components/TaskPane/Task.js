@@ -30,7 +30,7 @@ const Task = (context) => {
 	return (
 		<div
 			key={ id }
-			role="TaskList"
+			role="Task"
 		>
 			<span>{ text }</span>
 			<span>{ addTaskToTodo(context) }</span>
