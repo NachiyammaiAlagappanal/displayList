@@ -6,7 +6,7 @@ const TodoList = (context) => {
 	const filteredTodo = TodoManager.filterTodos(context);
 
 	return (
-		<div>
+		<div role="TodoList">
 			{ filteredTodo.map((todo) => Todo({
 				...context,
 				data: { todo },
