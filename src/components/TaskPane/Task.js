@@ -4,7 +4,10 @@ const addTaskToTodo = (context) => {
 	const { data: task } = context;
 
 	return (
-		<button onClick={ () => context.actions.addTask(task) }>
+		<button
+			role="AddButton"
+			onClick={ () => context.actions.addTask(task) }
+		>
 			+</button>
 	);
 };
@@ -13,7 +16,10 @@ const removeButton = (context) => {
 	const { data: task } = context;
 
 	return (
-		<button onClick={ () => context.actions.removeTask(task) }>
+		<button
+			role="removeButton"
+			onClick={ () => context.actions.removeTask(task) }
+		>
 			X</button>
 	);
 };
@@ -24,6 +30,7 @@ const Task = (context) => {
 	return (
 		<div
 			key={ id }
+			role="TaskList"
 		>
 			<span>{ text }</span>
 			<span>{ addTaskToTodo(context) }</span>
