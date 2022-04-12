@@ -33,7 +33,7 @@ const Todo = (context) => {
 	return (
 		<div
 			key={ id }
-			role="TodoList"
+			role="Todo"
 			className="sharedStyle"
 		>
 			<span>{ CheckBox(context) }</span>

@@ -18,9 +18,9 @@ const context = {
 const { actions } = context;
 
 test('To check presence of CheckBox, text, removeButton', () => {
-	const TodoList = render(Todo(context)).getByRole('TodoList');
+	const { getByRole } = render(Todo(context));
 
-	expect(TodoList).toBeInTheDocument();
+	expect(getByRole('Todo')).toBeInTheDocument();
 });
 
 test('ToggleTodo checkBox - toggles the todo', () => {
