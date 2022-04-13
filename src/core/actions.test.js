@@ -43,7 +43,7 @@ describe('to test the action functions', () => {
 
 		expect(result).toEqual({ todos: expectedTodos });
 		expect(TodoManager[method])
-			.toHaveBeenCalledWith(context);
+			.toHaveBeenCalledWith(context.state.todos, context.data);
 	};
 
 	test('ToggleTodo - toggle the todos', () => {
@@ -59,7 +59,13 @@ describe('to test the action functions', () => {
 	});
 
 	test('ClearCompleted- clear the completed todos', () => {
-		ActionTests('ClearCompleted', ClearCompleted);
+		jest.spyOn(TodoManager, 'ClearCompleted')
+			.mockReturnValue(expectedTodos);
+		const result = ClearCompleted(context);
+
+		expect(result).toEqual({ todos: expectedTodos });
+		expect(TodoManager.ClearCompleted)
+			.toHaveBeenCalledWith(context.state.todos);
 	});
 
 	test('setFilter - assign filter in the state based on user action', () => {

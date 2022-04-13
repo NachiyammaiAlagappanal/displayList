@@ -10,16 +10,16 @@ const addTodo = (context) => ({
 		data: { text: context.state.input }}),
 });
 const toggleTodo = (context) => ({
-	todos: TodoManager.toggleTodo(context),
+	todos: TodoManager.toggleTodo(context.state.todos, context.data),
 });
 const removeTodo = (context) => ({
-	todos: TodoManager.removeTodo(context),
+	todos: TodoManager.removeTodo(context.state.todos, context.data),
 });
 const toggleAll = (context) => ({
-	todos: TodoManager.toggleAll(context),
+	todos: TodoManager.toggleAll(context.state.todos, context.data),
 });
 const ClearCompleted = (context) => ({
-	todos: TodoManager.ClearCompleted(context),
+	todos: TodoManager.ClearCompleted(context.state.todos),
 });
 const setFilter = ({ data }) => ({
 	filter: data,

@@ -27,25 +27,23 @@ const TodoManager = {
 	AddTodo: (context) =>
 		context.state.todos.concat(TodoManager.getText(context)),
 
-	toggleTodo: (context) =>
-		context.state.todos.map((todo) => (todo.id !== context.data.id
+	toggleTodo: (todos, data) =>
+		todos.map((todo) => (todo.id !== data.id
 			? todo
 			: {
 				...todo,
-				completed: !context.data.completed,
+				completed: !data.completed,
 			}
 		)),
 
-	removeTodo: (context) => context.state.todos.filter((todo) =>
-		todo.id !== context.data.id),
+	removeTodo: (todos, data) => todos.filter((todo) => todo.id !== data.id),
 
-	toggleAll: (context) => context.state.todos.map((todo) => ({
+	toggleAll: (todos, data) => todos.map((todo) => ({
 		...todo,
-		completed: context.data,
+		completed: !data,
 	})),
 
-	ClearCompleted: (context) =>
-		context.state.todos.filter((todo) => !todo.completed),
+	ClearCompleted: (todos) => todos.filter((todo) => !todo.completed),
 
 	hasActiveCount: (context) =>
 		TodoManager.getActiveCount(context.state.todos) === 0,
