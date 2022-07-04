@@ -1,14 +1,16 @@
 import { React } from 'react';
+import { Button } from '@mui/material';
 
 const addTaskToTodo = (context) => {
 	const { data: task } = context;
 
 	return (
-		<button
+		<Button
+			variant="outlined"
 			role="AddButton"
 			onClick={ () => context.actions.addTask(task) }
 		>
-			+</button>
+			+</Button>
 	);
 };
 
@@ -16,11 +18,13 @@ const removeButton = (context) => {
 	const { data: task } = context;
 
 	return (
-		<button
+		<Button
+			variant="contained"
+			color="error"
 			role="removeButton"
 			onClick={ () => context.actions.removeTask(task) }
 		>
-			X</button>
+			X</Button>
 	);
 };
 
@@ -32,9 +36,9 @@ const Task = (context) => {
 			key={ id }
 			role="Task"
 		>
-			<span>{ text }</span>
-			<span>{ addTaskToTodo(context) }</span>
-			<span>{ removeButton(context) }</span>
+			<span>{text}</span>
+			<span>{addTaskToTodo(context)}</span>
+			<span>{removeButton(context)}</span>
 		</div>
 	);
 };
