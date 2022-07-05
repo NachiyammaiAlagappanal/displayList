@@ -1,3 +1,4 @@
+import { Tooltip } from '@mui/material';
 import { React } from 'react';
 import TodoManager from '../../../services/TodoManager';
 
@@ -8,12 +9,14 @@ const filterButton = (context) => {
 		TodoManager.hasNoTodos(context)
 			? null
 			:	<span>
-				<button
-					key={ filter }
-					role="FilterButton"
-					onClick={ () => actions.setFilter(filter) }
-				>
-					{ filter }</button>	</span>
+				<Tooltip title="filter">
+					<button
+						key={ filter }
+						role="FilterButton"
+						onClick={ () => actions.setFilter(filter) }
+					>
+						{ filter }</button>
+				</Tooltip>	</span>
 	);
 };
 

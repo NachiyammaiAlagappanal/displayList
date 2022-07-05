@@ -1,3 +1,4 @@
+import { Tooltip } from '@mui/material';
 import { React } from 'react';
 import TodoManager from '../../../services/TodoManager';
 
@@ -5,12 +6,14 @@ const Button = (context) => {
 	const { actions } = context;
 
 	return (
-		<button
-			role="ClearCompleted"
-			onClick={ () => actions.ClearCompleted() }
-		>
-			Clear completed
-		</button>
+		<Tooltip title="clear">
+			<button
+				role="ClearCompleted"
+				onClick={ () => actions.ClearCompleted() }
+			>
+				Clear completed
+			</button>
+		</Tooltip>
 	);
 }
 ;
