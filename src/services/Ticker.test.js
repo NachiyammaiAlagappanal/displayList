@@ -4,7 +4,7 @@ import Ticker from './Ticker';
 test('To check whether tasks are displayed with setInterval correctly', () => {
 	const context = { actions: {
 		fn: Symbol('fn'),
-		AddTasks: jest.fn(),
+		addTasks: jest.fn(),
 	},
 	config: {
 		tasks: [],
@@ -22,6 +22,6 @@ test('To check whether tasks are displayed with setInterval correctly', () => {
 		.toHaveBeenCalledWith(context.config.tasks);
 	expect(global.setInterval).toHaveBeenCalledWith(expect.any(Function),
 		context.config.TickerDelay);
-	expect(context.actions.AddTasks)
+	expect(context.actions.addTasks)
 		.toHaveBeenCalledWith(task);
 });

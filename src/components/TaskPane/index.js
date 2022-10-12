@@ -7,7 +7,7 @@ const TaskPane = (context) =>
 		className="TaskPane"
 	>
 		<h3> TASK</h3>
-		<div>{ TaskList(context) }</div>
+		<div><TaskList { ...context }/></div>
 
 	</div>;
 

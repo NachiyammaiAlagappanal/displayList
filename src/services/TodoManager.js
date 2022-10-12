@@ -19,7 +19,7 @@ const TodoManager = {
 		active: (todos) => !todos.completed,
 		completed: (todos) => todos.completed,
 	},
-	AddTodo: (context) =>
+	addTodo: (context) =>
 		context.state.todos.concat(TodoManager.getText(context)),
 
 	toggleTodo: (todos, data) =>
@@ -38,7 +38,7 @@ const TodoManager = {
 		completed: data,
 	})),
 
-	ClearCompleted: (todos) => todos.filter((todo) => !todo.completed),
+	clearCompleted: (todos) => todos.filter((todo) => !todo.completed),
 
 	hasActiveTodo: ({ state: { todos }}) =>
 		todos.filter((todo) => !todo.completed).length === 0,

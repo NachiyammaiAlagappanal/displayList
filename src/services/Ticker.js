@@ -6,7 +6,7 @@ const Ticker = {
 		const { tasks } = config;
 
 		return setInterval(() =>
-			actions.AddTasks(rndValue(tasks)), config.TickerDelay);
+			actions.addTasks(rndValue(tasks)), config.TickerDelay);
 	},
 };
 

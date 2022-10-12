@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import TaskManager from '../services/TaskManager.js';
 import TodoManager from '../services/TodoManager.js';
 
@@ -6,7 +5,7 @@ const updateInput = ({ data }) => ({
 	input: data,
 });
 const addTodo = (context) => ({
-	todos: TodoManager.AddTodo({ ...context,
+	todos: TodoManager.addTodo({ ...context,
 		data: { text: context.state.input }}),
 	input: '',
 });
@@ -19,8 +18,8 @@ const removeTodo = (context) => ({
 const toggleAll = (context) => ({
 	todos: TodoManager.toggleAll(context.state.todos, context.data),
 });
-const ClearCompleted = (context) => ({
-	todos: TodoManager.ClearCompleted(context.state.todos),
+const clearCompleted = (context) => ({
+	todos: TodoManager.clearCompleted(context.state.todos),
 });
 const setFilter = ({ data }) => ({
 	filter: data,
@@ -42,8 +41,8 @@ const setTasks = (context) => ({
 const removeTask = (context) => ({
 	Tasks: TaskManager.removeTask(context.state.Tasks, context.data),
 });
-const AddTasks = (context) => ({
-	Tasks: TaskManager.AddTask({ ... context, task: context.data }),
+const addTasks = (context) => ({
+	Tasks: TaskManager.addTask({ ... context, task: context.data }),
 });
 
 const actions = {
@@ -52,13 +51,13 @@ const actions = {
 	toggleTodo,
 	removeTodo,
 	toggleAll,
-	ClearCompleted,
+	clearCompleted,
 	setFilter,
 	setEditing,
 	editTodo,
 	setTasks,
 	removeTask,
-	AddTasks,
+	addTasks,
 
 };
 

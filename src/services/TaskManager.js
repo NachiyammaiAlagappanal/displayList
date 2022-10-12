@@ -12,7 +12,7 @@ const TaskManager = {
 
 	removeTask: (Tasks, data) => Tasks.filter((task) => task.id !== data.id),
 
-	AddTask: (context) =>
+	addTask: (context) =>
 		context.state.Tasks.concat(TaskManager.getTask(context)),
 
 };

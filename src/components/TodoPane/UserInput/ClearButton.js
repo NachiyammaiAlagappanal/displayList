@@ -8,7 +8,7 @@ const ClearButton = ({ state, actions }) => {
 	return isTodoCompleted && <Tooltip title="clear">
 		<button
 			role="ClearCompleted"
-			onClick={ () => actions.ClearCompleted() }
+			onClick={ () => actions.clearCompleted() }
 		>
 			Clear completed
 		</button>

@@ -2,7 +2,7 @@ import TaskManager from './TaskManager';
 import * as random from '@laufire/utils/random';
 
 describe('TaskManager', () => {
-	const { getTask, removeTask, AddTask } = TaskManager;
+	const { getTask, removeTask, addTask } = TaskManager;
 
 	const randomStringOne = Symbol('string');
 	const randomTextOne = Symbol('text');
@@ -46,9 +46,9 @@ describe('TaskManager', () => {
 
 		expect(result).toEqual([unChangedTask]);
 	});
-	test('AddTask - to add the task ', () => {
+	test('addTask - to add the task ', () => {
 		jest.spyOn(TaskManager, 'getTask').mockReturnValue(context.data);
-		const result = AddTask(context);
+		const result = addTask(context);
 
 		const expectedResult = [...existingTask, context.data];
 
