@@ -40,7 +40,7 @@ const TodoManager = {
 
 	toggleAll: (todos, data) => todos.map((todo) => ({
 		...todo,
-		completed: !data,
+		completed: data,
 	})),
 
 	ClearCompleted: (todos) => todos.filter((todo) => !todo.completed),
