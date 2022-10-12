@@ -1,9 +1,8 @@
-/* eslint-disable no-console */
 import { rndString } from '@laufire/utils/random';
 
 const TodoManager = {
 
-	getText: ({ config, data: { text }}) => ({
+	getTodo: ({ config, data: { text }}) => ({
 		id: rndString(config.idLength),
 		text: text,
 		completed: false,
@@ -19,8 +18,9 @@ const TodoManager = {
 		active: (todos) => !todos.completed,
 		completed: (todos) => todos.completed,
 	},
+
 	addTodo: (context) =>
-		context.state.todos.concat(TodoManager.getText(context)),
+		context.state.todos.concat(TodoManager.getTodo(context)),
 
 	toggleTodo: (todos, data) =>
 		todos.map((todo) => (todo.id !== data.id
