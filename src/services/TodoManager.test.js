@@ -2,8 +2,8 @@ import TodoManager from './TodoManager';
 import * as random from '@laufire/utils/random';
 
 describe('TodoManager', () => {
-	const { getText, getTodosCount, getActiveCount, AddTodo,
-		toggleTodo, removeTodo, toggleAll, ClearCompleted,
+	const { getTodo, addTodo,
+		toggleTodo, removeTodo, toggleAll, clearCompleted,
 		hasActiveTodo, filterTodos, hasTodo, editTodo } = TodoManager;
 
 	const randomStringOne = Symbol('string');
@@ -42,7 +42,7 @@ describe('TodoManager', () => {
 	test('getText - to get the Text', () => {
 		jest.spyOn(random, 'rndString').mockReturnValue(randomStringOne);
 
-		const result = getText({ config: { idLength: 16 },
+		const result = getTodo({ config: { idLength: 16 },
 			data: { text: newRandomText }});
 
 		expect(result).toEqual({ id: randomStringOne,
@@ -50,20 +50,9 @@ describe('TodoManager', () => {
 		expect(random.rndString).toHaveBeenCalledWith(context.config.idLength);
 	});
 
-	test('getTodosCount To check the todos count', () => {
-		const result = getTodosCount(context.state.todos);
-
-		expect(result).toEqual(existingTodos.length);
-	});
-
-	test('getActiveCount to check the active todos count', () => {
-		const result = getActiveCount(context.state.todos);
-
-		expect(result).toEqual(existingTodos.length);
-	});
 	test('AddTodo - adding the Todos', () => {
-		jest.spyOn(TodoManager, 'getText').mockReturnValue(context.data);
-		const result = AddTodo(context);
+		jest.spyOn(TodoManager, 'getTodo').mockReturnValue(context.data);
+		const result = addTodo(context);
 
 		const expectedResult = [...existingTodos, context.data];
 
@@ -85,7 +74,7 @@ describe('TodoManager', () => {
 		expect(result).toEqual([unChangedTodo]);
 	});
 	test('toggleAll - to toggleAll the todos', () => {
-		const completed = true;
+		const completed = false;
 		const result = toggleAll(existingTodos, completed);
 
 		expect(result).toEqual(existingTodos);
@@ -93,7 +82,7 @@ describe('TodoManager', () => {
 	test('ClearCompleted -  clearing the completed todos', () => {
 		const todos = [{ ...changedTodo,
 			completed: !changedTodo.completed }, unChangedTodo];
-		const result = ClearCompleted(todos);
+		const result = clearCompleted(todos);
 
 		expect(result).toEqual([unChangedTodo]);
 	});
@@ -160,7 +149,7 @@ describe('TodoManager', () => {
 		test('hasTodo FalseCondition', () => {
 			const result = hasTodo(context);
 
-			expect(result).toEqual(false);
+			expect(result).toEqual(true);
 		});
 		test('hasTodo TrueCondition', () => {
 			const ModifiedContext = {
@@ -170,7 +159,7 @@ describe('TodoManager', () => {
 			};
 			const result = hasTodo(ModifiedContext);
 
-			expect(result).toEqual(true);
+			expect(result).toEqual(false);
 		});
 	});
 	test('editing the Todo', () => {
