@@ -8,6 +8,7 @@ const updateInput = ({ data }) => ({
 const addTodo = (context) => ({
 	todos: TodoManager.AddTodo({ ...context,
 		data: { text: context.state.input }}),
+	input: '',
 });
 const toggleTodo = (context) => ({
 	todos: TodoManager.toggleTodo(context.state.todos, context.data),
@@ -41,9 +42,6 @@ const setTasks = (context) => ({
 const removeTask = (context) => ({
 	Tasks: TaskManager.removeTask(context.state.Tasks, context.data),
 });
-const addTask = (context) => ({
-	todos: TodoManager.AddTodo(context),
-});
 const AddTasks = (context) => ({
 	Tasks: TaskManager.AddTask({ ... context, task: context.data }),
 });
@@ -60,7 +58,6 @@ const actions = {
 	editTodo,
 	setTasks,
 	removeTask,
-	addTask,
 	AddTasks,
 
 };

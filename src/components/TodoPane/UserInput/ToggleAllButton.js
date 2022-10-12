@@ -3,7 +3,7 @@ import TodoManager from '../../../services/TodoManager';
 
 const Checkbox = (context) => {
 	const { actions } = context;
-	const isSelected = TodoManager.hasActiveCount(context);
+	const isSelected = TodoManager.hasActiveTodo(context);
 
 	return (
 		<input

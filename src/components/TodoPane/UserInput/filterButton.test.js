@@ -15,24 +15,24 @@ const context = {
 
 describe('filterBar', () => {
 	test('When filterBar is not present for no todos', () => {
-		jest.spyOn(TodoManager, 'hasNoTodos').mockReturnValue(true);
+		jest.spyOn(TodoManager, 'hasTodo').mockReturnValue(true);
 		const FilterButton = filterButton({ ...context, data: filter });
 
-		expect(TodoManager.hasNoTodos)
+		expect(TodoManager.hasTodo)
 			.toHaveBeenCalledWith({ ...context, data: filter });
 		expect(FilterButton).not.toBeInTheDocument();
 	});
 	test('When filterBar is present', () => {
-		jest.spyOn(TodoManager, 'hasNoTodos').mockReturnValue(false);
+		jest.spyOn(TodoManager, 'hasTodo').mockReturnValue(false);
 		const FilterButton = render(filterButton({ ...context,
 			data: filter })).getByRole('FilterButton');
 
-		expect(TodoManager.hasNoTodos)
+		expect(TodoManager.hasTodo)
 			.toHaveBeenCalledWith({ ...context, data: filter });
 		expect(FilterButton).toBeInTheDocument();
 	});
 	test('display and access the filter Buttons', () => {
-		jest.spyOn(TodoManager, 'hasNoTodos').mockReturnValue(false);
+		jest.spyOn(TodoManager, 'hasTodo').mockReturnValue(false);
 		const FilterButton = render(filterButton({ ...context,
 			data: filter })).getByRole('FilterButton');
 

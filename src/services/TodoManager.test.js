@@ -4,7 +4,7 @@ import * as random from '@laufire/utils/random';
 describe('TodoManager', () => {
 	const { getText, getTodosCount, getActiveCount, AddTodo,
 		toggleTodo, removeTodo, toggleAll, ClearCompleted,
-		hasActiveCount, filterTodos, hasNoTodos, editTodo } = TodoManager;
+		hasActiveTodo, filterTodos, hasTodo, editTodo } = TodoManager;
 
 	const randomStringOne = Symbol('string');
 	const randomTextOne = Symbol('text');
@@ -99,12 +99,12 @@ describe('TodoManager', () => {
 	});
 
 	describe('ActiveCountCheck - To count the Active Todos', () => {
-		test('hasActiveCount FalseCondition', () => {
-			const result = hasActiveCount(context);
+		test('hasActiveTodo FalseCondition', () => {
+			const result = hasActiveTodo(context);
 
 			expect(result).toEqual(false);
 		});
-		test('hasActiveCount TrueCondition', () => {
+		test('hasActiveTodo TrueCondition', () => {
 			const ModifiedContext = {
 				state: {
 					todos: [{ ...existingTodos,
@@ -112,7 +112,7 @@ describe('TodoManager', () => {
 				},
 			};
 
-			const result = hasActiveCount(ModifiedContext);
+			const result = hasActiveTodo(ModifiedContext);
 
 			expect(result).toEqual(true);
 		});
@@ -157,18 +157,18 @@ describe('TodoManager', () => {
 	});
 
 	describe('TodosCountCheck - to check the count of active Todos', () => {
-		test('hasNoTodos FalseCondition', () => {
-			const result = hasNoTodos(context);
+		test('hasTodo FalseCondition', () => {
+			const result = hasTodo(context);
 
 			expect(result).toEqual(false);
 		});
-		test('hasNoTodos TrueCondition', () => {
+		test('hasTodo TrueCondition', () => {
 			const ModifiedContext = {
 				state: {
 					todos: [],
 				},
 			};
-			const result = hasNoTodos(ModifiedContext);
+			const result = hasTodo(ModifiedContext);
 
 			expect(result).toEqual(true);
 		});

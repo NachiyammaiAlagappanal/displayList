@@ -14,34 +14,34 @@ const context = {
 
 describe('ToggleAllButton - availability Check', () => {
 	test('when ToggleAllButton is not displayed', () => {
-		jest.spyOn(TodoManager, 'hasNoTodos').mockReturnValue(true);
+		jest.spyOn(TodoManager, 'hasTodo').mockReturnValue(true);
 
 		const checkBox = ToggleAllButton(context);
 
-		expect(TodoManager.hasNoTodos).toHaveBeenCalledWith(context);
+		expect(TodoManager.hasTodo).toHaveBeenCalledWith(context);
 		expect(checkBox).not.toBeInTheDocument();
 	});
 
 	test('when ToggleAllButton is not displayed', () => {
-		jest.spyOn(TodoManager, 'hasNoTodos').mockReturnValue(false);
+		jest.spyOn(TodoManager, 'hasTodo').mockReturnValue(false);
 
 		const checkBox = render(ToggleAllButton(context)).getByRole('checkBox');
 
-		expect(TodoManager.hasNoTodos).toHaveBeenCalledWith(context);
+		expect(TodoManager.hasTodo).toHaveBeenCalledWith(context);
 		expect(checkBox).toBeInTheDocument();
 	});
 
 	test('when CheckBox is selected and unSelected ', () => {
 		const isSelected = rndValue([true, false]);
 
-		jest.spyOn(TodoManager, 'hasNoTodos').mockReturnValue(false);
-		jest.spyOn(TodoManager, 'hasActiveCount').mockReturnValue(isSelected);
+		jest.spyOn(TodoManager, 'hasTodo').mockReturnValue(false);
+		jest.spyOn(TodoManager, 'hasActiveTodo').mockReturnValue(isSelected);
 
 		const checkBox = render(ToggleAllButton(context)).getByRole('checkBox');
 
 		fireEvent.click(checkBox);
 
-		expect(TodoManager.hasActiveCount).toHaveBeenCalledWith(context);
+		expect(TodoManager.hasActiveTodo).toHaveBeenCalledWith(context);
 		expect(context.actions.toggleAll).toHaveBeenCalledWith(!isSelected);
 	});
 });
