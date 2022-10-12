@@ -15,10 +15,7 @@ const Checkbox = (context) => {
 	);
 };
 
-const ToggleAllButton = (context) => (
-	TodoManager.hasNoTodos(context)
-		? null
-		:	Checkbox(context)
-);
+const ToggleAllButton = (context) => TodoManager.hasTodo(context)
+&& Checkbox(context);
 
 export default ToggleAllButton;

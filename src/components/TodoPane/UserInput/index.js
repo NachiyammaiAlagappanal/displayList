@@ -7,12 +7,12 @@ import ActionButton from './ActionButton.js';
 
 const UserInput = (context) =>
 	<div role="UserInput">
-		<div>	{ ToggleAllButton(context) }
-			{	TodoInput(context) }
-			{ ActionButton(context) }
+		<div><ToggleAllButton { ...context }/>
+			<TodoInput { ...context }/>
+			<ActionButton { ...context }/>
 		</div>
-		<div>{ ClearButton(context) }</div>
-		<div>	{ FilterBar(context) }</div>
+		<div><ClearButton { ...context }/></div>
+		<div><FilterBar { ...context }/></div>
 	</div>;
 
 export default UserInput;

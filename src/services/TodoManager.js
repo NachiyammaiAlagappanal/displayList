@@ -14,11 +14,6 @@ const TodoManager = {
 	hasCompletedTodos: (todos) =>
 		todos.filter((todo) => todo.completed).length !== 0,
 
-	getTodosCount: (todos) => todos.length,
-
-	getActiveCount: (todos) =>
-		todos.filter((todo) => !todo.completed).length,
-
 	filters: {
 		all: () => true,
 		active: (todos) => !todos.completed,
@@ -45,14 +40,13 @@ const TodoManager = {
 
 	ClearCompleted: (todos) => todos.filter((todo) => !todo.completed),
 
-	hasActiveCount: (context) =>
-		TodoManager.getActiveCount(context.state.todos) === 0,
+	hasActiveCount: ({ state: { todos }}) =>
+		todos.filter((todo) => !todo.completed).length === 0,
 
 	filterTodos: ({ state: { todos, filter }}) =>
 		todos.filter(TodoManager.filters[filter]),
 
-	hasNoTodos: (context) =>
-		TodoManager.getTodosCount(context.state.todos) === 0,
+	hasTodo: ({ state: { todos }}) => todos.length !== 0,
 
 	editTodo: (
 		todos, editing, text
