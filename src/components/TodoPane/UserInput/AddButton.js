@@ -1,6 +1,7 @@
 import { React } from 'react';
 import TodoManager from '../../../services/TodoManager';
 import { Tooltip } from '@mui/material';
+import TodoBackend from '../../../services/TodoBackend';
 
 const AddButton = (context) => {
 	const { actions, state: { input }} = context;
@@ -10,7 +11,10 @@ const AddButton = (context) => {
 			<button
 				role="AddButton"
 				disabled={ TodoManager.hasInput(input) }
-				onClick={ () => actions.addTodo() }
+				onClick={ async () => {
+					await TodoBackend.create({ text: input });
+					return actions.addTodo();
+				} }
 			> +
 			</button>
 		</Tooltip>

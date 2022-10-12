@@ -1,5 +1,6 @@
 import { React } from 'react';
 import { Button } from '@mui/material';
+import TodoBackend from '../../services/TodoBackend';
 
 const addTaskToTodo = (context) => {
 	const { data: task } = context;
@@ -8,10 +9,12 @@ const addTaskToTodo = (context) => {
 		<Button
 			variant="outlined"
 			role="AddButton"
-			onClick={ () => context.actions.addTask(task) }
+			onClick={ async () => {
+				await TodoBackend.create(task);
+				return context.actions.addTask(task);
+			} }
 		>
-			+</Button>
-	);
+			+</Button>);
 };
 
 const removeButton = (context) => {
