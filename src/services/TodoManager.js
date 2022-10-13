@@ -1,10 +1,9 @@
 /* eslint-disable no-console */
-import { rndString } from '@laufire/utils/random';
+import TodoBackend from './TodoBackend';
 
 const TodoManager = {
 
-	getText: ({ config, data: { text }}) => ({
-		id: rndString(config.idLength),
+	getTodo: ({ data: { text }}) => ({
 		text: text,
 		completed: false,
 	}),
@@ -19,8 +18,6 @@ const TodoManager = {
 		active: (todos) => !todos.completed,
 		completed: (todos) => todos.completed,
 	},
-	AddTodo: (context) =>
-		context.state.todos.concat(TodoManager.getText(context)),
 
 	toggleTodo: (todos, data) =>
 		todos.map((todo) => (todo.id !== data.id
@@ -57,6 +54,16 @@ const TodoManager = {
 			text,
 		})),
 
+	addTodo: async (context) => {
+		const { actions, state: { todos }, data } = context;
+		const createdTodo = await TodoBackend
+			.create(TodoManager.getTodo({ data: {	text: data }}));
+
+		return actions.addTodo([
+			...todos,
+			createdTodo,
+		]);
+	},
 };
 
 export default TodoManager;

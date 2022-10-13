@@ -5,10 +5,7 @@ import TodoManager from '../services/TodoManager.js';
 const updateInput = ({ data }) => ({
 	input: data,
 });
-const addTodo = (context) => ({
-	todos: TodoManager.AddTodo({ ...context,
-		data: { text: context.state.input }}),
-});
+
 const toggleTodo = (context) => ({
 	todos: TodoManager.toggleTodo(context.state.todos, context.data),
 });
@@ -41,16 +38,15 @@ const setTasks = (context) => ({
 const removeTask = (context) => ({
 	Tasks: TaskManager.removeTask(context.state.Tasks, context.data),
 });
-const addTask = (context) => ({
-	todos: TodoManager.AddTodo(context),
-});
 const AddTasks = (context) => ({
 	Tasks: TaskManager.AddTask({ ... context, task: context.data }),
+});
+const addTodo = ({ data: todos }) => ({
+	todos,
 });
 
 const actions = {
 	updateInput,
-	addTodo,
 	toggleTodo,
 	removeTodo,
 	toggleAll,
@@ -60,9 +56,8 @@ const actions = {
 	editTodo,
 	setTasks,
 	removeTask,
-	addTask,
 	AddTasks,
-
+	addTodo,
 };
 
 export default actions;

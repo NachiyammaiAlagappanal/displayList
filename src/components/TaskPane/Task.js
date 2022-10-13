@@ -1,18 +1,18 @@
 import { React } from 'react';
 import { Button } from '@mui/material';
-import TodoBackend from '../../services/TodoBackend';
+import TodoManager from '../../services/TodoManager';
 
 const addTaskToTodo = (context) => {
-	const { data: task } = context;
+	const { data: { text }} = context;
 
 	return (
 		<Button
 			variant="outlined"
 			role="AddButton"
-			onClick={ async () => {
-				await TodoBackend.create(task);
-				return context.actions.addTask(task);
-			} }
+			onClick={ () => TodoManager.addTodo({
+				...context,
+				data: text,
+			}) }
 		>
 			+</Button>);
 };

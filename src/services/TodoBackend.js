@@ -1,9 +1,8 @@
+import { omit } from '@laufire/utils/collection';
 import axios from 'axios';
 
 const TodoBackend = {
-	create: async (data) => {
-		const todo = { ...data, completed: false };
-
+	create: async (todo) => {
 		const res = await axios.post(
 			'http://localhost:1234/todos', todo,
 			{
@@ -12,7 +11,7 @@ const TodoBackend = {
 				},
 			}
 		);
-		const createdData = res.data.data[0];
+		const createdData = omit(res.data.data, ['updatedAt', 'createdAt']);
 
 		return createdData;
 	},
