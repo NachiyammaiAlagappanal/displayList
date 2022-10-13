@@ -8,7 +8,7 @@ const addTaskToTodo = (context) => {
 		<Button
 			variant="outlined"
 			role="AddButton"
-			onClick={ () => { context.actions.addTaskToTodo(task);	} }
+			onClick={ () => { context.actions.addTodo(task.text);	} }
 		>
 			+</Button>
 	);

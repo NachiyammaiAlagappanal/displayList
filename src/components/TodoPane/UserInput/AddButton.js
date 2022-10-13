@@ -8,7 +8,7 @@ const AddButton = (context) => {
 		<button
 			role="AddButton"
 			disabled={ TodoManager.hasInput(input) }
-			onClick={ () => actions.addTodo() }
+			onClick={ () => actions.addTodo(input) }
 		> +
 		</button>
 	);
