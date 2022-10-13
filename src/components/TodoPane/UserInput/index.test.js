@@ -30,17 +30,18 @@ test('UserInput', () => {
 	expect(getByRole('UserInput')).toBeInTheDocument();
 
 	expect(getByRole('ClearCompleted')).toBeInTheDocument();
-	expect(ClearButton.default).toHaveBeenCalledWith(context);
+	expect(ClearButton.default.mock.calls[0][0]).toEqual(context);
 
 	expect(getByRole('FilterButton')).toBeInTheDocument();
-	expect(FilterBar.default).toHaveBeenCalledWith(context);
+	expect(FilterBar.default.mock.calls[0][0]).toEqual(context);
 
 	expect(getByRole('textBox')).toBeInTheDocument();
-	expect(TodoInput.default).toHaveBeenCalledWith(context);
+	expect(TodoInput.default.mock.calls[0][0]).toEqual(context);
 
 	expect(getByRole('checkbox')).toBeInTheDocument();
-	expect(ToggleAllButton.default).toHaveBeenCalledWith(context);
+	expect(ToggleAllButton.default.mock.calls[0][0])
+		.toEqual(context);
 
 	expect(getByRole('ActionButton')).toBeInTheDocument();
-	expect(ActionButton.default).toHaveBeenCalledWith(context);
+	expect(ActionButton.default.mock.calls[0][0]).toEqual(context);
 });

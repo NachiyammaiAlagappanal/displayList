@@ -4,9 +4,9 @@ import TaskManager from '../services/TaskManager';
 
 describe('to test the action functions', () => {
 	const { updateInput, addTodo, toggleTodo,
-		ClearCompleted, setFilter,
-		setEditing, editTodo, setTasks, removeTask,
-		addTask, addTasks, toggleAll, removeTodo } = actions;
+		clearCompleted, setFilter,
+		setEditing, editTodo, setTasks, removeTask, addTaskToTodo
+		, addTasks, toggleAll, removeTodo } = actions;
 
 	const data = {
 		id: Symbol('id'),
@@ -30,11 +30,11 @@ describe('to test the action functions', () => {
 	});
 
 	test('To check the input value added to the todos', () => {
-		jest.spyOn(TodoManager, 'AddTodo').mockReturnValue(expectedTodos);
+		jest.spyOn(TodoManager, 'addTodo').mockReturnValue(expectedTodos);
 		const result = addTodo(context);
 
 		expect(result).toEqual({ todos: expectedTodos });
-		expect(TodoManager.AddTodo).toHaveBeenCalledWith({ ...context,
+		expect(TodoManager.addTodo).toHaveBeenCalledWith({ ...context,
 			data: { text: context.state.input }});
 	});
 	const ActionTests = (method, Method) => {
@@ -59,12 +59,12 @@ describe('to test the action functions', () => {
 	});
 
 	test('ClearCompleted- clear the completed todos', () => {
-		jest.spyOn(TodoManager, 'ClearCompleted')
+		jest.spyOn(TodoManager, 'clearCompleted')
 			.mockReturnValue(expectedTodos);
-		const result = ClearCompleted(context);
+		const result = clearCompleted(context);
 
 		expect(result).toEqual({ todos: expectedTodos });
-		expect(TodoManager.ClearCompleted)
+		expect(TodoManager.clearCompleted)
 			.toHaveBeenCalledWith(context.state.todos);
 	});
 
@@ -107,11 +107,11 @@ describe('to test the action functions', () => {
 	});
 
 	test('addTask - add the task to todo', () => {
-		jest.spyOn(TodoManager, 'AddTodo').mockReturnValue(expectedTodos);
-		const result = addTask(context);
+		jest.spyOn(TodoManager, 'addTodo').mockReturnValue(expectedTodos);
+		const result = addTaskToTodo(context);
 
 		expect(result).toEqual({ todos: expectedTodos });
-		expect(TodoManager.AddTodo).toHaveBeenCalledWith(context);
+		expect(TodoManager.addTodo).toHaveBeenCalledWith(context);
 	});
 
 	test('addTasks - add the task in taskList', () => {

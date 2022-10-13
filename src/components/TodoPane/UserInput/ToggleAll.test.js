@@ -14,16 +14,16 @@ const context = {
 
 describe('ToggleAllButton - availability Check', () => {
 	test('when ToggleAllButton is not displayed', () => {
-		jest.spyOn(TodoManager, 'hasTodo').mockReturnValue(true);
+		jest.spyOn(TodoManager, 'hasTodo').mockReturnValue(false);
 
 		const checkBox = ToggleAllButton(context);
 
 		expect(TodoManager.hasTodo).toHaveBeenCalledWith(context);
-		expect(checkBox).not.toBeInTheDocument();
+		expect(checkBox).toEqual(false);
 	});
 
 	test('when ToggleAllButton is not displayed', () => {
-		jest.spyOn(TodoManager, 'hasTodo').mockReturnValue(false);
+		jest.spyOn(TodoManager, 'hasTodo').mockReturnValue(true);
 
 		const checkBox = render(ToggleAllButton(context)).getByRole('checkBox');
 
@@ -34,7 +34,7 @@ describe('ToggleAllButton - availability Check', () => {
 	test('when CheckBox is selected and unSelected ', () => {
 		const isSelected = rndValue([true, false]);
 
-		jest.spyOn(TodoManager, 'hasTodo').mockReturnValue(false);
+		jest.spyOn(TodoManager, 'hasTodo').mockReturnValue(true);
 		jest.spyOn(TodoManager, 'hasActiveTodo').mockReturnValue(isSelected);
 
 		const checkBox = render(ToggleAllButton(context)).getByRole('checkBox');

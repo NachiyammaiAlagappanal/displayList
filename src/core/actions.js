@@ -7,7 +7,6 @@ const updateInput = ({ data }) => ({
 const addTodo = (context) => ({
 	todos: TodoManager.addTodo({ ...context,
 		data: { text: context.state.input }}),
-	input: '',
 });
 const toggleTodo = (context) => ({
 	todos: TodoManager.toggleTodo(context.state.todos, context.data),
