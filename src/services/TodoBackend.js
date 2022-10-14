@@ -27,6 +27,13 @@ const TodoBackend = {
 
 		return omit(updatedData, ['updatedAt', 'createdAt']);
 	},
+
+	remove: async (id) => {
+		const res = await axios.delete(`${ url }:${ port }/todos/${ id }`, headerConfig,);
+		const { status } = res.data;
+
+		return status;
+	},
 };
 
 export default TodoBackend;

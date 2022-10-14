@@ -1,4 +1,5 @@
 import { React } from 'react';
+import TodoManager from '../../../services/TodoManager';
 
 const CheckBox = (context) => {
 	const { actions, data: { todo }} = context;
@@ -14,12 +15,12 @@ const CheckBox = (context) => {
 	);
 };
 const removeTodo = (context) => {
-	const { data: { todo }} = context;
+	const { data: target } = context;
 
 	return (
 		<button
 			role="removeButton"
-			onClick={ () => context.actions.removeTodo(todo) }
+			onClick={ () => TodoManager.removeTodo(context, target) }
 		>X
 		</button>
 	);

@@ -28,7 +28,15 @@ const TodoManager = {
 			}
 		)),
 
-	removeTodo: (todos, data) => todos.filter((todo) => todo.id !== data.id),
+	removeTodo: async ({ actions, state: { todos }}, { todo: target }) => {
+		const status = await TodoBackend.remove(target.id);
+		const todosWithoutTarget = todos
+			.filter((todo) => todo.id !== target.id);
+
+		status === 'success'
+			? actions.removeTodo(todosWithoutTarget)
+			: actions.removeTodo(todos);
+	},
 
 	toggleAll: (todos, data) => todos.map((todo) => ({
 		...todo,

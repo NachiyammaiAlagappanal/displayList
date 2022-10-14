@@ -9,9 +9,9 @@ const updateInput = ({ data }) => ({
 const toggleTodo = (context) => ({
 	todos: TodoManager.toggleTodo(context.state.todos, context.data),
 });
-const removeTodo = (context) => ({
-	todos: TodoManager.removeTodo(context.state.todos, context.data),
-});
+
+const removeTodo = ({ data: todos }) => ({ todos });
+
 const toggleAll = (context) => ({
 	todos: TodoManager.toggleAll(context.state.todos, context.data),
 });
