@@ -45,14 +45,18 @@ const TodoManager = {
 
 	hasTodo: ({ state: { todos }}) => todos.length !== 0,
 
-	editTodo: (
-		todos, editing, text
-	) => todos.map((todo) => (todo.id !== editing.id
-		? todo
-		: {
-			...todo,
-			text,
-		})),
+	editTodo: async ({ actions, state: { todos, editing, input }}) => {
+		const target = todos.find((todo) => todo.id === editing.id);
+		const editedTodo = await TodoBackend.update(editing.id, {
+			...target,
+			text: input,
+		});
+		const editedTodos = todos.map((todo) => (todo.id !== editing.id
+			? todo
+			: { ...todo, ...editedTodo }));
+
+		return actions.editTodos(editedTodos);
+	},
 
 	addTodo: async (context) => {
 		const { actions, state: { todos }, data } = context;

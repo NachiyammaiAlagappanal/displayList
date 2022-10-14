@@ -25,12 +25,10 @@ const setEditing = ({ data }) => ({
 	editing: data,
 	input: data.text,
 });
-const editTodo = ({ state }) => ({
+const editTodos = ({ data: todos }) => ({
 	input: '',
 	editing: null,
-	todos: TodoManager.editTodo(
-		state.todos, state.editing, state.input
-	),
+	todos: todos,
 });
 const setTasks = (context) => ({
 	Tasks: context.data,
@@ -53,7 +51,7 @@ const actions = {
 	ClearCompleted,
 	setFilter,
 	setEditing,
-	editTodo,
+	editTodos,
 	setTasks,
 	removeTask,
 	AddTasks,
