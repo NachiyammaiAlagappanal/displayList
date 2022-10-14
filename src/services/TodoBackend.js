@@ -1,4 +1,4 @@
-import { omit } from '@laufire/utils/collection';
+import { map, omit } from '@laufire/utils/collection';
 import axios from 'axios';
 
 const url = 'http://localhost';
@@ -38,8 +38,10 @@ const TodoBackend = {
 	getAll: async () => {
 		const res = await axios.get(`${ url }:${ port }/todos`, headerConfig,);
 		const { data: todos } = res.data;
+		const actualTodos = map(todos, (todo) =>
+			omit(todo, ['updatedAt', 'createdAt']));
 
-		return todos;
+		return actualTodos;
 	},
 };
 
