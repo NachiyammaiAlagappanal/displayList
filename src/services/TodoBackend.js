@@ -34,6 +34,13 @@ const TodoBackend = {
 
 		return status;
 	},
+
+	getAll: async () => {
+		const res = await axios.get(`${ url }:${ port }/todos`, headerConfig,);
+		const { data: todos } = res.data;
+
+		return todos;
+	},
 };
 
 export default TodoBackend;
