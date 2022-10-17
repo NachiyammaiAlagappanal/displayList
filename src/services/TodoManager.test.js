@@ -43,7 +43,7 @@ describe('TodoManager', () => {
 		jest.spyOn(random, 'rndString').mockReturnValue(randomStringOne);
 
 		const result = getTodo({ config: { idLength: 16 },
-			text: newRandomText });
+			data: newRandomText });
 
 		expect(result).toEqual({ id: randomStringOne,
 			text: newRandomText, completed: false });
@@ -60,29 +60,28 @@ describe('TodoManager', () => {
 	});
 
 	test('toggleTodo = toggle the todos', () => {
-		const result = toggleTodo(existingTodos, changedTodo);
+		const result = toggleTodo(context, changedTodo);
 
 		const expectation = [{ ...changedTodo,
-			completed: !changedTodo.completed }, unChangedTodo];
+			completed: changedTodo.completed }, unChangedTodo];
 
 		expect(result).toEqual(expectation);
 	});
 
 	test('removeTodo - remove the todo', () => {
-		const result = removeTodo(existingTodos, changedTodo);
+		const result = removeTodo({ ...context, data: changedTodo });
 
 		expect(result).toEqual([unChangedTodo]);
 	});
 	test('toggleAll - to toggleAll the todos', () => {
-		const completed = false;
-		const result = toggleAll(existingTodos, completed);
+		const result = toggleAll({ ...context, data: false });
 
 		expect(result).toEqual(existingTodos);
 	});
 	test('ClearCompleted -  clearing the completed todos', () => {
 		const todos = [{ ...changedTodo,
 			completed: !changedTodo.completed }, unChangedTodo];
-		const result = clearCompleted(todos);
+		const result = clearCompleted({ state: { todos }});
 
 		expect(result).toEqual([unChangedTodo]);
 	});
@@ -164,11 +163,10 @@ describe('TodoManager', () => {
 	});
 	test('editing the Todo', () => {
 		const data = 'Hi';
-		const result = editTodo(
-			existingTodos, changedTodo, data
-		);
+		const result = editTodo({ state: { todos: existingTodos,
+			editing: changedTodo, input: data }});
 		const expectation = [{ ...changedTodo,
-			text: data }, unChangedTodo];
+			input: data }, unChangedTodo];
 
 		expect(result).toEqual(expectation);
 	});

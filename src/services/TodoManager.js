@@ -50,7 +50,7 @@ const TodoManager = {
 
 	hasTodo: ({ state: { todos }}) => todos.length !== 0,
 
-	editTodo: ({ todos, editing, input }) =>
+	editTodo: ({ state: { todos, editing, input }}) =>
 		todos.map((todo) => (todo.id !== editing.id
 			? todo
 			: {

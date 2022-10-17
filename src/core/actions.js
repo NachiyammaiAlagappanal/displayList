@@ -26,10 +26,10 @@ const setEditing = ({ data }) => ({
 	editing: data,
 	input: data.text,
 });
-const editTodo = ({ state }) => ({
+const editTodo = (context) => ({
 	input: '',
 	editing: null,
-	todos: TodoManager.editTodo({ state }),
+	todos: TodoManager.editTodo(context),
 });
 const setTasks = (context) => ({
 	Tasks: context.data,

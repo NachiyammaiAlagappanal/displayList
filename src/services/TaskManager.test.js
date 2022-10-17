@@ -29,7 +29,7 @@ describe('TaskManager', () => {
 		},
 		data: randomTextThree,
 	};
-	const existingTask = context.state.Tasks;
+	const existingTask = context;
 	const [changedTask, unChangedTask] = existingTask;
 
 	test('getTask To get task', () => {
