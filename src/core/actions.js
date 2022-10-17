@@ -5,17 +5,16 @@ const updateInput = ({ data }) => ({
 	input: data,
 });
 const addTodo = (context) => ({
-	todos: TodoManager.addTodo({ ...context,
-		data: { text: context.data }}),
+	todos: TodoManager.addTodo(context),
 });
 const toggleTodo = (context) => ({
-	todos: TodoManager.toggleTodo(context.state.todos, context.data),
+	todos: TodoManager.toggleTodo(context),
 });
 const removeTodo = (context) => ({
-	todos: TodoManager.removeTodo(context.state.todos, context.data),
+	todos: TodoManager.removeTodo(context),
 });
 const toggleAll = (context) => ({
-	todos: TodoManager.toggleAll(context.state.todos, context.data),
+	todos: TodoManager.toggleAll(context),
 });
 const clearCompleted = (context) => ({
 	todos: TodoManager.clearCompleted(context.state.todos),
@@ -30,15 +29,13 @@ const setEditing = ({ data }) => ({
 const editTodo = ({ state }) => ({
 	input: '',
 	editing: null,
-	todos: TodoManager.editTodo(
-		state.todos, state.editing, state.input
-	),
+	todos: TodoManager.editTodo({ state }),
 });
 const setTasks = (context) => ({
 	Tasks: context.data,
 });
 const removeTask = (context) => ({
-	Tasks: TaskManager.removeTask(context.state.Tasks, context.data),
+	Tasks: TaskManager.removeTask(context),
 });
 const addTasks = (context) => ({
 	Tasks: TaskManager.addTask({ ... context, task: context.data }),

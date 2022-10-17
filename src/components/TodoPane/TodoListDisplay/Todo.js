@@ -13,7 +13,7 @@ const CheckBox = (context) => {
 		/>
 	);
 };
-const removeTodo = (context) => {
+const RemoveButton = (context) => {
 	const { data: { todo }} = context;
 
 	return (
@@ -36,13 +36,13 @@ const Todo = (context) => {
 			role="Todo"
 			className="sharedStyle"
 		>
-			<span>{ CheckBox(context) }</span>
+			<span><CheckBox { ...context }/></span>
 			<span
 				className={ style }
 				role="setEditing"
 				onClick={ () => actions.setEditing(todo) }
 			>	{ text }</span>
-			<span>{ removeTodo(context) }</span>
+			<span><RemoveButton { ...context }/></span>
 		</div>
 	);
 };

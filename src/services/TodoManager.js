@@ -2,9 +2,9 @@ import { rndString } from '@laufire/utils/random';
 
 const TodoManager = {
 
-	getTodo: ({ config, data: { text }}) => ({
+	getTodo: ({ config, data }) => ({
 		id: rndString(config.idLength),
-		text: text,
+		text: data,
 		completed: false,
 	}),
 
@@ -22,7 +22,7 @@ const TodoManager = {
 	addTodo: (context) =>
 		context.state.todos.concat(TodoManager.getTodo(context)),
 
-	toggleTodo: (todos, data) =>
+	toggleTodo: ({ state: { todos }, data }) =>
 		todos.map((todo) => (todo.id !== data.id
 			? todo
 			: {
@@ -31,14 +31,16 @@ const TodoManager = {
 			}
 		)),
 
-	removeTodo: (todos, data) => todos.filter((todo) => todo.id !== data.id),
+	removeTodo: ({ state: { todos }, data }) =>
+		todos.filter((todo) => todo.id !== data.id),
 
-	toggleAll: (todos, data) => todos.map((todo) => ({
+	toggleAll: ({ state: { todos }, data }) => todos.map((todo) => ({
 		...todo,
 		completed: data,
 	})),
 
-	clearCompleted: (todos) => todos.filter((todo) => !todo.completed),
+	clearCompleted: (todos) =>
+		todos.filter((todo) => !todo.completed),
 
 	hasActiveTodo: ({ state: { todos }}) =>
 		todos.filter((todo) => !todo.completed).length === 0,
@@ -48,14 +50,13 @@ const TodoManager = {
 
 	hasTodo: ({ state: { todos }}) => todos.length !== 0,
 
-	editTodo: (
-		todos, editing, text
-	) => todos.map((todo) => (todo.id !== editing.id
-		? todo
-		: {
-			...todo,
-			text,
-		})),
+	editTodo: ({ todos, editing, input }) =>
+		todos.map((todo) => (todo.id !== editing.id
+			? todo
+			: {
+				...todo,
+				input,
+			})),
 
 };
 
