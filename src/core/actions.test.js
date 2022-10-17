@@ -5,8 +5,8 @@ import TaskManager from '../services/TaskManager';
 describe('to test the action functions', () => {
 	const { updateInput, addTodo, toggleTodo,
 		clearCompleted, setFilter,
-		setEditing, editTodo, setTasks, removeTask, addTaskToTodo
-		, addTasks, toggleAll, removeTodo } = actions;
+		setEditing, editTodo, setTasks, removeTask,
+		addTasks, toggleAll, removeTodo } = actions;
 
 	const data = {
 		id: Symbol('id'),
@@ -34,8 +34,7 @@ describe('to test the action functions', () => {
 		const result = addTodo(context);
 
 		expect(result).toEqual({ todos: expectedTodos });
-		expect(TodoManager.addTodo).toHaveBeenCalledWith({ ...context,
-			data: { text: context.state.input }});
+		expect(TodoManager.addTodo).toHaveBeenCalledWith(context);
 	});
 	const ActionTests = (method, Method) => {
 		jest.spyOn(TodoManager, method).mockReturnValue(expectedTodos);
@@ -43,7 +42,7 @@ describe('to test the action functions', () => {
 
 		expect(result).toEqual({ todos: expectedTodos });
 		expect(TodoManager[method])
-			.toHaveBeenCalledWith(context.state.todos, context.data);
+			.toHaveBeenCalledWith(context);
 	};
 
 	test('ToggleTodo - toggle the todos', () => {
@@ -65,7 +64,7 @@ describe('to test the action functions', () => {
 
 		expect(result).toEqual({ todos: expectedTodos });
 		expect(TodoManager.clearCompleted)
-			.toHaveBeenCalledWith(context.state.todos);
+			.toHaveBeenCalledWith(context);
 	});
 
 	test('setFilter - assign filter in the state based on user action', () => {
@@ -85,9 +84,7 @@ describe('to test the action functions', () => {
 		const expectation = { todos: expectedTodos, input: '', editing: null };
 		const result = editTodo({ state });
 
-		expect(TodoManager.editTodo).toHaveBeenCalledWith(
-			state.todos, state.editing, state.input
-		);
+		expect(TodoManager.editTodo).toHaveBeenCalledWith({ state });
 		expect(result).toEqual(expectation);
 	});
 
@@ -103,15 +100,7 @@ describe('to test the action functions', () => {
 
 		expect(result).toEqual({ Tasks: expectedTasks });
 		expect(TaskManager.removeTask)
-			.toHaveBeenCalledWith(context.state.Tasks, context.data);
-	});
-
-	test('addTask - add the task to todo', () => {
-		jest.spyOn(TodoManager, 'addTodo').mockReturnValue(expectedTodos);
-		const result = addTaskToTodo(context);
-
-		expect(result).toEqual({ todos: expectedTodos });
-		expect(TodoManager.addTodo).toHaveBeenCalledWith(context);
+			.toHaveBeenCalledWith(context);
 	});
 
 	test('addTasks - add the task in taskList', () => {
@@ -120,6 +109,6 @@ describe('to test the action functions', () => {
 
 		expect(result).toEqual({ Tasks: expectedTasks });
 		expect(TaskManager.addTask)
-			.toHaveBeenCalledWith({ ... context, task: context.data });
+			.toHaveBeenCalledWith(context);
 	});
 });

@@ -39,7 +39,7 @@ const TodoManager = {
 		completed: data,
 	})),
 
-	clearCompleted: (todos) =>
+	clearCompleted: ({ state: { todos }}) =>
 		todos.filter((todo) => !todo.completed),
 
 	hasActiveTodo: ({ state: { todos }}) =>

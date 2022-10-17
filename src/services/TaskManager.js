@@ -1,9 +1,9 @@
 import { rndString } from '@laufire/utils/random';
 
 const TaskManager = {
-	getTask: ({ config, data: text }) => ({
+	getTask: ({ config, data }) => ({
 		id: rndString(config.idLength),
-		text: text,
+		text: data,
 	}),
 
 	init: (context) =>

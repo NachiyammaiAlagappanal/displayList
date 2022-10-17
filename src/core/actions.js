@@ -17,7 +17,7 @@ const toggleAll = (context) => ({
 	todos: TodoManager.toggleAll(context),
 });
 const clearCompleted = (context) => ({
-	todos: TodoManager.clearCompleted(context.state.todos),
+	todos: TodoManager.clearCompleted(context),
 });
 const setFilter = ({ data }) => ({
 	filter: data,
@@ -38,7 +38,7 @@ const removeTask = (context) => ({
 	Tasks: TaskManager.removeTask(context),
 });
 const addTasks = (context) => ({
-	Tasks: TaskManager.addTask({ ... context, task: context.data }),
+	Tasks: TaskManager.addTask(context),
 });
 
 const actions = {

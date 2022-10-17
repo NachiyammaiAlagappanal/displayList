@@ -23,7 +23,8 @@ describe('Add the text to the Todos', () => {
 		const component = render(AddButton(context)).getByRole('AddButton');
 
 		fireEvent.click(component);
-		expect(context.actions.addTodo).toHaveBeenCalledWith();
+		expect(context.actions.addTodo)
+			.toHaveBeenCalledWith(context.state.input);
 	});
 
 	describe('check add Button in able or disable condition', () => {

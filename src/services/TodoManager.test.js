@@ -43,7 +43,7 @@ describe('TodoManager', () => {
 		jest.spyOn(random, 'rndString').mockReturnValue(randomStringOne);
 
 		const result = getTodo({ config: { idLength: 16 },
-			data: { text: newRandomText }});
+			text: newRandomText });
 
 		expect(result).toEqual({ id: randomStringOne,
 			text: newRandomText, completed: false });
