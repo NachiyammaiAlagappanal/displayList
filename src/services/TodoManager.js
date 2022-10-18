@@ -10,7 +10,7 @@ const TodoManager = {
 
 	hasInput: (input) => input === '',
 
-	hasCompletedTodos: (todos) =>
+	hasCompletedTodos: ({ state: { todos }}) =>
 		todos.filter((todo) => todo.completed).length !== 0,
 
 	filters: {

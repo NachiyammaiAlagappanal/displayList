@@ -2,8 +2,9 @@ import { Tooltip } from '@mui/material';
 import { React } from 'react';
 import TodoManager from '../../../services/TodoManager';
 
-const ClearButton = ({ state, actions }) => {
-	const isTodoCompleted = TodoManager.hasCompletedTodos(state.todos);
+const ClearButton = (context) => {
+	const { actions } = context;
+	const isTodoCompleted = TodoManager.hasCompletedTodos(context);
 
 	return isTodoCompleted && <Tooltip title="clear">
 		<button

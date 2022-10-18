@@ -1,7 +1,7 @@
 import { React } from 'react';
 import { Button } from '@mui/material';
 
-const addTaskToTodo = (context) => {
+const AddTaskToTodo = (context) => {
 	const { data: task } = context;
 
 	return (
@@ -14,7 +14,7 @@ const addTaskToTodo = (context) => {
 	);
 };
 
-const removeButton = (context) => {
+const RemoveButton = (context) => {
 	const { data: task } = context;
 
 	return (
@@ -37,8 +37,8 @@ const Task = (context) => {
 			role="Task"
 		>
 			<span>{text}</span>
-			<span>{addTaskToTodo(context)}</span>
-			<span>{removeButton(context)}</span>
+			<span><AddTaskToTodo { ...context }/></span>
+			<span><RemoveButton { ...context }/></span>
 		</div>
 	);
 };

@@ -3,7 +3,7 @@ import * as random from '@laufire/utils/random';
 
 describe('TodoManager', () => {
 	const { getTodo, addTodo,
-		toggleTodo, removeTodo, toggleAll, clearCompleted,
+		toggleTodo, removeTodo, toggleAll, clearCompleted, hasCompletedTodos,
 		hasActiveTodo, filterTodos, hasTodo, editTodo } = TodoManager;
 
 	const randomStringOne = Symbol('string');
@@ -101,6 +101,26 @@ describe('TodoManager', () => {
 			};
 
 			const result = hasActiveTodo(ModifiedContext);
+
+			expect(result).toEqual(true);
+		});
+	});
+
+	describe('CompletedTodosCount - To count the completed Todos', () => {
+		test('hasCompletedTodo FalseCondition', () => {
+			const result = hasCompletedTodos(context);
+
+			expect(result).toEqual(false);
+		});
+		test('hasCompletedTodo TrueCondition', () => {
+			const ModifiedContext = {
+				state: {
+					todos: [{ ...existingTodos,
+						completed: !existingTodos.completed }],
+				},
+			};
+
+			const result = hasCompletedTodos(ModifiedContext);
 
 			expect(result).toEqual(true);
 		});

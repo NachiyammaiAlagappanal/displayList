@@ -9,7 +9,7 @@ const task = {
 
 const context = {
 	actions: {
-		addTask: jest.fn(),
+		addTodo: jest.fn(),
 		removeTask: jest.fn(),
 	},
 	data: task,
@@ -40,6 +40,6 @@ test('remove the task and add it to the todo', () => {
 
 	fireEvent.click(AddButton);
 
-	expect(context.actions.addTask)
-		.toHaveBeenCalledWith(task);
+	expect(context.actions.addTodo)
+		.toHaveBeenCalledWith(task.text);
 });
