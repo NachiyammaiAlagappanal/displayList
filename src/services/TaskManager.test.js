@@ -29,7 +29,7 @@ describe('TaskManager', () => {
 		},
 		data: randomTextThree,
 	};
-	const existingTask = context;
+	const existingTask = context.state.Tasks;
 	const [changedTask, unChangedTask] = existingTask;
 
 	test('getTask To get task', () => {
@@ -42,7 +42,7 @@ describe('TaskManager', () => {
 		expect(random.rndString).toHaveBeenCalledWith(context.config.idLength);
 	});
 	test('removeTask - to remove the task', () => {
-		const result = removeTask(existingTask, changedTask);
+		const result = removeTask({ ...context, data: changedTask });
 
 		expect(result).toEqual([unChangedTask]);
 	});
