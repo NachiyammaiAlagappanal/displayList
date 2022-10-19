@@ -1,21 +1,25 @@
-/* eslint-disable react/display-name */
 import { render } from '@testing-library/react';
 import React from 'react';
-
-jest.mock('./components/TodoPane', () => () => <div role="TodoPane"/>);
-jest.mock('./components/TaskPane', () => () => <div role="TaskPane"/>);
-
 import App from './App';
+import * as TodoPane from './components/TodoPane/index.js';
 import TaskManager from './services/TaskManager';
 import Ticker from './services/Ticker';
+import * as TaskPane from './components/TaskPane/index.js';
+// import context from './core/context';
 
 test('renders learn react link', () => {
-	jest.spyOn(React, 'useEffect');
+	jest.spyOn(React, 'useEffect').mockImplementation((fn) => fn());
 	jest.spyOn(Ticker, 'start').mockReturnValue();
 	jest.spyOn(TaskManager, 'init').mockReturnValue();
+	jest.spyOn(TodoPane, 'default').mockReturnValue(<div role="TodoPane"/>);
+	jest.spyOn(TaskPane, 'default').mockReturnValue(<div role="TaskPane"/>);
 
 	const { getByRole } = render(<App/>);
 
 	expect(getByRole('TodoPane')).toBeInTheDocument();
 	expect(getByRole('TaskPane')).toBeInTheDocument();
+	expect(getByRole('App')).toBeInTheDocument();
+	expect(React.useEffect).toHaveBeenCalledWith(expect.any(Function), []);
+	// expect(TodoPane.default).toHaveBeenCalledWith(context, {});
+	// expect(TaskPane.default).toHaveBeenCalledWith(context, {});
 });
