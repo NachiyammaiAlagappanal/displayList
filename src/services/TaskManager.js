@@ -6,9 +6,11 @@ const TaskManager = {
 		text: data,
 	}),
 
+	setTask: (context) => context.config.tasks.map((task) =>
+		TaskManager.getTask({ ...context, data: task })),
+
 	init: (context) =>
-		context.actions.setTasks(context.config.tasks.map((task) =>
-			TaskManager.getTask({ ...context, data: task })),),
+		context.actions.setTasks(TaskManager.setTask(context)),
 
 	removeTask: ({ state: { Tasks }, data }) =>
 		Tasks.filter((task) => task.id !== data.id),

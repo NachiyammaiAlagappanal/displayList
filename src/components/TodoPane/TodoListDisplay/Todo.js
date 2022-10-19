@@ -1,29 +1,6 @@
 import { React } from 'react';
-
-const CheckBox = (context) => {
-	const { actions, data: { todo }} = context;
-	const { completed } = todo;
-
-	return (
-		<input
-			role="CheckBox"
-			type="checkbox"
-			checked={ completed }
-			onChange={ () => actions.toggleTodo(todo) }
-		/>
-	);
-};
-const RemoveButton = (context) => {
-	const { data: { todo }} = context;
-
-	return (
-		<button
-			role="removeButton"
-			onClick={ () => context.actions.removeTodo(todo) }
-		>X
-		</button>
-	);
-};
+import CheckBox from './CheckBox';
+import RemoveButton from './RemoveButton';
 
 const Todo = (context) => {
 	const { actions, data: { todo }} = context;

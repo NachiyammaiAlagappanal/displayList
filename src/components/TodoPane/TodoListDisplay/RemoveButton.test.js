@@ -1,4 +1,4 @@
-import Todo from './Todo';
+import RemoveButton from './RemoveButton';
 import { render, fireEvent } from '@testing-library/react';
 
 const todo = {
@@ -6,21 +6,19 @@ const todo = {
 	text: Symbol('text'),
 	completed: false,
 };
-
 const context = {
 	actions: {
-		setEditing: jest.fn(),
-		toggleTodo: jest.fn(),
 		removeTodo: jest.fn(),
 	},
 	data: { todo },
 };
 const { actions } = context;
 
-test('Edit the todo, when clicked on the text', () => {
-	const setEditing = render(Todo(context)).getByRole('setEditing');
+test('remove the todo, when clicked on the removeButton', () => {
+	const removeButton = render(RemoveButton(context))
+		.getByRole('removeButton');
 
-	fireEvent.click(setEditing);
-	expect(actions.setEditing)
+	fireEvent.click(removeButton);
+	expect(actions.removeTodo)
 		.toHaveBeenCalledWith(todo);
 });
