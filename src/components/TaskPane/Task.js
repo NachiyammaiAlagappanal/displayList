@@ -1,35 +1,6 @@
 import { React } from 'react';
-import { Button } from '@mui/material';
-import TodoManager from '../../services/TodoManager';
-
-const AddTaskToTodo = (context) => {
-	const { data: { text }} = context;
-
-	return (
-		<Button
-			variant="outlined"
-			role="AddButton"
-			onClick={ () => TodoManager.addTodo({
-				...context,
-				data: text,
-			}) }
-		>
-			+</Button>);
-};
-
-const RemoveButton = (context) => {
-	const { data: task } = context;
-
-	return (
-		<Button
-			variant="contained"
-			color="error"
-			role="removeButton"
-			onClick={ () => context.actions.removeTask(task) }
-		>
-			X</Button>
-	);
-};
+import AddTaskToTodo from './AddButton';
+import RemoveButton from './RemoveButton';
 
 const Task = (context) => {
 	const { data: { id, text }} = context;

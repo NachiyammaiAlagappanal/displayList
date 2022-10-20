@@ -1,5 +1,5 @@
-import filterBar from './FilterBar';
-import * as filterButton from './FilterButton';
+import FilterBar from './FilterBar';
+import * as FilterButton from './FilterButton';
 import { range } from '@laufire/utils/collection';
 import { render } from '@testing-library/react';
 import { rndBetween, rndString } from '@laufire/utils/random';
@@ -14,13 +14,13 @@ test('To check the filter Bar tasks', () => {
 		},
 	};
 
-	jest.spyOn(filterButton, 'default').mockImplementation(() =>
+	jest.spyOn(FilterButton, 'default').mockImplementation(() =>
 		<div key={ rndString() } role="FilterButton"/>);
 
-	const { getAllByRole } = render(filterBar(context));
+	const { getAllByRole } = render(FilterBar(context));
 
 	context.config.filters.map((filter, index) => {
-		expect(filterButton.default)
+		expect(FilterButton.default)
 			.toHaveBeenCalledWith({ ...context, data: filter });
 		expect(getAllByRole('FilterButton')[index]).toBeInTheDocument();
 	});

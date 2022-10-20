@@ -1,6 +1,6 @@
 import TodoList from './TodoList';
 import * as Todo from './Todo';
-import { React } from '.';
+import { React } from 'react';
 import { render } from '@testing-library/react';
 import { rndBetween } from '@laufire/utils/lib';
 import TodoManager from '../../../services/TodoManager';

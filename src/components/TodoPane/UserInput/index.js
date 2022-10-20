@@ -4,24 +4,21 @@ import FilterBar from './FilterBar.js';
 import TodoInput from './TodoInput.js';
 import ToggleAllButton from './ToggleAllButton.js';
 import ActionButton from './ActionButton.js';
+import renderItem from '../../RenderItem.js';
 
 const Fields = [ToggleAllButton, TodoInput, ActionButton];
-
-// eslint-disable-next-line react/display-name
-const renderItem = (context) => (Component, key) =>
-	<Component key={ key }{ ...context }/>;
 
 const TodoInputs = (context) =>
 	Fields.map((Component, field) =>
 		renderItem({ ...context })(Component, field));
 
-const userInput = [TodoInputs, ClearButton, FilterBar];
+const userInputs = [TodoInputs, ClearButton, FilterBar];
 
-const UserInput = (context) =>
+const UserInputs = (context) =>
 	<div role="UserInput">
-		{userInput.map((Component, field) =>
+		{userInputs.map((Component, field) =>
 			<div key={ field }>
 				{renderItem({ ...context })(Component, field)}</div>)}
 	</div>;
 
-export default UserInput;
+export default UserInputs;
