@@ -1,28 +1,28 @@
-import { Fragment, React } from 'react';
+import { React } from 'react';
 import ClearButton from './ClearButton.js';
 import FilterBar from './FilterBar.js';
 import TodoInput from './TodoInput.js';
 import ToggleAllButton from './ToggleAllButton.js';
 import ActionButton from './ActionButton.js';
 
-// TODO: USE MAP
-const TodoInputs = (context) => <>
-	<ToggleAllButton { ...context }/>
-	<TodoInput { ...context }/>
-	<ActionButton { ...context }/>
-</>;
+const Fields = [ToggleAllButton, TodoInput, ActionButton];
 
-// TODO: USE MAP
+// eslint-disable-next-line react/display-name
+const renderItem = (context) => (Component, key) =>
+	<Component key={ key }{ ...context }/>;
+
+const TodoInputs = (context) =>
+	Fields.map((Component, field) =>
+		renderItem({ ...context })(Component, field));
+
+const userInput = [TodoInputs, ClearButton, FilterBar];
+
 const UserInput = (context) =>
 	<div role="UserInput">
 		<div>
-			<TodoInputs { ...context }/>
-		</div>
-		<div>
-			<ClearButton { ...context }/>
-		</div>
-		<div>
-			<FilterBar { ...context }/>
+			{userInput.map((Component, field) =>
+				<div key={ field }>
+					{renderItem({ ...context })(Component, field)}</div>)}
 		</div>
 	</div>;
 
