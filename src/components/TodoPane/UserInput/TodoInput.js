@@ -8,13 +8,17 @@ const actionKeys = {
 	Escape: (context) => context.actions.updateInput(''),
 };
 
-const inputTextBox = (context) =>
-	<input
-		role="textBox"
-		value={ context.state.input }
-		onChange={ (evt) => context.actions.updateInput(evt.target.value) }
-		onKeyUp={ (evt) =>
-			actionKeys[evt.code] && actionKeys[evt.code](context) }
-	/>;
+const InputTextBox = (context) => {
+	const { state } = context;
 
-export default inputTextBox;
+	return (
+		<input
+			role="textBox"
+			value={ state.input }
+			onChange={ (evt) => context.actions.updateInput(evt.target.value) }
+			onKeyUp={ (evt) => actionKeys[evt.code]
+			&& actionKeys[evt.code](context) }
+		/>);
+};
+
+export default InputTextBox;

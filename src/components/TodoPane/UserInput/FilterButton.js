@@ -1,21 +1,20 @@
-import { Tooltip } from '@mui/material';
 import { React } from 'react';
 import TodoManager from '../../../services/TodoManager';
 
-const filterButton = (context) => {
+const Button = (context) => {
 	const { actions, data: filter } = context;
 
 	return (
-		TodoManager.hasTodo(context) && <span>
-			<Tooltip title="filter">
-				<button
-					key={ filter }
-					role="FilterButton"
-					onClick={ () => actions.setFilter(filter) }
-				>
-					{ filter }</button>
-			</Tooltip>	</span>
-	);
+		<button
+			key={ filter }
+			role="FilterButton"
+			onClick={ () => actions.setFilter(filter) }
+		>
+			{ filter }</button>);
 };
 
-export default filterButton;
+const FilterButton = (context) =>
+	TodoManager.hasTodo(context)
+		&& Button(context);
+
+export default FilterButton;

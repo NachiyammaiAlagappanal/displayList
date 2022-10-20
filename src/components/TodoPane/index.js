@@ -1,12 +1,12 @@
 import { React } from 'react';
 import UserInput from './UserInput';
-import TodoListDisplay from './TodoListDisplay';
+import TodoList from './TodoListDisplay/TodoList';
 
 const TodoPane = (context) =>
 	<div role="TodoPane" className="TodoPane">
 		<h3>Todo</h3>
-		<div><UserInput { ...context }/></div>
-		<div><TodoListDisplay { ...context }/></div>
+		<UserInput { ...context }/>
+		<TodoList { ...context }/>
 	</div>;
 
 export default TodoPane;

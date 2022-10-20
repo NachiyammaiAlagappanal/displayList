@@ -1,6 +1,8 @@
-import filterButton from './FilterButton';
+import FilterButton from './FilterButton';
 
-const filterBar = (context) => context.config.filters.map((filter) =>
-	filterButton({ ...context, data: filter }));
+// TODO: use component style
 
-export default filterBar;
+const FilterBar = (context) => context.config.filters.map((filter) =>
+	FilterButton({ ...context, data: filter }));
+
+export default FilterBar;

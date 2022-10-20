@@ -4,9 +4,9 @@ import TodoManager from '../../../services/TodoManager';
 
 const ClearButton = (context) => {
 	const { actions } = context;
-	const isTodoCompleted = TodoManager.hasCompletedTodos(context);
+	const hasCompletedTodos = TodoManager.hasCompletedTodos(context);
 
-	return isTodoCompleted && <Tooltip title="clear">
+	return hasCompletedTodos && <Tooltip title="clear">
 		<button
 			role="ClearCompleted"
 			onClick={ () => actions.clearCompleted() }
