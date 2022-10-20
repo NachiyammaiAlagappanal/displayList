@@ -3,11 +3,11 @@ import Todo from './Todo';
 import TodoManager from '../../../services/TodoManager';
 
 const TodoList = (context) => {
-	const filteredTodo = TodoManager.filterTodos(context);
+	const filteredTodos = TodoManager.filterTodos(context);
 
 	return (
 		<div role="TodoList">
-			{ filteredTodo.map((todo) => Todo({
+			{ filteredTodos.map((todo) => Todo({
 				...context,
 				data: { todo },
 			})) }

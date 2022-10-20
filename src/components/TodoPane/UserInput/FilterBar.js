@@ -1,8 +1,7 @@
 import FilterButton from './FilterButton';
+import { React } from 'react';
 
-// TODO: use component style
-
-const FilterBar = (context) => context.config.filters.map((filter) =>
-	FilterButton({ ...context, data: filter }));
+const FilterBar = (context) => context.config.filters.map((filter, index) =>
+	<FilterButton key={ index }{ ...{ ...context, data: filter } }/>);
 
 export default FilterBar;

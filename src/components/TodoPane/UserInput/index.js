@@ -19,11 +19,9 @@ const userInput = [TodoInputs, ClearButton, FilterBar];
 
 const UserInput = (context) =>
 	<div role="UserInput">
-		<div>
-			{userInput.map((Component, field) =>
-				<div key={ field }>
-					{renderItem({ ...context })(Component, field)}</div>)}
-		</div>
+		{userInput.map((Component, field) =>
+			<div key={ field }>
+				{renderItem({ ...context })(Component, field)}</div>)}
 	</div>;
 
 export default UserInput;
