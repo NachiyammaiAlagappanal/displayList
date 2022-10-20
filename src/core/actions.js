@@ -4,15 +4,12 @@ import TodoManager from '../services/TodoManager.js';
 const updateInput = ({ data }) => ({
 	input: data,
 });
-const addTodo = (context) => ({
-	todos: TodoManager.addTodo(context),
-});
 const toggleTodo = (context) => ({
 	todos: TodoManager.toggleTodo(context),
 });
-const removeTodo = (context) => ({
-	todos: TodoManager.removeTodo(context),
-});
+
+const removeTodo = ({ data: todos }) => ({ todos });
+
 const toggleAll = (context) => ({
 	todos: TodoManager.toggleAll(context),
 });
@@ -26,10 +23,10 @@ const setEditing = ({ data }) => ({
 	editing: data,
 	input: data.text,
 });
-const editTodo = (context) => ({
+const editTodos = ({ data: todos }) => ({
 	input: '',
 	editing: null,
-	todos: TodoManager.editTodo(context),
+	todos: todos,
 });
 const setTasks = (context) => ({
 	Tasks: context.data,
@@ -40,21 +37,26 @@ const removeTask = (context) => ({
 const addTasks = (context) => ({
 	Tasks: TaskManager.addTask(context),
 });
+const addTodo = (context) => ({
+	todos: [
+		...context.state.todos,
+		context.data,
+	],
+});
 
 const actions = {
 	updateInput,
-	addTodo,
 	toggleTodo,
 	removeTodo,
 	toggleAll,
 	clearCompleted,
 	setFilter,
 	setEditing,
-	editTodo,
+	editTodos,
 	setTasks,
 	removeTask,
 	addTasks,
-
+	addTodo,
 };
 
 export default actions;

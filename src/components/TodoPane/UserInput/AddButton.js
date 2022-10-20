@@ -2,13 +2,16 @@ import { React } from 'react';
 import TodoManager from '../../../services/TodoManager';
 
 const AddButton = (context) => {
-	const { actions, state: { input }} = context;
+	const { state: { input }} = context;
 
 	return (
 		<button
 			role="AddButton"
 			disabled={ TodoManager.hasInput(input) }
-			onClick={ () => actions.addTodo(input) }
+			onClick={ () => TodoManager.addTodo({
+				...context,
+				data: input,
+			}) }
 		> +
 		</button>
 	);

@@ -1,10 +1,10 @@
-import { rndString } from '@laufire/utils/random';
+/* eslint-disable no-console */
+import TodoBackend from './TodoBackend';
 
 const TodoManager = {
 
-	getTodo: ({ config, data }) => ({
-		id: rndString(config.idLength),
-		text: data,
+	getTodo: ({ data: { text }}) => ({
+		text: text,
 		completed: false,
 	}),
 
@@ -19,9 +19,6 @@ const TodoManager = {
 		completed: (todos) => todos.completed,
 	},
 
-	addTodo: (context) =>
-		context.state.todos.concat(TodoManager.getTodo(context)),
-
 	toggleTodo: ({ state: { todos }, data }) =>
 		todos.map((todo) => (todo.id !== data.id
 			? todo
@@ -31,8 +28,15 @@ const TodoManager = {
 			}
 		)),
 
-	removeTodo: ({ state: { todos }, data }) =>
-		todos.filter((todo) => todo.id !== data.id),
+	removeTodo: async ({ actions, state: { todos }}, { todo: target }) => {
+		const status = await TodoBackend.remove(target.id);
+		const todosWithoutTarget = todos
+			.filter((todo) => todo.id !== target.id);
+
+		status === 'success'
+			? actions.removeTodo(todosWithoutTarget)
+			: actions.removeTodo(todos);
+	},
 
 	toggleAll: ({ state: { todos }, data }) => todos.map((todo) => ({
 		...todo,
@@ -50,14 +54,26 @@ const TodoManager = {
 
 	hasTodo: ({ state: { todos }}) => todos.length !== 0,
 
-	editTodo: ({ state: { todos, editing, input }}) =>
-		todos.map((todo) => (todo.id !== editing.id
+	editTodo: async ({ actions, state: { todos, editing, input }}) => {
+		const target = todos.find((todo) => todo.id === editing.id);
+		const editedTodo = await TodoBackend.update(editing.id, {
+			...target,
+			text: input,
+		});
+		const editedTodos = todos.map((todo) => (todo.id !== editing.id
 			? todo
-			: {
-				...todo,
-				input,
-			})),
+			: { ...todo, ...editedTodo }));
 
+		return actions.editTodos(editedTodos);
+	},
+
+	addTodo: async (context) => {
+		const { actions, data } = context;
+		const createdTodo = await TodoBackend
+			.create(TodoManager.getTodo({ data: {	text: data }}));
+
+		return actions.addTodo(createdTodo);
+	},
 };
 
 export default TodoManager;

@@ -1,4 +1,5 @@
 import { React } from 'react';
+import TodoManager from '../../../services/TodoManager';
 
 const RemoveButton = (context) => {
 	const { data: { todo }} = context;
@@ -6,7 +7,7 @@ const RemoveButton = (context) => {
 	return (
 		<button
 			role="removeButton"
-			onClick={ () => context.actions.removeTodo(todo) }
+			onClick={ () => TodoManager.removeTodo(context, { todo }) }
 		>X
 		</button>
 	);
