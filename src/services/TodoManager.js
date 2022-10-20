@@ -67,14 +67,11 @@ const TodoManager = {
 	},
 
 	addTodo: async (context) => {
-		const { actions, state: { todos }, data } = context;
+		const { actions, data } = context;
 		const createdTodo = await TodoBackend
 			.create(TodoManager.getTodo({ data: {	text: data }}));
 
-		return actions.addTodo([
-			...todos,
-			createdTodo,
-		]);
+		return actions.addTodo(createdTodo);
 	},
 };
 

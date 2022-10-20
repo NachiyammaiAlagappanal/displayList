@@ -39,8 +39,11 @@ const removeTask = (context) => ({
 const AddTasks = (context) => ({
 	Tasks: TaskManager.AddTask({ ... context, task: context.data }),
 });
-const addTodo = ({ data: todos }) => ({
-	todos,
+const addTodo = (context) => ({
+	todos: [
+		...context.state.todos,
+		context.data,
+	],
 });
 
 const actions = {
