@@ -43,6 +43,7 @@ const addTodo = (context) => ({
 		context.data,
 	],
 });
+const setTodos = (context) => ({ todos: [...context.data] });
 
 const actions = {
 	updateInput,
@@ -57,6 +58,7 @@ const actions = {
 	removeTask,
 	addTasks,
 	addTodo,
+	setTodos,
 };
 
 export default actions;

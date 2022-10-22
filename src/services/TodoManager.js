@@ -69,9 +69,16 @@ const TodoManager = {
 	addTodo: async (context) => {
 		const { actions, data } = context;
 		const createdTodo = await TodoBackend
-			.create(TodoManager.getTodo({ data: {	text: data }}));
+			.create(TodoManager.getTodo({ data: { text: data }}));
 
 		return actions.addTodo(createdTodo);
+	},
+
+	getAllTodo: async (context) => {
+		const { actions } = context;
+		const todos = await TodoBackend.getAll();
+
+		return actions.setTodos(todos);
 	},
 };
 
