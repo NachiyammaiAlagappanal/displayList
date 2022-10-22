@@ -1,12 +1,11 @@
-import { rndValue } from '@laufire/utils/random';
+import TaskManager from './TaskManager';
 
 const Ticker = {
 	start: (context) => {
-		const { actions, config } = context;
-		const { tasks } = config;
+		const { config } = context;
 
-		return setInterval(() =>
-			actions.addTasks(rndValue(tasks)), config.TickerDelay);
+		return setInterval(() => TaskManager.addTask(context),
+			config.TickerDelay);
 	},
 };
 

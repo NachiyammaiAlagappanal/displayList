@@ -1,14 +1,8 @@
 import { map, omit } from '@laufire/utils/collection';
 import axios from 'axios';
+import config from '../core/config';
 
-const url = 'http://localhost';
-const port = 1234;
-const headerConfig = {
-	headers: {
-		'Content-Type': 'application/json',
-	},
-};
-
+const { url, port, headerConfig } = config;
 const TodoBackend = {
 	create: async (todo) => {
 		const res = await axios.post(

@@ -1,4 +1,5 @@
 import { rndString } from '@laufire/utils/random';
+import TaskBackend from './TaskBackend';
 
 const TaskManager = {
 	getTask: ({ config, data }) => ({
@@ -15,8 +16,11 @@ const TaskManager = {
 	removeTask: ({ state: { Tasks }, data }) =>
 		Tasks.filter((task) => task.id !== data.id),
 
-	addTask: (context) =>
-		context.state.Tasks.concat(TaskManager.getTask(context)),
+	addTask: async (context) => {
+		const newTask = await TaskBackend.getTask();
+
+		context.actions.addTask(newTask);
+	},
 
 };
 

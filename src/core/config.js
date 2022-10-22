@@ -7,6 +7,13 @@ const config = {
 	filters: ['all', 'active', 'completed'],
 	TickerDelay: milliseconds * seconds,
 	tasks: ['Task1', 'Task2', 'Task3'],
+	url: 'http://localhost',
+	port: 1235,
+	headerConfig: {
+		headers: {
+			'Content-Type': 'application/json',
+		},
+	},
 };
 
 export default config;
