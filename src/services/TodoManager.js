@@ -1,4 +1,6 @@
-import TodoBackend from './TodoBackend';
+import resource from './Resource';
+
+const Todo = resource('todos');
 
 const TodoManager = {
 
@@ -28,7 +30,7 @@ const TodoManager = {
 		)),
 
 	removeTodo: async ({ actions, state: { todos }}, { todo: target }) => {
-		const status = await TodoBackend.remove(target.id);
+		const status = await Todo.remove(target.id);
 		const todosWithoutTarget = todos
 			.filter((todo) => todo.id !== target.id);
 
@@ -55,7 +57,7 @@ const TodoManager = {
 
 	editTodo: async ({ actions, state: { todos, editing, input }}) => {
 		const target = todos.find((todo) => todo.id === editing.id);
-		const editedTodo = await TodoBackend.update(editing.id, {
+		const editedTodo = await Todo.update(editing.id, {
 			...target,
 			text: input,
 		});
@@ -68,7 +70,7 @@ const TodoManager = {
 
 	addTodo: async (context) => {
 		const { actions, data } = context;
-		const createdTodo = await TodoBackend
+		const createdTodo = await Todo
 			.create(TodoManager.getTodo({ data: { text: data }}));
 
 		return actions.addTodo(createdTodo);
@@ -76,7 +78,7 @@ const TodoManager = {
 
 	getAllTodo: async (context) => {
 		const { actions } = context;
-		const todos = await TodoBackend.getAll();
+		const todos = await Todo.getAll();
 
 		return actions.setTodos(todos);
 	},
