@@ -1,6 +1,7 @@
 import resource from './Resource';
+import axios from 'axios';
 
-const Todo = resource('todos');
+const Todo = resource({ name: 'todos', restClient: axios });
 
 const TodoManager = {
 

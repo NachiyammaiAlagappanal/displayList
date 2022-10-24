@@ -1,11 +1,11 @@
 import axios from 'axios';
 import config from '../core/config';
 
-const { url, port, headerConfig } = config;
+const { host } = config;
 
 const TaskBackend = {
 	getTask: async () => {
-		const res = await axios.get(`${ url }:${ port }/task`, headerConfig,);
+		const res = await axios.get(`${ host }:1235/task`);
 
 		return res.data.data;
 	},
