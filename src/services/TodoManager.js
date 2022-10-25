@@ -1,7 +1,10 @@
+import config from '../core/config';
 import resource from './Resource';
-import axios from 'axios';
+import restClient from './restClient';
+const { host, port } = config;
 
-const Todo = resource({ name: 'todos', restClient: axios });
+const client = restClient({ host, port });
+const Todo = resource({ name: 'todos', client: client });
 
 const TodoManager = {
 
@@ -31,7 +34,7 @@ const TodoManager = {
 		)),
 
 	removeTodo: async ({ actions, state: { todos }}, { todo: target }) => {
-		const status = await Todo.remove(target.id);
+		const status = await Todo.remove({ id: target.id });
 		const todosWithoutTarget = todos
 			.filter((todo) => todo.id !== target.id);
 
@@ -58,9 +61,12 @@ const TodoManager = {
 
 	editTodo: async ({ actions, state: { todos, editing, input }}) => {
 		const target = todos.find((todo) => todo.id === editing.id);
-		const editedTodo = await Todo.update(editing.id, {
-			...target,
-			text: input,
+		const editedTodo = await Todo.update({
+			id: editing.id,
+			data: {
+				...target,
+				text: input,
+			},
 		});
 		const editedTodos = todos.map((todo) => (todo.id !== editing.id
 			? todo
@@ -71,8 +77,9 @@ const TodoManager = {
 
 	addTodo: async (context) => {
 		const { actions, data } = context;
+		const newTodo = TodoManager.getTodo({ data: { text: data }});
 		const createdTodo = await Todo
-			.create(TodoManager.getTodo({ data: { text: data }}));
+			.create({ data: newTodo });
 
 		return actions.addTodo(createdTodo);
 	},
