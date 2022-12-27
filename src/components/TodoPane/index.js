@@ -1,12 +1,14 @@
 import { React } from 'react';
 import UserInput from './UserInput';
 import TodoList from './TodoListDisplay/TodoList';
+import { Box, Toolbar } from '@mui/material';
 
 const TodoPane = (context) =>
-	<div role="TodoPane" className="TodoPane">
-		<h3>Todo</h3>
+	<Box role="TodoPane" className="TodoPane">
+		<Toolbar className="center">
+			TODO</Toolbar>
 		<UserInput { ...context }/>
 		<TodoList { ...context }/>
-	</div>;
+	</Box>;
 
 export default TodoPane;

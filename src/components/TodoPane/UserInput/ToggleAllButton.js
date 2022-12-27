@@ -1,3 +1,4 @@
+import { Checkbox } from '@mui/material';
 import { React } from 'react';
 import TodoManager from '../../../services/TodoManager';
 
@@ -6,7 +7,7 @@ const CheckBox = (context) => {
 	const isSelected = TodoManager.hasActiveTodo(context);
 
 	return (
-		<input
+		<Checkbox
 			role="checkBox"
 			type="checkbox"
 			checked={ isSelected }

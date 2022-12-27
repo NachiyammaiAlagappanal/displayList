@@ -1,29 +1,25 @@
-import { Fragment, React } from 'react';
+import { React } from 'react';
 import ClearButton from './ClearButton.js';
 import FilterBar from './FilterBar.js';
 import TodoInput from './TodoInput.js';
 import ToggleAllButton from './ToggleAllButton.js';
 import ActionButton from './ActionButton.js';
+import renderItem from '../../RenderItem.js';
+import { Box } from '@mui/material';
 
-// TODO: USE MAP
-const TodoInputs = (context) => <>
-	<ToggleAllButton { ...context }/>
-	<TodoInput { ...context }/>
-	<ActionButton { ...context }/>
-</>;
+const Fields = [ToggleAllButton, TodoInput, ActionButton];
 
-// TODO: USE MAP
-const UserInput = (context) =>
-	<div role="UserInput">
-		<div>
-			<TodoInputs { ...context }/>
-		</div>
-		<div>
-			<ClearButton { ...context }/>
-		</div>
-		<div>
-			<FilterBar { ...context }/>
-		</div>
-	</div>;
+const TodoInputs = (context) =>
+	Fields.map((Component, field) =>
+		renderItem({ ...context })(Component, field));
 
-export default UserInput;
+const userInputs = [TodoInputs, ClearButton, FilterBar];
+
+const UserInputs = (context) =>
+	<Box role="UserInput">
+		{userInputs.map((Component, field) =>
+			<Box key={ field }>
+				{renderItem({ ...context })(Component, field)}</Box>)}
+	</Box>;
+
+export default UserInputs;

@@ -1,10 +1,14 @@
 import AddButton from './AddButton';
 import EditButton from './EditButton';
+import { React } from 'react';
 
-// TODO: use component style
-const ActionButton = (context) => (context.state.editing
-	? EditButton(context)
-	: AddButton(context)
-);
+const ActionButton = (context) => {
+	const { state } = context;
+
+	return state.editing
+		? <EditButton { ...context }/>
+		: <AddButton { ...context }/>
+	;
+};
 
 export default ActionButton;
