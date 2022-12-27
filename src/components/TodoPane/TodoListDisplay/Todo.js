@@ -1,3 +1,4 @@
+import { Box } from '@mui/material';
 import { React } from 'react';
 import CheckBox from './CheckBox';
 import RemoveButton from './RemoveButton';
@@ -8,19 +9,19 @@ const Todo = (context) => {
 	const style = completed ? 'completedStyle' : 'activeStyle';
 
 	return (
-		<div
+		<Box
 			key={ id }
 			role="Todo"
 			className="sharedStyle"
-		>
-			<span><CheckBox { ...context }/></span>
-			<span
+		><Box component="span"><CheckBox { ...context }/></Box>
+			<Box
+				component="span"
 				className={ style }
 				role="setEditing"
 				onClick={ () => actions.setEditing(todo) }
-			>	{ text }</span>
-			<span><RemoveButton { ...context }/></span>
-		</div>
+			>	{ text }</Box>
+			<Box component="span"><RemoveButton { ...context }/></Box>
+		</Box>
 	);
 };
 

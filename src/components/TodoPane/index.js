@@ -5,8 +5,7 @@ import { Box, Toolbar } from '@mui/material';
 
 const TodoPane = (context) =>
 	<Box role="TodoPane" className="TodoPane">
-		<Toolbar className="center">
-			TODO</Toolbar>
+		<Toolbar>TODO</Toolbar>
 		<UserInput { ...context }/>
 		<TodoList { ...context }/>
 	</Box>;

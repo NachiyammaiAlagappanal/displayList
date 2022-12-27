@@ -1,14 +1,15 @@
+import { Box, Toolbar } from '@mui/material';
 import { React } from 'react';
 import TaskList from './TaskList';
 
 const TaskPane = (context) =>
-	<div
+	<Box
 		role="TaskPane"
 		className="TaskPane"
 	>
-		<h3> TASK</h3>
-		<div><TaskList { ...context }/></div>
+		<Toolbar>TASK</Toolbar>
+		<Box><TaskList { ...context }/></Box>
 
-	</div>;
+	</Box>;
 
 export default TaskPane;

@@ -1,3 +1,4 @@
+import { Box } from '@mui/material';
 import { React } from 'react';
 import Task from './Task.js';
 
@@ -6,8 +7,8 @@ const TaskList = (context) => {
 
 	return (
 
-		<div role="TaskList">
-			{ Tasks.map((task) => Task({ ...context, data: task })) } </div>
+		<Box role="TaskList">
+			{ Tasks.map((task) => Task({ ...context, data: task })) } </Box>
 	);
 };
 

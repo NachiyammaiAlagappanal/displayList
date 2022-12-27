@@ -1,5 +1,5 @@
 import { React } from 'react';
-import { Button } from '@mui/material';
+import { Box, Button } from '@mui/material';
 
 const AddTaskToTodo = (context) => {
 	const { data: task } = context;
@@ -32,14 +32,14 @@ const Task = (context) => {
 	const { data: { id, text }} = context;
 
 	return (
-		<div
+		<Box
 			key={ id }
 			role="Task"
 		>
-			<span>{text}</span>
-			<span><AddTaskToTodo { ...context }/></span>
-			<span><RemoveButton { ...context }/></span>
-		</div>
+			<Box component="span">{text}</Box>
+			<Box component="span"><AddTaskToTodo { ...context }/></Box>
+			<Box component="span"><RemoveButton { ...context }/></Box>
+		</Box>
 	);
 };
 
