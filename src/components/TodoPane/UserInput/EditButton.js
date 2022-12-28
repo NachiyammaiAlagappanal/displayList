@@ -8,6 +8,8 @@ const EditButton = ({ actions, state: { input }}) =>
 		role="editButton"
 		disabled={ TodoManager.hasInput(input) }
 		onClick={ () => actions.editTodo() }
+		size="large"
+		sx={ { Color: 'black', marginTop: '15px' } }
 	>EDIT</Button>;
 
 export default EditButton;

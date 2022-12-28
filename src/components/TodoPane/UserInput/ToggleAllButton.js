@@ -12,6 +12,7 @@ const CheckBox = (context) => {
 			type="checkbox"
 			checked={ isSelected }
 			onChange={ () => actions.toggleAll(!isSelected) }
+			sx={ { Color: 'black', marginTop: '15px' } }
 		/>
 	);
 };

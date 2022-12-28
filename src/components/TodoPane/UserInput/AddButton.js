@@ -10,6 +10,9 @@ const AddButton = (context) => {
 			role="AddButton"
 			disabled={ TodoManager.hasInput(input) }
 			onClick={ () => actions.addTodo(input) }
+			size="large"
+			variant="filled"
+			sx={ { Color: 'black', marginTop: '15px' } }
 		> +
 		</Button>
 	);

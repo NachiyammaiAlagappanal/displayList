@@ -7,7 +7,7 @@ import ActionButton from './ActionButton.js';
 import renderItem from '../../RenderItem.js';
 import { Box } from '@mui/material';
 
-const Fields = [ToggleAllButton, TodoInput, ActionButton];
+const Fields = [TodoInput, ActionButton, ToggleAllButton];
 
 const TodoInputs = (context) =>
 	Fields.map((Component, field) =>
@@ -16,7 +16,10 @@ const TodoInputs = (context) =>
 const userInputs = [TodoInputs, ClearButton, FilterBar];
 
 const UserInputs = (context) =>
-	<Box role="UserInput">
+	<Box
+		role="UserInput"
+		sx={ { margin: '10px', display: 'grid' } }
+	>
 		{userInputs.map((Component, field) =>
 			<Box key={ field }>
 				{renderItem({ ...context })(Component, field)}</Box>)}
