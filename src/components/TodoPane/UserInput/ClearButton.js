@@ -10,6 +10,10 @@ const ClearButton = (context) => {
 		<Button
 			role="ClearCompleted"
 			onClick={ () => actions.clearCompleted() }
+			size="small"
+			variant="contained"
+			color="success"
+			sx={ { width: '25%' } }
 		>
 			Clear completed
 		</Button>

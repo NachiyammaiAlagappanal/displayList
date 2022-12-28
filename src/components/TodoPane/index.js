@@ -5,8 +5,10 @@ import { Box } from '@mui/material';
 
 const TodoPane = (context) =>
 	<Box role="TodoPane" className="TodoPane">
-		<UserInput { ...context }/>
-		<TodoList { ...context }/>
+		<Box sx={ { display: 'flex', flexDirection: 'column', gap: '30px' } }>
+			<UserInput { ...context }/>
+			<TodoList { ...context }/>
+		</Box>
 	</Box>;
 
 export default TodoPane;

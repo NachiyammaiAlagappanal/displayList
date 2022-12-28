@@ -13,14 +13,14 @@ const Todo = (context) => {
 			key={ id }
 			role="Todo"
 			className="sharedStyle"
-		><Box component="span"><CheckBox { ...context }/></Box>
+		><Box component="span"/>
 			<Box
 				component="span"
 				className={ style }
 				role="setEditing"
 				onClick={ () => actions.setEditing(todo) }
-			>	{ text }</Box>
-			<Box component="span"><RemoveButton { ...context }/></Box>
+			>	{ text }</Box><Box component="span">
+				<RemoveButton { ...context }/><CheckBox { ...context }/></Box>
 		</Box>
 	);
 };

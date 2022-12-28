@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { React, useEffect } from 'react';
 import TodoPane from './components/TodoPane/index.js';
 import './App.scss';
@@ -9,6 +10,7 @@ import { Box } from '@mui/material';
 const App = (context) => {
 	useEffect(() => TaskManager.init(context), []);
 	useEffect(() => Ticker.start(context), []);
+	console.log(context);
 
 	return (
 		<Box role="App">
