@@ -16,14 +16,14 @@ const App = (context) => {
 	return (
 		<Box role="App">
 			<Grid container={ true } sx={ { height: '100vh' } }>
-				<Grid item={ true } xs={ 6 } sx={ { background: 'skyBlue' } }>
+				<Grid item={ true } xs={ 6 } sx={ { background: '#24324bfa' } }>
 					<Paper
 						sx={ {
 							height: '80%',
 							width: '80%',
 							margin: '10%',
-							backgroundColor: '#ffc800',
-							border: '2px solid Chocolate',
+							backgroundColor: 'BISQUE',
+							// border: '2px solid Chocolate',
 						} }
 					><TodoPane { ...context }/></Paper>
 				</Grid>

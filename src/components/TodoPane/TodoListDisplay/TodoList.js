@@ -11,13 +11,12 @@ const TodoList = (context) => {
 		<Box
 			role="TodoList"
 			sx={ { alignItems: 'center', flexDirection: 'column',
-				display: 'flex' } }
-		>
+				display: 'flex', gap: '10px' } }
+		> <ClearButton { ...context }/>
 			{ filteredTodos.map((todo) => Todo({
 				...context,
 				data: { todo },
 			})) }
-			<ClearButton { ...context }/>
 		</Box>
 	);
 };

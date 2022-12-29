@@ -6,11 +6,11 @@ import ActionButton from './ActionButton.js';
 import renderItem from '../../RenderItem.js';
 import { Box } from '@mui/material';
 
-const Fields = [TodoInput, ActionButton, ToggleAllButton];
+const Fields = [ToggleAllButton, TodoInput, ActionButton];
 
 const TodoInputs = (context) =>
 	<Box 	sx={ { display: 'grid',
-		gridTemplateColumns: '60% 20% 20%' } }
+		gridTemplateColumns: 'auto auto 20%' } }
 	>{
 			Fields.map((Component, field) =>
 				renderItem({ ...context })(Component, field))
@@ -22,7 +22,7 @@ const UserInputs = (context) =>
 	<Box
 		role="UserInput"
 		sx={ { display: 'grid',
-			gridTemplateColumns: '60% 20% 20%' } }
+			gridTemplateColumns: '70% 30%' } }
 	>
 		{userInputs.map((Component, field) =>
 			<Box

@@ -4,7 +4,6 @@ import { Box, Paper } from '@mui/material';
 import { React } from 'react';
 import CheckBox from './CheckBox';
 import RemoveButton from './RemoveButton';
-import CircleRoundedIcon from '@mui/icons-material/CircleRounded';
 
 const Todo = (context) => {
 	const { actions, data: { todo }} = context;
@@ -16,16 +15,21 @@ const Todo = (context) => {
 			key={ id }
 			role="Todo"
 			className="sharedStyle"
-		><Box component="span"><Paper>
-				<CircleRoundedIcon sx={ { fontSize: 'small' } }/>
+			sx={ { display: 'flex', flexDirection: 'row' } }
+		>	<CheckBox { ...context }/>
+			<Paper
+				elevation={ 0 }
+				sx={ { minWidth: '100px' } }
+				autoFocus={ true }
+			>
 				<Box
-					component="span"
 					className={ style }
 					role="setEditing"
+					component="span"
+
 					onClick={ () => actions.setEditing(todo) }
-				>	{ text }</Box></Paper>
-			<Box component="span"><CheckBox { ...context }/>
-				<RemoveButton { ...context }/></Box></Box></Box>
+				>{ text }</Box></Paper>
+			<RemoveButton { ...context }/></Box>
 	);
 };
 

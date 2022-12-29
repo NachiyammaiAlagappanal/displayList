@@ -8,7 +8,7 @@ const RemoveButton = (context) => {
 		<Button
 			role="removeButton"
 			onClick={ () => context.actions.removeTodo(todo) }
-			color="error"
+			sx={ { color: '#fc0000' } }
 		>X
 		</Button>
 	);

@@ -11,7 +11,7 @@ const CheckBox = (context) => {
 			role="CheckBox"
 			checked={ completed }
 			color="success"
-			checkedIcon={ <CheckIcon/> }
+			checkedIcon={ <CheckIcon sx={ { color: '#05f611' } }/> }
 			icon={ <CheckIcon/> }
 			onChange={ () => actions.toggleTodo(todo) }
 		/>
