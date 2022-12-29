@@ -18,12 +18,14 @@
 };
 
 .TodoPane{
-	position: absolute;
-	height: 100%;
-	width: 50%;
+	height: 90%;
+	width: 45%;
 	top: 0;
 	left: 0;
-	background-color: pink;
+	background-color: #ffb700d2;
+	margin: 20px;
+	margin-top: 3%;
+	border: 3px solid black;
 }
 
 .TaskPane{

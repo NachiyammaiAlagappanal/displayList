@@ -5,7 +5,6 @@ import TaskList from './TaskList';
 const TaskPane = (context) =>
 	<Box
 		role="TaskPane"
-		className="TaskPane"
 	>
 		<Toolbar>TASK</Toolbar>
 		<Box><TaskList { ...context }/></Box>

@@ -1,7 +1,10 @@
-import { Box } from '@mui/material';
+/* eslint-disable react/jsx-indent */
+/* eslint-disable max-lines-per-function */
+import { Box, Paper } from '@mui/material';
 import { React } from 'react';
 import CheckBox from './CheckBox';
 import RemoveButton from './RemoveButton';
+import CircleRoundedIcon from '@mui/icons-material/CircleRounded';
 
 const Todo = (context) => {
 	const { actions, data: { todo }} = context;
@@ -13,15 +16,16 @@ const Todo = (context) => {
 			key={ id }
 			role="Todo"
 			className="sharedStyle"
-		><Box component="span"/>
-			<Box
-				component="span"
-				className={ style }
-				role="setEditing"
-				onClick={ () => actions.setEditing(todo) }
-			>	{ text }</Box><Box component="span">
-				<RemoveButton { ...context }/><CheckBox { ...context }/></Box>
-		</Box>
+		><Box component="span"><Paper>
+				<CircleRoundedIcon sx={ { fontSize: 'small' } }/>
+				<Box
+					component="span"
+					className={ style }
+					role="setEditing"
+					onClick={ () => actions.setEditing(todo) }
+				>	{ text }</Box></Paper>
+			<Box component="span"><CheckBox { ...context }/>
+				<RemoveButton { ...context }/></Box></Box></Box>
 	);
 };
 

@@ -11,7 +11,7 @@ const FilterDropDown = (context) => {
 		role="FilterButton"
 		value={ filter }
 		size="small"
-		sx={ { marginTop: '10px', minWidth: '130px', height: '40px' } }
+		sx={ { marginTop: '10px', minWidth: '120px', height: '40px' } }
 		onChange={ (evt) => actions.setFilter(evt.target.value) }
 	                                       >
 		{config.filters.map((fil) =>

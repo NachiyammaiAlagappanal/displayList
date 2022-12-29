@@ -9,16 +9,20 @@ import { Box } from '@mui/material';
 const Fields = [TodoInput, ActionButton, ToggleAllButton];
 
 const TodoInputs = (context) =>
-	Fields.map((Component, field) =>
-		renderItem({ ...context })(Component, field));
+	<Box 	sx={ { display: 'grid',
+		gridTemplateColumns: '60% 20% 20%' } }
+	>{
+			Fields.map((Component, field) =>
+				renderItem({ ...context })(Component, field))
+		}</Box>;
 
 const userInputs = [TodoInputs, FilterDropDown];
 
 const UserInputs = (context) =>
 	<Box
 		role="UserInput"
-		sx={ { margin: '10px', display: 'grid',
-			gridTemplateColumns: '80% 20%' } }
+		sx={ { display: 'grid',
+			gridTemplateColumns: '60% 20% 20%' } }
 	>
 		{userInputs.map((Component, field) =>
 			<Box
