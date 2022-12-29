@@ -10,8 +10,7 @@ const TodoList = (context) => {
 	return (
 		<Box
 			role="TodoList"
-			sx={ { alignItems: 'center', flexDirection: 'column',
-				display: 'flex', gap: '10px' } }
+			className="column"
 		> <ClearButton { ...context }/>
 			{ filteredTodos.map((todo) => Todo({
 				...context,

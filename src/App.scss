@@ -17,15 +17,10 @@
 		color: black,
 };
 
-.TodoPane{
-	height: 90%;
-	width: 45%;
-	top: 0;
-	left: 0;
-	background-color: #ffb700d2;
-	margin: 20px;
-	margin-top: 3%;
-	border: 3px solid black;
+.TodoPane {
+	height: 80%;
+	width: 80%;
+	margin: 10%;
 }
 
 .TaskPane{
@@ -35,5 +30,15 @@
 	top: 0;
 	right: 0;
 	background-color: lightgreen;
+}
+.row {
+	display: flex;
+	flex-direction: row;
+}
+.column{
+	align-items: center,;
+	flex-direction: column;
+		display: flex;
+		 gap: 10px;
 }
 
