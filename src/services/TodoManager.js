@@ -2,9 +2,9 @@ import { rndString } from '@laufire/utils/random';
 
 const TodoManager = {
 
-	getTodo: ({ config, state }) => ({
+	getTodo: ({ config, data }) => ({
 		id: rndString(config.idLength),
-		text: state.input,
+		text: data,
 		completed: false,
 	}),
 

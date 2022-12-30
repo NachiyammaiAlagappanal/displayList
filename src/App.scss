@@ -24,12 +24,9 @@
 }
 
 .TaskPane{
-	position: absolute;
-	height: 100%;
-	width: 50%;
-	top: 0;
-	right: 0;
-	background-color: lightgreen;
+	height: 80%;
+	width: 80%;
+	margin: 10%;
 }
 .row {
 	display: flex;
@@ -38,7 +35,7 @@
 .column{
 	align-items: center,;
 	flex-direction: column;
-		display: flex;
-		 gap: 10px;
+	display: flex;
+	gap: 10px;
 }
 

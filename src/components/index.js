@@ -8,14 +8,16 @@ const TodoPaneFrame = (context) =>
 		<Paper className="TodoPane" sx={ { 	backgroundColor: 'BISQUE' } }>
 			<TodoPane { ...context }/></Paper>
 	</Grid>;
-const TaskPaneFrame = (context) => <Grid item={ true } xs={ 6 }>
-	<Paper
-		sx={ {
-			height: 140,
-			width: 100,
-		} }
-	><TaskPane { ...context }/></Paper>
-</Grid>;
+const TaskPaneFrame = (context) =>
+	<Grid
+		item={ true }
+		xs={ 6 }
+		sx={ { backgroundColor: '#149387' } }
+	>
+		<Paper
+			className="TaskPane"
+		><TaskPane { ...context }/></Paper>
+	</Grid>;
 
 const Frame = (context) => <Grid container={ true } sx={ { height: '100vh' } }>
 	<TodoPaneFrame { ...context }/>

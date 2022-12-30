@@ -35,9 +35,8 @@ const Task = (context) => {
 		<Box
 			key={ id }
 			role="Task"
-		>
+		>	<Box component="span"><AddTaskToTodo { ...context }/></Box>
 			<Box component="span">{text}</Box>
-			<Box component="span"><AddTaskToTodo { ...context }/></Box>
 			<Box component="span"><RemoveButton { ...context }/></Box>
 		</Box>
 	);

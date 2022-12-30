@@ -5,7 +5,7 @@ const getEnterKeyAction = (context) =>
 	(context.state.editing ? 'editTodo' : 'addTodo');
 
 const actionKeys = {
-	Enter: (context) => context.actions[getEnterKeyAction(context)](),
+	Enter: (context) => context.actions[getEnterKeyAction(context)](context),
 	Escape: (context) => context.actions.updateInput(''),
 };
 
@@ -21,7 +21,7 @@ const InputTextBox = (context) => {
 			value={ state.input }
 			onChange={ (evt) => context.actions.updateInput(evt.target.value) }
 			onKeyUp={ (evt) => actionKeys[evt.code]
-			&& actionKeys[evt.code](context) }
+			&& actionKeys[evt.code]({ ...context, data: evt.target.value }) }
 		/>);
 };
 
