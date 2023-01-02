@@ -3,15 +3,16 @@ import { React } from 'react';
 import TodoManager from '../../../services/TodoManager';
 
 const FilterButton = (context) => {
-	const { actions, data: filter } = context;
+	const { actions, data: filter, state } = context;
+	const isVariant = filter === state.filter;
 
 	return (
 		<Button
 			key={ filter }
 			role="FilterButton"
 			onClick={ () => actions.setFilter(filter) }
-			variant="text"
-			sx={ { fontSize: '10px' } }
+			variant={ isVariant ? 'outlined' : 'text' }
+			sx={ { fontSize: '10px', height: '20px' } }
 		>
 			{ filter }</Button>);
 };

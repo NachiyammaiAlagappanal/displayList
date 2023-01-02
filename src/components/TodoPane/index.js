@@ -6,14 +6,13 @@ import ControlBar from './UserInput/ControlBar';
 
 const TodoPane = (context) =>
 	<Box>
-		<Toolbar>Todos</Toolbar>
+		<Toolbar sx={ { justifyContent: 'center' } }>Todos</Toolbar>
 		<Box
 			role="TodoPane"
 			className="column"
-			sx={ { width: '90%' } }
 		>
-			<div style={ { height: '50px' } }>
-				<ControlBar { ...context }/></div>
+			<Box sx={ { height: '50px' } }>
+				<ControlBar { ...context }/></Box>
 			<UserInput { ...context }/>
 			<TodoList { ...context }/>
 		</Box>

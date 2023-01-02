@@ -12,7 +12,7 @@ const ClearButton = (context) => {
 			onClick={ () => actions.clearCompleted() }
 			size="small"
 			variant="text"
-			sx={ { fontSize: '10px' } }
+			sx={ { fontSize: '10px', height: '20px' } }
 		>
 			Clear completed
 		</Button>

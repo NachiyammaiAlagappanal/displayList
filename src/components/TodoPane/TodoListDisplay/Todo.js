@@ -1,5 +1,5 @@
 /* eslint-disable max-lines-per-function */
-import { Box, Paper } from '@mui/material';
+import { Box } from '@mui/material';
 import { React } from 'react';
 import CheckBox from './CheckBox';
 import RemoveButton from './RemoveButton';
@@ -15,15 +15,14 @@ const Todo = (context) => {
 			role="Todo"
 			className="row sharedStyle"
 		>
-			<div style={ { width: '50px', height: '50px' } }>
-				<CheckBox { ...context }/></div>
-			<Paper sx={ { minWidth: '100px', backgroundColor: '#f0c83ffa' } }>
-				<Box
-					className={ style }
-					role="setEditing"
-					component="span"
-					onClick={ () => actions.setEditing(todo) }
-				>{ text }</Box></Paper><RemoveButton { ...context }/></Box>
+			<Box className="size">
+				<CheckBox { ...context }/></Box>
+			<Box
+				className={ `text ${ style }` }
+				role="setEditing"
+				component="span"
+				onClick={ () => actions.setEditing(todo) }
+			>{ text }</Box><RemoveButton { ...context }/></Box>
 	);
 };
 
