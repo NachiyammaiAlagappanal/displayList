@@ -20,7 +20,7 @@
 .TodoPane {
 	height: 80%;
 	width: 80%;
-	margin: 10%;
+	margin: 0 10%;
 }
 
 .TaskPane{
@@ -55,4 +55,9 @@
 .size {
 	width: 50px;
 	height: 50px;
+}
+.header {
+	justify-content: center;
+	color: #6e6e6c;
+	font-size: xxx-large;
 }

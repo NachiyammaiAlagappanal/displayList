@@ -6,12 +6,16 @@ import ClearButton from './ClearButton';
 const ControlBar = (context) => {
 	const { config: { filters }} = context;
 
-	return <Box className="row">
-		{filters.map((filter, index) =>
-			<FilterButtons key={ index } { ...{ ...context, data: filter } }/>)}
-		<div style={ { width: '50px', height: '50px' } }>
-			<ClearButton { ...context }/></div>
-	</Box>;
+	return <Box>
+		<Box className="row">
+			{filters.map((filter, index) =>
+				<FilterButtons
+					key={ index }
+					{ ...{ ...context, data: filter } }
+				/>)}
+			<Box style={ { height: '40px' } }>
+				<ClearButton { ...context }/></Box>
+		</Box></Box>;
 };
 
 export default ControlBar;

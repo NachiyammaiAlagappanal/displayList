@@ -1,21 +1,19 @@
 import { React } from 'react';
 import UserInput from './UserInput';
 import TodoList from './TodoListDisplay/TodoList';
-import { Box, Toolbar } from '@mui/material';
+import { Box } from '@mui/material';
 import ControlBar from './UserInput/ControlBar';
 
 const TodoPane = (context) =>
 	<Box>
-		<Toolbar sx={ { justifyContent: 'center' } }>Todos</Toolbar>
+		<Box sx={ { height: '40px' } }>
+			<ControlBar { ...context }/></Box>
 		<Box
 			role="TodoPane"
 			className="column"
 		>
-			<Box sx={ { height: '50px' } }>
-				<ControlBar { ...context }/></Box>
 			<UserInput { ...context }/>
 			<TodoList { ...context }/>
-		</Box>
-	</Box>;
+		</Box></Box>;
 
 export default TodoPane;
