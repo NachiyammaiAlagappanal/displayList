@@ -33,9 +33,20 @@
 	flex-direction: row;
 }
 .column{
-	align-items: center,;
+	align-items: center;
 	flex-direction: column;
 	display: flex;
 	gap: 10px;
+}
+.gap {
+	row-gap: 30px
+}
+.input-column{
+	display: grid;
+	grid-template-columns: auto auto 20%;
+}
+.center{
+	display: flex;
+	justify-content: center;
 }
 

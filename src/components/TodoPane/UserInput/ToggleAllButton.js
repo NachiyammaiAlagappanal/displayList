@@ -14,7 +14,7 @@ const CheckBox = (context) => {
 				type="checkbox"
 				checked={ isSelected }
 				color="success"
-				checkedIcon={ <CheckIcon sx={ { color: '#05f611' } }/> }
+				checkedIcon={ <CheckIcon sx={ { color: '#2e7d32' } }/> }
 				icon={ <CheckIcon/> }
 				onChange={ () => actions.toggleAll(!isSelected) }
 				sx={ { Color: 'black', marginTop: '15px' } }

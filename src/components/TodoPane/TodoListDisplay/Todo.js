@@ -13,8 +13,9 @@ const Todo = (context) => {
 			key={ id }
 			role="Todo"
 			className="row sharedStyle"
+			sx={ { alignItems: 'center' } }
 		><CheckBox { ...context }/>
-			<Paper sx={ { minWidth: '100px' } }>
+			<Paper sx={ { minWidth: '100px', backgroundColor: '#f0c83ffa' } }>
 				<Box
 					className={ style }
 					role="setEditing"

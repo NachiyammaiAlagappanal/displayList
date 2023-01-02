@@ -4,13 +4,9 @@ import TodoList from './TodoListDisplay/TodoList';
 import { Box } from '@mui/material';
 
 const TodoPane = (context) =>
-	<Box role="TodoPane">
-		<Box
-			sx={ { display: 'flex', flexDirection: 'column', rowGap: '30px' } }
-		>
-			<UserInput { ...context }/>
-			<TodoList { ...context }/>
-		</Box>
+	<Box role="TodoPane" className="column gap">
+		<UserInput { ...context }/>
+		<TodoList { ...context }/>
 	</Box>;
 
 export default TodoPane;

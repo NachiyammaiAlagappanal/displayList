@@ -5,7 +5,7 @@ import TodoPane from './TodoPane';
 
 const TodoPaneFrame = (context) =>
 	<Grid item={ true } xs={ 6 } sx={ { background: '#24324bfa' } }>
-		<Paper className="TodoPane" sx={ { 	backgroundColor: 'BISQUE' } }>
+		<Paper className="TodoPane">
 			<TodoPane { ...context }/></Paper>
 	</Grid>;
 const TaskPaneFrame = (context) =>
