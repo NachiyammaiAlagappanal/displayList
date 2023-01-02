@@ -1,3 +1,4 @@
+/* eslint-disable max-lines-per-function */
 import { Box, Paper } from '@mui/material';
 import { React } from 'react';
 import CheckBox from './CheckBox';
@@ -13,8 +14,9 @@ const Todo = (context) => {
 			key={ id }
 			role="Todo"
 			className="row sharedStyle"
-			sx={ { alignItems: 'center' } }
-		><CheckBox { ...context }/>
+		>
+			<div style={ { width: '50px', height: '50px' } }>
+				<CheckBox { ...context }/></div>
 			<Paper sx={ { minWidth: '100px', backgroundColor: '#f0c83ffa' } }>
 				<Box
 					className={ style }

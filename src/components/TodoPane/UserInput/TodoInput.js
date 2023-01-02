@@ -18,6 +18,7 @@ const InputTextBox = (context) => {
 			role="textBox"
 			label="Add New Todo"
 			value={ state.input }
+			sx={ { alignItems: 'center' } }
 			onChange={ (evt) => context.actions.updateInput(evt.target.value) }
 			onKeyUp={ (evt) => actionKeys[evt.code]
 			&& actionKeys[evt.code]({ ...context, data: evt.target.value }) }

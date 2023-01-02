@@ -22,7 +22,9 @@ const CheckBox = (context) => {
 	);
 };
 
-const ToggleAllButton = (context) => TodoManager.hasTodo(context)
-&& <CheckBox { ...context }/>;
+const ToggleAllButton = (context) =>
+	<div style={ { width: '50px', height: '50px' } }>
+		{TodoManager.hasTodo(context)
+	&& <CheckBox { ...context }/>}</div>;
 
 export default ToggleAllButton;

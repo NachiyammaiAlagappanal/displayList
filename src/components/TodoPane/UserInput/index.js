@@ -1,20 +1,11 @@
 import { React } from 'react';
-import FilterDropDown from './FilterDropDown.js';
 import TodoInput from './TodoInput.js';
 import ToggleAllButton from './ToggleAllButton.js';
 import ActionButton from './ActionButton.js';
 import renderItem from '../../RenderItem.js';
 import { Box } from '@mui/material';
 
-const Fields = [ToggleAllButton, TodoInput, ActionButton];
-
-const TodoInputs = (context) =>
-	<Box className="input-column">{
-		Fields.map((Component, field) =>
-			renderItem({ ...context })(Component, field))
-	}</Box>;
-
-const userInputs = [TodoInputs, FilterDropDown];
+const userInputs = [ToggleAllButton, TodoInput, ActionButton];
 
 const UserInputs = (context) =>
 	<Box
