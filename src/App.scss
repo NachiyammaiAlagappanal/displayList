@@ -10,7 +10,8 @@
 };
 
 .completedStyle  {
-	font-size: x-large,
+	text-decoration: line-through;
+	color: lightgrey
 };
 
 .activeStyle {
@@ -26,7 +27,7 @@
 .TaskPane{
 	height: 80%;
 	width: 80%;
-	margin: 10%;
+	margin: 0 10%;
 }
 .row {
 	display: flex;
@@ -51,6 +52,6 @@
 }
 .header {
 	justify-content: center;
-	color: #6e6e6c;
+	color: #676755;
 	font-size: xxx-large;
 }

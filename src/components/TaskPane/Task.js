@@ -1,16 +1,17 @@
 import { React } from 'react';
 import { Box, Button } from '@mui/material';
+import AddIcon from '@mui/icons-material/Add';
+import ClearRoundedIcon from '@mui/icons-material/ClearRounded';
 
 const AddTaskToTodo = (context) => {
 	const { data: task } = context;
 
 	return (
 		<Button
-			variant="outlined"
 			role="AddButton"
 			onClick={ () => { context.actions.addTodo(task.text);	} }
 		>
-			+</Button>
+			<AddIcon sx={ { color: 'lightGrey' } }/></Button>
 	);
 };
 
@@ -19,12 +20,11 @@ const RemoveButton = (context) => {
 
 	return (
 		<Button
-			variant="contained"
-			color="error"
 			role="removeButton"
+			sx={ { color: '#ecb0b0' } }
 			onClick={ () => context.actions.removeTask(task) }
 		>
-			X</Button>
+			<ClearRoundedIcon/></Button>
 	);
 };
 
