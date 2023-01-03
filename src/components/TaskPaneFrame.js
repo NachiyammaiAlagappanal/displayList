@@ -7,7 +7,7 @@ const TaskPaneFrame = (context) =>
 		item={ true }
 		md={ 6 }
 		xs={ 12 }
-		sx={ { backgroundColor: '#149387' } }
+		sx={ { backgroundColor: '#c83349' } }
 	><Toolbar className="header" sx={ { color: '#96967b' } }>Tasks</Toolbar>
 		<Paper
 			className="TaskPane"

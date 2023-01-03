@@ -11,7 +11,7 @@ const AddTaskToTodo = (context) => {
 			role="AddButton"
 			onClick={ () => { context.actions.addTodo(task.text);	} }
 		>
-			<AddIcon sx={ { color: 'lightGrey' } }/></Button>
+			<AddIcon sx={ { color: '#404040' } }/></Button>
 	);
 };
 
@@ -21,7 +21,7 @@ const RemoveButton = (context) => {
 	return (
 		<Button
 			role="removeButton"
-			sx={ { color: '#ecb0b0' } }
+			sx={ { color: '#800000' } }
 			onClick={ () => context.actions.removeTask(task) }
 		>
 			<ClearRoundedIcon/></Button>
@@ -36,7 +36,7 @@ const Task = (context) => {
 			key={ id }
 			role="Task"
 		>	<Box component="span"><AddTaskToTodo { ...context }/></Box>
-			<Box component="span">{text}</Box>
+			<Box component="span" sx={ { color: '#ff6f69' } }>{text}</Box>
 			<Box component="span"><RemoveButton { ...context }/></Box>
 		</Box>
 	);

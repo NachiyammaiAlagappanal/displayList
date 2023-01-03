@@ -11,8 +11,8 @@ const AddButton = (context) => {
 			role="AddButton"
 			disabled={ TodoManager.hasInput(input) }
 			onClick={ () => actions.addTodo(input) }
-			sx={ { color: 'black', marginTop: '15px' } }
-		><AddIcon sx={ { color: 'lightGrey' } }/>
+			sx={ { marginTop: '15px' } }
+		><AddIcon sx={ { color: '#404040' } }/>
 		</Button>
 	);
 };

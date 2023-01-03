@@ -6,7 +6,7 @@ const TodoPaneFrame = (context) =>
 	<Grid
 		item={ true }
 		md={ 6 }
-		sm={ 12 }
+		xs={ 12 }
 		sx={ { background: '#24324bfa' } }
 	>
 		<Toolbar className="header">Todos</Toolbar>

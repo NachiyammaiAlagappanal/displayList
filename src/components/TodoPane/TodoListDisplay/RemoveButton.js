@@ -9,7 +9,7 @@ const RemoveButton = (context) => {
 		<Button
 			role="removeButton"
 			onClick={ () => context.actions.removeTodo(todo) }
-			sx={ { color: '#ecb0b0' } }
+			sx={ { color: '#800000' } }
 		><ClearRoundedIcon/>
 		</Button>
 	);
