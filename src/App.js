@@ -4,7 +4,7 @@ import './App.scss';
 import TaskManager from './services/TaskManager.js';
 import Ticker from './services/Ticker.js';
 import { Box } from '@mui/material';
-import Frame from './components';
+import Menu from './components/mobileView';
 
 const App = (context) => {
 	useEffect(() => TaskManager.init(context), []);
@@ -13,7 +13,7 @@ const App = (context) => {
 
 	return (
 		<Box role="App">
-			<Frame { ...context }/>
+			<Menu { ...context }/>
 		</Box>
 	);
 };

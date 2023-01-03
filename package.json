@@ -8,6 +8,7 @@
     "@laufire/resist": "^0.0.5",
     "@laufire/utils": "^2.9.2",
     "@mui/icons-material": "^5.11.0",
+    "@mui/lab": "^5.0.0-alpha.114",
     "@mui/material": "^5.11.2",
     "axios": "^1.1.2",
     "react": "^17.0.2",

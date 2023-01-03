@@ -4,6 +4,9 @@ import TodoManager from '../services/TodoManager.js';
 const updateInput = ({ data }) => ({
 	input: data,
 });
+const toggleMenu = (context) => ({
+	value: context.data,
+});
 const addTodo = (context) => ({
 	todos: TodoManager.addTodo(context),
 });
@@ -54,6 +57,7 @@ const actions = {
 	setTasks,
 	removeTask,
 	addTasks,
+	toggleMenu,
 
 };
 
