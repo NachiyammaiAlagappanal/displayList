@@ -8,7 +8,7 @@ const seed = {
 	filter: 'all',
 	editing: null,
 	Tasks: [],
-	value: 1,
+	value: '1',
 };
 
 export default seed;
