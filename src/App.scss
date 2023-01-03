@@ -37,20 +37,13 @@
 	flex-direction: column;
 	display: flex;
 }
-.gap {
-	row-gap: 30px
-}
-.input-column{
-	display: grid;
-	grid-template-columns: auto auto 20%;
-}
 .center{
 	display: flex;
 }
 .text{
 	align-items: center;
 	width: 200px;
-	padding-top: 10px;
+	padding-top: 12px;
 }
 .size {
 	width: 50px;

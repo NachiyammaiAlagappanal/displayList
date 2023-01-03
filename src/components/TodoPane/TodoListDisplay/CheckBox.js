@@ -1,20 +1,23 @@
 /* eslint-disable id-length */
 import { Checkbox } from '@mui/material';
 import { React } from 'react';
-import CheckIcon from '@mui/icons-material/Check';
+import CheckCircleOutlineRoundedIcon from
+	'@mui/icons-material/CheckCircleOutlineRounded';
 import RadioButtonUncheckedRoundedIcon from
 	'@mui/icons-material/RadioButtonUncheckedRounded';
 
 const CheckBox = (context) => {
-	const { actions, data: { todo }} = context;
-	const { completed } = todo;
+	const { actions, data: { todo: { completed }, todo }} = context;
 
 	return (
 		<Checkbox
 			role="CheckBox"
 			checked={ completed }
-			color="success"
-			checkedIcon={ <CheckIcon sx={ { color: '#2e7d32' } }/> }
+			checkedIcon={
+				<CheckCircleOutlineRoundedIcon
+					sx={ { color: 'green' } }
+				/>
+			}
 			icon={
 				<RadioButtonUncheckedRoundedIcon
 					sx={ { color: 'lightGrey' } }
