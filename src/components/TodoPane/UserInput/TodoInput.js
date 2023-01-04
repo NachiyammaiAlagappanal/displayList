@@ -15,10 +15,10 @@ const InputTextBox = (context) => {
 
 	return (
 		<TextField
-			className="text"
 			variant="standard"
 			role="textBox"
 			label="Add New Todo"
+			sx={ { width: '16vw' } }
 			value={ state.input }
 
 			onChange={ (evt) => context.actions.updateInput(evt.target.value) }
