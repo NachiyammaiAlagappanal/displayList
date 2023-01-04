@@ -5,8 +5,9 @@ import TaskPane from './TaskPane';
 const TaskPaneFrame = (context) =>
 	<Grid
 		item={ true }
-		md={ 6 }
 		xs={ 12 }
+		md={ 6 }
+		sm={ 6 }
 		sx={ { backgroundColor: '#c83349' } }
 	><Toolbar className="header" sx={ { color: '#96967b' } }>Tasks</Toolbar>
 		<Paper
