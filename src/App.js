@@ -7,11 +7,10 @@ import { Box, useMediaQuery } from '@mui/material';
 import Menu from './components/mobileView';
 import Frame from './components';
 
-const getSurface = () => {
+const GetSurface = (context) => {
 	const matches = useMediaQuery('(min-width:600px)');
 
-	console.log(matches);
-	return matches;
+	return matches ? <Frame { ...context }/> : <Menu { ...context }/>;
 };
 
 const App = (context) => {
@@ -20,7 +19,7 @@ const App = (context) => {
 	console.log(context);
 	return (
 		<Box role="App">
-			{ getSurface() ? <Frame { ...context }/> : <Menu { ...context }/>}
+			<GetSurface { ...context }/>
 		</Box>
 	);
 };
