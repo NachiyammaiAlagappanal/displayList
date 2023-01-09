@@ -3,24 +3,40 @@ import { React, useEffect } from 'react';
 import './App.scss';
 import TaskManager from './services/TaskManager.js';
 import Ticker from './services/Ticker.js';
-import { Box, useMediaQuery } from '@mui/material';
-import Menu from './components/mobileView';
-import Frame from './components';
+import { Box, createTheme, ThemeProvider } from '@mui/material';
+import GetSurface from './components/GetSurface';
 
-const GetSurface = (context) => {
-	const matches = useMediaQuery('(min-width:600px)');
-
-	return matches ? <Frame { ...context }/> : <Menu { ...context }/>;
-};
+const theme = createTheme({
+	palette: {
+		mode: 'dark',
+		primary: {
+			main: '#C8841E',
+		},
+		secondary: {
+			main: '#C586C0',
+		},
+		warning: {
+			main: '#7CDCFE',
+		},
+		error: {
+			main: '#C61E1E',
+		},
+		success: {
+			main: '#11cb5f',
+		},
+	},
+});
 
 const App = (context) => {
 	useEffect(() => TaskManager.init(context), []);
 	useEffect(() => Ticker.start(context), []);
 	console.log(context);
 	return (
-		<Box role="App">
-			<GetSurface { ...context }/>
-		</Box>
+		<ThemeProvider theme={ theme }>
+			<Box role="App">
+				<GetSurface { ...context }/>
+			</Box>
+		</ThemeProvider>
 	);
 };
 

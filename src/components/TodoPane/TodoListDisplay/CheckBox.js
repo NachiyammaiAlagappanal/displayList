@@ -15,12 +15,12 @@ const CheckBox = (context) => {
 			checked={ completed }
 			checkedIcon={
 				<CheckCircleOutlineRoundedIcon
-					sx={ { color: 'green' } }
+					color="success"
 				/>
 			}
 			icon={
 				<RadioButtonUncheckedRoundedIcon
-					sx={ { color: 'lightGrey' } }
+					color="secondary"
 				/>
 			}
 			onChange={ () => actions.toggleTodo(todo) }

@@ -20,7 +20,6 @@ const InputTextBox = (context) => {
 			label="Add New Todo"
 			sx={ { width: '16vw' } }
 			value={ state.input }
-
 			onChange={ (evt) => context.actions.updateInput(evt.target.value) }
 			onKeyUp={ (evt) => actionKeys[evt.code]
 			&& actionKeys[evt.code]({ ...context, data: state.input }) }

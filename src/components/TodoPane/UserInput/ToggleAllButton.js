@@ -13,11 +13,10 @@ const CheckBox = (context) => {
 				role="checkBox"
 				type="checkbox"
 				checked={ isSelected }
-				color="success"
-				checkedIcon={ <CheckIcon sx={ { color: '#2e7d32' } }/> }
-				icon={ <CheckIcon sx={ { color: 'lightGrey' } }/> }
+				checkedIcon={ <CheckIcon color="success"/> }
+				icon={ <CheckIcon color="secondary"/> }
 				onChange={ () => actions.toggleAll(!isSelected) }
-				sx={ { Color: 'black', marginTop: '15px' } }
+				sx={ { marginTop: '15px' } }
 			/></Tooltip>
 	);
 };

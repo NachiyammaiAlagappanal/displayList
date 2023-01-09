@@ -12,7 +12,7 @@ const AddButton = (context) => {
 			disabled={ TodoManager.hasInput(input) }
 			onClick={ () => actions.addTodo(input) }
 			sx={ { marginTop: '15px' } }
-		><AddIcon sx={ { color: '#404040' } }/>
+		><AddIcon/>
 		</Button>
 	);
 };
