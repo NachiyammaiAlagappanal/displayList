@@ -7,6 +7,9 @@ const updateInput = ({ data }) => ({
 const toggleMenu = (context) => ({
 	value: context.data,
 });
+const toggleMode = (context) => ({
+	theme: context.data,
+});
 const addTodo = (context) => ({
 	todos: TodoManager.addTodo(context),
 });
@@ -58,6 +61,7 @@ const actions = {
 	removeTask,
 	addTasks,
 	toggleMenu,
+	toggleMode,
 
 };
 

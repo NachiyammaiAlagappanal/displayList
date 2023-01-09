@@ -3,36 +3,16 @@ import { React, useEffect } from 'react';
 import './App.scss';
 import TaskManager from './services/TaskManager.js';
 import Ticker from './services/Ticker.js';
-import { Box, createTheme, ThemeProvider } from '@mui/material';
+import { Box, ThemeProvider } from '@mui/material';
 import GetSurface from './components/GetSurface';
-
-const theme = createTheme({
-	palette: {
-		mode: 'dark',
-		primary: {
-			main: '#C8841E',
-		},
-		secondary: {
-			main: '#C586C0',
-		},
-		warning: {
-			main: '#7CDCFE',
-		},
-		error: {
-			main: '#C61E1E',
-		},
-		success: {
-			main: '#11cb5f',
-		},
-	},
-});
+import Theme from './Theme/Theme';
 
 const App = (context) => {
 	useEffect(() => TaskManager.init(context), []);
 	useEffect(() => Ticker.start(context), []);
 	console.log(context);
 	return (
-		<ThemeProvider theme={ theme }>
+		<ThemeProvider theme={ Theme(context) }>
 			<Box role="App">
 				<GetSurface { ...context }/>
 			</Box>

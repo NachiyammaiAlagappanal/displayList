@@ -9,6 +9,7 @@ const seed = {
 	editing: null,
 	Tasks: [],
 	value: '1',
+	theme: 'dark',
 };
 
 export default seed;
