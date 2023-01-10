@@ -11,9 +11,9 @@ const TodoPaneFrame = (context) =>
 		sm={ 6 }
 		sx={ { backgroundColor: 'background.default' } }
 	>
-		<Grid container={ true }>
+		<Grid container={ true } justifyContent="space-between">
 			<Grid xs={ 10 }>
-				<Toolbar className="header" color="heading">
+				<Toolbar className="header" sx={ { color: 'heading.main' } }>
 					Todos</Toolbar></Grid>
 			<Grid xs={ 2 }>
 				<ThemeDropDown { ...context }/></Grid></Grid>
