@@ -8,6 +8,7 @@ const ThemeDropDown = (context) => {
 
 	return <Select
 		value={ theme }
+		sx={ { backgroundColor: 'primary.main', color: 'white' } }
 		onChange={ (evt) => context.actions.toggleMode(peek(evt.target.value)) }
 	       >{
 			modes.map((mode) =>

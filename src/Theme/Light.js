@@ -1,25 +1,28 @@
 const light = {
 	primary: {
-		main: '#00848C',
+		main: '#B81515',
 	},
 	secondary: {
-		main: '#C586C0',
+		main: '#3278C8',
 	},
 	warning: {
-		main: '#7CDCFE',
+		main: '#E50052',
 	},
 	error: {
-		main: '#EE3A59',
+		main: '#F16E40',
 	},
 	success: {
-		main: '#065309',
+		main: '#161297',
 	},
 	background: {
-		default: '#E27B47',
-		paper: '#EBED78',
+		default: '#84D2D6',
+		paper: '#C2E7F0',
 	},
 	heading: {
 		main: '#0f6a4e',
+	},
+	text: {
+		main: '#000000',
 	},
 };
 

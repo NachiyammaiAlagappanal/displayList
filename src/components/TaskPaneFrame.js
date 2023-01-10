@@ -8,7 +8,6 @@ const TaskPaneFrame = (context) =>
 		xs={ 12 }
 		md={ 6 }
 		sm={ 6 }
-		sx={ { backgroundColor: '#149387' } }
 	><Toolbar className="header" color="heading">Tasks</Toolbar>
 		<Paper
 			className="TaskPane"

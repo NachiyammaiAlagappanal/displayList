@@ -15,7 +15,8 @@ const TodoPaneFrame = (context) =>
 			<Grid xs={ 10 }>
 				<Toolbar className="header" color="heading">
 					Todos</Toolbar></Grid>
-			<Grid xs={ 2 }><ThemeDropDown { ...context }/></Grid></Grid>
+			<Grid xs={ 2 }>
+				<ThemeDropDown { ...context }/></Grid></Grid>
 		<Paper className="TodoPane">
 			<TodoPane { ...context }/></Paper>
 	</Grid>;

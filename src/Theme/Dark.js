@@ -21,6 +21,9 @@ const dark = {
 	heading: {
 		main: '#0f6a4e',
 	},
+	text: {
+		primary: '#7C95C0',
+	},
 };
 
 export default dark;
