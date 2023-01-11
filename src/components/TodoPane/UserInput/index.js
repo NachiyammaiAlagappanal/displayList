@@ -13,9 +13,7 @@ const UserInputs = (context) =>
 		className="center"
 	>
 		{userInputs.map((Component, field) =>
-			<Box
-				key={ field }
-			>
+			<Box key={ field }>
 				{renderItem({ ...context })(Component, field)}</Box>)}
 	</Box>;
 

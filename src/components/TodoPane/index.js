@@ -6,8 +6,7 @@ import ControlBar from './UserInput/ControlBar';
 
 const TodoPane = (context) =>
 	<Box>
-		<Box sx={ { height: '40px' } }>
-			<ControlBar { ...context }/></Box>
+		<ControlBar { ...context }/>
 		<Box
 			role="TodoPane"
 			className="column"

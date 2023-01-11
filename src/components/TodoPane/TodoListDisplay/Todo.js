@@ -23,7 +23,8 @@ const Todo = (context) => {
 				component="span"
 				onClick={ () => actions.setEditing(todo) }
 				color="text.primary"
-			>{ text }</Box><RemoveButton { ...context }/></Box>
+			>{ text }</Box>
+			<RemoveButton { ...context }/></Box>
 	);
 };
 
