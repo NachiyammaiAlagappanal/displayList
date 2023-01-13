@@ -2,12 +2,17 @@ const light = {
 	mode: 'light',
 	primary: {
 		main: '#C8841E',
+		secondary: '#b7b6b6',
 	},
 	secondary: {
-		main: '#3278C8',
+		main: '#0B0629',
+	},
+	error: {
+		main: '#d32f2f',
+		secondary: '#b7b6b6',
 	},
 	success: {
-		main: '#11cb5f',
+		main: '#60b246',
 	},
 	background: {
 		default: '#0B0629',
