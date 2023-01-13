@@ -4,11 +4,14 @@ import TodoPane from './TodoPane';
 import ThemeDropDown from '../Theme/ThemeDropDown';
 
 const Header = (context) =>
-	<Grid container={ true } justifyContent="space-between">
-		<Grid xs={ 10 }>
-			<Toolbar className="header" sx={ { color: 'heading.main' } }>
+	<Grid container={ true }>
+		<Grid xs={ 8 }>
+			<Toolbar
+				className="header"
+				sx={ { color: 'heading.main' } }
+			>
 				Todos</Toolbar></Grid>
-		<Grid xs={ 2 }>
+		<Grid xs={ 4 } justifyContent="center" sx={ { marginTop: '20px' } }>
 			<ThemeDropDown { ...context }/></Grid></Grid>;
 
 const TodoPaneFrame = (context) =>
