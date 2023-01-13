@@ -15,7 +15,7 @@ const CheckBox = (context) => {
 				checked={ isSelected }
 				size="medium"
 				checkedIcon={ <CheckIcon color="success"/> }
-				icon={ <CheckIcon color="secondary"/> }
+				icon={ <CheckIcon color="primary.secondary"/> }
 				onChange={ () => actions.toggleAll(!isSelected) }
 			/></Tooltip>
 	);
