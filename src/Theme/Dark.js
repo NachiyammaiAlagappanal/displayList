@@ -1,15 +1,10 @@
 const dark = {
+	mode: 'dark',
 	primary: {
 		main: '#C8841E',
 	},
 	secondary: {
 		main: '#C586C0',
-	},
-	warning: {
-		main: '#7CDCFE',
-	},
-	error: {
-		main: '#C61E1E',
 	},
 	success: {
 		main: '#11cb5f',

@@ -1,5 +1,4 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
-import { peek } from '@laufire/utils/debug';
 import { MenuItem, Select } from '@mui/material';
 import { React } from 'react';
 
@@ -9,7 +8,7 @@ const ThemeDropDown = (context) => {
 	return <Select
 		value={ theme }
 		sx={ { backgroundColor: 'primary.main', color: 'white' } }
-		onChange={ (evt) => context.actions.toggleMode(peek(evt.target.value)) }
+		onChange={ (evt) => context.actions.toggleMode(evt.target.value) }
 	       >{
 			modes.map((mode) =>
 				<MenuItem key={ mode } value={ mode }>{mode}</MenuItem>)

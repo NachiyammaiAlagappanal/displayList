@@ -2,11 +2,17 @@
 import { createTheme } from '@mui/material';
 import dark from './Dark';
 import light from './Light';
+import SwiggyTheme from './SwiggyTheme';
+
+const theme = {
+	dark: dark,
+	light: light,
+	swiggy: SwiggyTheme,
+};
 
 const Theme = (context) => createTheme({
 	palette: {
-		mode: context.state.theme,
-		...context.state.theme === 'dark' ? dark : light,
+		...theme[context.state.theme],
 	},
 });
 

@@ -1,6 +1,6 @@
 import { Button } from '@mui/material';
 import { React } from 'react';
-import ClearRoundedIcon from '@mui/icons-material/ClearRounded';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const RemoveButton = (context) => {
 	const { data: { todo }} = context;
@@ -9,8 +9,8 @@ const RemoveButton = (context) => {
 		<Button
 			role="removeButton"
 			onClick={ () => context.actions.removeTodo(todo) }
-			color="error"
-		><ClearRoundedIcon/>
+			color="primary"
+		><DeleteIcon/>
 		</Button>
 	);
 };
