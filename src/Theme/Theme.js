@@ -3,11 +3,13 @@ import { createTheme } from '@mui/material';
 import dark from './Dark';
 import light from './Light';
 import SwiggyTheme from './SwiggyTheme';
+import TodoTheme from './TodoTheme';
 
 const theme = {
 	dark: dark,
 	light: light,
 	swiggy: SwiggyTheme,
+	Todo: TodoTheme,
 };
 
 const Theme = (context) => createTheme({

@@ -7,7 +7,7 @@ const config = {
 	filters: ['all', 'active', 'completed'],
 	TickerDelay: milliseconds * seconds,
 	tasks: ['Task1', 'Task2', 'Task3'],
-	modes: ['dark', 'light', 'swiggy'],
+	modes: ['dark', 'light', 'swiggy', 'Todo'],
 };
 
 export default config;
