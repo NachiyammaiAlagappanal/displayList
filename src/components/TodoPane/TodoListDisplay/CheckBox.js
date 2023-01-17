@@ -1,4 +1,3 @@
-/* eslint-disable no-mixed-spaces-and-tabs */
 /* eslint-disable id-length */
 import { Box, Checkbox } from '@mui/material';
 import { React } from 'react';
@@ -7,24 +6,23 @@ import CheckCircleOutlineRoundedIcon from
 import RadioButtonUncheckedRoundedIcon from
 	'@mui/icons-material/RadioButtonUncheckedRounded';
 
-const CheckBox = (context) => {
-	const { actions, data: { todo: { completed }, todo }} = context;
-
-	return (
-		<Box className="size"><Checkbox
+const CheckBox = ({ actions, data: { todo: { completed }, todo }}) =>
+	<Box className="size">
+		<Checkbox
 			role="CheckBox"
 			checked={ completed }
 			checkedIcon={
 				<CheckCircleOutlineRoundedIcon
 					color="success"
+					sx={ { '&:hover': { color: 'success.main' }} }
 				/>
 			}
 			icon={
-				<RadioButtonUncheckedRoundedIcon color="text"/>
+				<RadioButtonUncheckedRoundedIcon
+					color="text"
+				/>
 			}
 			onChange={ () => actions.toggleTodo(todo) }
-		                      /></Box>
-	);
-};
+		/></Box>;
 
 export default CheckBox;
