@@ -1,28 +1,33 @@
 const dark = {
 	mode: 'dark',
 	primary: {
-		main: '#C8841E',
-		secondary: '#b7b6b6',
+		main: '#FC8019',
 	},
 	secondary: {
-		main: '#C586C0',
-	},
-	error: {
-		main: '#f44336',
-		secondary: '#b7b6b6',
+		main: '#F94D5E',
 	},
 	success: {
-		main: '#11cb5f',
+		main: '#60B246',
 	},
-	background: {
-		default: '#1EC895',
-		paper: '#0B0629',
+	error: {
+		main: '#D22D2D',
 	},
-	heading: {
-		main: '#0f6a4e',
+	info: {
+		main: '#5D8ED5',
+	},
+	warning: {
+		main: '#795548',
 	},
 	text: {
-		primary: '#7C95C0',
+		main: '#334b63',
+		contrast: '#ccd2d8',
+	},
+	background: {
+		paper: '#001e3c',
+		default: '#ffffff',
+	},
+	heading: {
+		main: '#6F6F6F',
 	},
 };
 

@@ -1,28 +1,33 @@
 const light = {
 	mode: 'light',
 	primary: {
-		main: '#C8841E',
-		secondary: '#b7b6b6',
+		main: '#FC9947',
 	},
 	secondary: {
-		main: '#0B0629',
-	},
-	error: {
-		main: '#d32f2f',
-		secondary: '#b7b6b6',
+		main: '#F94D5E',
 	},
 	success: {
-		main: '#60b246',
+		main: '#20A339',
+	},
+	error: {
+		main: '#D22D2D',
+	},
+	info: {
+		main: '#5D8ED5',
+	},
+	warning: {
+		main: '#795548',
 	},
 	background: {
-		default: '#0B0629',
 		paper: '#ffffff',
+		default: '#001e3c',
+	},
+	text: {
+		main: '#CFCFCF',
+		contrast: '#74737a',
 	},
 	heading: {
 		main: '#74737a',
-	},
-	text: {
-		main: '#020202',
 	},
 };
 

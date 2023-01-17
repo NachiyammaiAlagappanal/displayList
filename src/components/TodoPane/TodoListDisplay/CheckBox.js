@@ -20,9 +20,7 @@ const CheckBox = (context) => {
 				/>
 			}
 			icon={
-				<RadioButtonUncheckedRoundedIcon
-					color="primary.secondary"
-				/>
+				<RadioButtonUncheckedRoundedIcon color="text"/>
 			}
 			onChange={ () => actions.toggleTodo(todo) }
 		                      /></Box>

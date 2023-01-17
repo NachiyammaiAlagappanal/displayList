@@ -10,8 +10,9 @@ const RemoveButton = (context) => {
 			role="removeButton"
 			onClick={ () => context.actions.removeTodo(todo) }
 		>
-			<ClearRoundedIcon sx={ { 	'color': 'error.secondary',
-				'&:hover': { color: 'error.main' }} }
+			<ClearRoundedIcon
+				color="text"
+				sx={ { '&:hover': { color: 'error.main' }} }
 			/>
 		</Button>
 	);
