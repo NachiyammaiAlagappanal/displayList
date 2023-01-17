@@ -1,7 +1,7 @@
 const dark = {
 	mode: 'dark',
 	primary: {
-		main: '#FC8019',
+		main: '#FC9947',
 	},
 	secondary: {
 		main: '#F94D5E',

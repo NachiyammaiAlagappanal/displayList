@@ -1,7 +1,7 @@
 const light = {
 	mode: 'light',
 	primary: {
-		main: '#FC9947',
+		main: '#FC8019',
 	},
 	secondary: {
 		main: '#F94D5E',
