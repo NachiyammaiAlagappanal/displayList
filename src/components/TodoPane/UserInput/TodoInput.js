@@ -17,11 +17,13 @@ const InputTextBox = (context) => {
 		<TextField
 			className="text"
 			variant="standard"
+			autoComplete="off"
 			role="textBox"
 			label="Add New Todo"
+			sx={ { width: '40vw' } }
 			value={ state.input }
-			color="primary"
-			onChange={ (evt) => context.actions.updateInput(evt.target.value) }
+			onChange={ (evt) => context.actions
+				.updateInput(evt.target.value) }
 			onKeyUp={ (evt) => actionKeys[evt.code]
 			&& actionKeys[evt.code]({ ...context, data: state.input }) }
 		/>);

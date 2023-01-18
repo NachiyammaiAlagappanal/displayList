@@ -5,14 +5,14 @@ import { Box } from '@mui/material';
 import ControlBar from './UserInput/ControlBar';
 
 const TodoPane = (context) =>
-	<Box>
+	<Box
+		role="TodoPane"
+		className="column"
+		sx={ { gap: '10px', width: '100%' } }
+	>
 		<ControlBar { ...context }/>
-		<Box
-			role="TodoPane"
-			className="column"
-		>
-			<UserInput { ...context }/>
-			<TodoList { ...context }/>
-		</Box></Box>;
+		<UserInput { ...context }/>
+		<TodoList { ...context }/>
+	</Box>;
 
 export default TodoPane;

@@ -34,7 +34,6 @@
 	flex-direction: row;
 }
 .column{
-	align-items: center;
 	flex-direction: column;
 	display: flex;
 }
@@ -44,7 +43,7 @@
 .text{
 	text-align: left;
 	padding-top: 12px;
-	width: 16vw;
+	flex-grow: 1;
 }
 .size {
 	width: 50px;

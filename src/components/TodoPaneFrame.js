@@ -1,18 +1,17 @@
-import { Grid, Paper, Toolbar } from '@mui/material';
+import { Grid, Toolbar } from '@mui/material';
 import { React } from 'react';
 import TodoPane from './TodoPane';
-import ThemeDropDown from '../Theme/ThemeDropDown';
+// import ThemeDropDown from '../Theme/ThemeDropDown';
 
-const Header = (context) =>
+const Header = () =>
 	<Grid container={ true }>
-		<Grid xs={ 8 }>
+		<Grid xs={ 12 }>
 			<Toolbar
 				className="header"
 				sx={ { color: 'heading.main' } }
 			>
 				Todos</Toolbar></Grid>
-		<Grid xs={ 4 } justifyContent="center" sx={ { marginTop: '20px' } }>
-			<ThemeDropDown { ...context }/></Grid></Grid>;
+	</Grid>;
 
 const TodoPaneFrame = (context) =>
 	<Grid
@@ -23,8 +22,7 @@ const TodoPaneFrame = (context) =>
 		sx={ { backgroundColor: 'background.default' } }
 	>
 		<Header { ...context }/>
-		<Paper className="TodoPane">
-			<TodoPane { ...context }/></Paper>
+		<TodoPane { ...context }/>
 	</Grid>;
 
 export default TodoPaneFrame;

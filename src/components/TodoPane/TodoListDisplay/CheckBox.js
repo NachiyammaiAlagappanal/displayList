@@ -10,6 +10,7 @@ const CheckBox = ({ actions, data: { todo: { completed }, todo }}) =>
 	<Box className="size">
 		<Checkbox
 			role="CheckBox"
+
 			checked={ completed }
 			checkedIcon={
 				<CheckCircleOutlineRoundedIcon
@@ -19,7 +20,7 @@ const CheckBox = ({ actions, data: { todo: { completed }, todo }}) =>
 			}
 			icon={
 				<RadioButtonUncheckedRoundedIcon
-					color="text"
+					color="text.contrast"
 				/>
 			}
 			onChange={ () => actions.toggleTodo(todo) }

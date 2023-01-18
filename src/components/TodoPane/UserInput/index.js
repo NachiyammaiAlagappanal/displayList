@@ -3,18 +3,17 @@ import TodoInput from './TodoInput.js';
 import ToggleAllButton from './ToggleAllButton.js';
 import ActionButton from './ActionButton.js';
 import renderItem from '../../RenderItem.js';
-import { Box } from '@mui/material';
+import { Box, Paper } from '@mui/material';
 
 const userInputs = [ToggleAllButton, TodoInput, ActionButton];
 
 const UserInputs = (context) =>
-	<Box
-		role="UserInput"
-		className="center"
-	>
-		{userInputs.map((Component, field) =>
-			<Box key={ field }>
-				{renderItem({ ...context })(Component, field)}</Box>)}
-	</Box>;
+	<Paper>
+		<Box
+			role="UserInput"
+			className="center"
+		>{userInputs.map((Component, field) =>
+				renderItem({ ...context })(Component, field))}
+		</Box></Paper>;
 
 export default UserInputs;
