@@ -9,6 +9,7 @@ const seed = {
 	editing: null,
 	Tasks: [],
 	value: '1',
+	themeButton: false,
 	theme: 'dark',
 };
 

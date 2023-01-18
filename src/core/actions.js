@@ -9,6 +9,10 @@ const toggleMenu = (context) => ({
 });
 const toggleMode = (context) => ({
 	theme: context.data,
+	themeButton: false,
+});
+const toggleTheme = (context) => ({
+	themeButton: context.data,
 });
 const addTodo = (context) => ({
 	todos: TodoManager.addTodo(context),
@@ -62,7 +66,7 @@ const actions = {
 	addTasks,
 	toggleMenu,
 	toggleMode,
-
+	toggleTheme,
 };
 
 export default actions;

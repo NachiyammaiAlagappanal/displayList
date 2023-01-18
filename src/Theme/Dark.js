@@ -24,10 +24,10 @@ const dark = {
 	},
 	background: {
 		paper: '#001e3c',
-		default: '#ffffff',
+		default: '#013263',
 	},
 	heading: {
-		main: '#6F6F6F',
+		main: '#7f7f83',
 	},
 };
 

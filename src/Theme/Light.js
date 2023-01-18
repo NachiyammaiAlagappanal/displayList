@@ -19,15 +19,14 @@ const light = {
 		main: '#795548',
 	},
 	background: {
-		paper: '#ffffff',
-		default: '#001e3c',
+		paper: '#e7ebf0',
 	},
 	text: {
 		main: '#CFCFCF',
 		contrast: '#74737a',
 	},
 	heading: {
-		main: '#74737a',
+		main: '#919095',
 	},
 };
 

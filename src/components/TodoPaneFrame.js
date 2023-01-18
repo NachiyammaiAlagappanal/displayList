@@ -1,17 +1,13 @@
 import { Grid, Toolbar } from '@mui/material';
 import { React } from 'react';
 import TodoPane from './TodoPane';
-// import ThemeDropDown from '../Theme/ThemeDropDown';
 
 const Header = () =>
-	<Grid container={ true }>
-		<Grid xs={ 12 }>
-			<Toolbar
-				className="header"
-				sx={ { color: 'heading.main' } }
-			>
-				Todos</Toolbar></Grid>
-	</Grid>;
+	<Toolbar
+		className="header"
+		sx={ { color: 'heading.main' } }
+	>
+		todos</Toolbar>;
 
 const TodoPaneFrame = (context) =>
 	<Grid

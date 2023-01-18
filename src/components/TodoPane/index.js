@@ -8,7 +8,7 @@ const TodoPane = (context) =>
 	<Box
 		role="TodoPane"
 		className="column"
-		sx={ { gap: '10px', width: '100%' } }
+		sx={ { width: '100%' } }
 	>
 		<ControlBar { ...context }/>
 		<UserInput { ...context }/>
