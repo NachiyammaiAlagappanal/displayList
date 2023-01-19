@@ -3,7 +3,7 @@
 import { Button, Menu, MenuItem } from '@mui/material';
 import { Box } from '@mui/system';
 import { React } from 'react';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import SettingsBrightnessIcon from '@mui/icons-material/SettingsBrightness';
 
 const ThemeButton = (context) => {
 	const { state: { themeButton, theme }, actions,
@@ -12,8 +12,9 @@ const ThemeButton = (context) => {
 	return <Box>
 		<Button
 			onClick={ (evt) => actions.toggleTheme(evt.currentTarget) }
-			sx={ { color: 'text.contrast' } }
-		><ExpandMoreIcon/></Button>
+			color="heading"
+			sx={ { '&:hover': { color: 'text.contrast' }} }
+		><SettingsBrightnessIcon/></Button>
 		<Menu
 			open={ themeButton }
 			value={ theme }

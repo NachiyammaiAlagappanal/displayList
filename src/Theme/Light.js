@@ -1,13 +1,14 @@
 const light = {
 	mode: 'light',
 	primary: {
-		main: '#FC8019',
+		main: '#EE9344',
+		background: '#F2F1F2',
 	},
 	secondary: {
 		main: '#F94D5E',
 	},
 	success: {
-		main: '#20A339',
+		main: '#82AB3C',
 	},
 	error: {
 		main: '#D22D2D',
@@ -20,6 +21,7 @@ const light = {
 	},
 	background: {
 		paper: '#e7ebf0',
+		default: '#F2F1F2',
 	},
 	text: {
 		main: '#CFCFCF',

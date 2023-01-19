@@ -1,4 +1,4 @@
-import { Box, Checkbox, Tooltip } from '@mui/material';
+import { Checkbox, Tooltip } from '@mui/material';
 import { React } from 'react';
 import TodoManager from '../../../services/TodoManager';
 import CheckIcon from '@mui/icons-material/Check';
@@ -7,13 +7,17 @@ const CheckBox = (context) => {
 	const { actions } = context;
 	const isSelected = TodoManager.hasActiveTodo(context);
 
+	const available = TodoManager.hasTodo(context)
+		? { visibility: 'visible' }
+		: { visibility: 'hidden' };
+
 	return (
 		<Tooltip title="Toggle All">
 			<Checkbox
 				role="checkBox"
 				type="checkbox"
 				checked={ isSelected }
-				size="medium"
+				sx={ available }
 				checkedIcon={ <CheckIcon color="success"/> }
 				icon={ <CheckIcon color="text.contrast"/> }
 				onChange={ () => actions.toggleAll(!isSelected) }
@@ -21,9 +25,6 @@ const CheckBox = (context) => {
 	);
 };
 
-const ToggleAllButton = (context) =>
-	<Box className="size margin">
-		{TodoManager.hasTodo(context)
-	&& <CheckBox { ...context }/>}</Box>;
+const ToggleAllButton = (context) => <CheckBox { ...context }/>;
 
 export default ToggleAllButton;

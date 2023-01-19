@@ -8,11 +8,11 @@ const TodoPane = (context) =>
 	<Box
 		role="TodoPane"
 		className="column"
-		sx={ { width: '100%' } }
+		sx={ { width: '100%', rowGap: '20px' } }
 	>
 		<ControlBar { ...context }/>
-		<UserInput { ...context }/>
-		<TodoList { ...context }/>
+		<Box><UserInput { ...context }/>
+			<TodoList { ...context }/></Box>
 	</Box>;
 
 export default TodoPane;

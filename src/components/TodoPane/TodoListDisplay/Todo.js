@@ -14,9 +14,7 @@ const Todo = (context) => {
 			key={ id }
 			role="Todo"
 			className="row sharedStyle"
-		>
-			<Box className="size">
-				<CheckBox { ...context }/></Box>
+		><CheckBox { ...context }/>
 			<Box
 				className={ `text ${ style }` }
 				role="setEditing"

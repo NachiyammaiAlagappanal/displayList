@@ -1,4 +1,4 @@
-import { TextField } from '@mui/material';
+import { InputBase } from '@mui/material';
 import { React } from 'react';
 
 const getEnterKeyAction = (context) =>
@@ -14,13 +14,12 @@ const InputTextBox = (context) => {
 	const { state } = context;
 
 	return (
-		<TextField
-			className="text"
+		<InputBase
 			variant="standard"
 			autoComplete="off"
 			role="textBox"
-			label="Add New Todo"
-			sx={ { width: '40vw' } }
+			placeholder="Add New Todo"
+			sx={ { width: '42vw' } }
 			value={ state.input }
 			onChange={ (evt) => context.actions
 				.updateInput(evt.target.value) }

@@ -15,7 +15,7 @@ const TodoPaneFrame = (context) =>
 		xs={ 12 }
 		md={ 6 }
 		sm={ 6 }
-		sx={ { backgroundColor: 'background.default' } }
+		sx={ { backgroundColor: 'background.default', rowGap: '20px' } }
 	>
 		<Header { ...context }/>
 		<TodoPane { ...context }/>

@@ -7,15 +7,18 @@ import ThemeButton from '../../../Theme/ThemeButton';
 const ControlBar = (context) => {
 	const { config: { filters }} = context;
 
-	return <Box sx={ { display: 'flex', justifyContent: 'space-between' } }>
-		<Box className="row">
-			{filters.map((filter, index) =>
-				<FilterButtons
-					key={ index }
-					{ ...{ ...context, data: filter } }
-				/>)}<ClearButton { ...context }/></Box>
-		<Box style={ { height: '40px' } }><ThemeButton { ...context }/></Box>
-	</Box>;
+	return (
+		<Box sx={ { display: 'flex',
+			justifyContent: 'space-between', alignItems: 'center' } }
+		>
+			<Box className="row">
+				{filters.map((filter, index) =>
+					<FilterButtons
+						key={ index }
+						{ ...{ ...context, data: filter } }
+					/>)}<ClearButton { ...context }/></Box>
+			<Box><ThemeButton { ...context }/></Box>
+		</Box>);
 };
 
 export default ControlBar;
