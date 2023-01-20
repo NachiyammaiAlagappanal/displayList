@@ -16,8 +16,10 @@ const ControlBar = (context) => {
 					<FilterButtons
 						key={ index }
 						{ ...{ ...context, data: filter } }
-					/>)}<ClearButton { ...context }/></Box>
-			<Box><ThemeButton { ...context }/></Box>
+					/>)}</Box>
+			<Box className="row" sx={ { alignItems: 'center' } }>
+				<ClearButton { ...context }/>
+				<ThemeButton { ...context }/></Box>
 		</Box>);
 };
 
