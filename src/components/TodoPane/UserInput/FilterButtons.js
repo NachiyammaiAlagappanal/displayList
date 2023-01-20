@@ -11,7 +11,7 @@ const FilterButton = (context) => {
 			key={ filter }
 			role="FilterButton"
 			onClick={ () => actions.setFilter(filter) }
-			variant={ isVariant ? 'outlined' : 'text' }
+			variant={ isVariant ? 'contained' : 'text' }
 			sx={ { fontSize: '10px', height: '20px' } }
 		>
 			{ filter }</Button>);

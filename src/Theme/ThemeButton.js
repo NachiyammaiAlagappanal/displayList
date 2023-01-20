@@ -19,6 +19,8 @@ const ThemeButton = (context) => {
 			open={ themeButton }
 			value={ theme }
 			anchorEl={ themeButton }
+			anchorOrigin={ { vertical: 'bottom', horizontal: 'center' } }
+			transformOrigin={ { vertical: 'top', horizontal: 'center' } }
 		>
 			{modes.map((mode) =>
 				<MenuItem

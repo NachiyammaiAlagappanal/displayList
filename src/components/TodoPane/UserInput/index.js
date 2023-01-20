@@ -8,7 +8,10 @@ import { Box, Paper } from '@mui/material';
 const userInputs = [ToggleAllButton, TodoInput, ActionButton];
 
 const UserInputs = (context) =>
-	<Paper>
+	<Paper
+		elevation={ 12 }
+		sx={ { boxShadow: 'none', borderRadius: 'inherit' } }
+	>
 		<Box
 			role="UserInput"
 			className="center"
