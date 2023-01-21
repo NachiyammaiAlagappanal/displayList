@@ -12,10 +12,12 @@ const TodoList = (context) => {
 				role="TodoList"
 				className="column"
 			>
-				{ filteredTodos.map((todo) => Todo({
-					...context,
-					data: { todo },
-				})) }
+				{ filteredTodos.map((todo, index) =>
+					<Todo
+						key={ index }
+						{ ...{ ...context,
+							data: { todo }} }
+					/>) }
 			</Box></Paper>
 	);
 };

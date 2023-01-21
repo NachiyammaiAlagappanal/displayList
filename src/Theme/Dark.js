@@ -33,6 +33,9 @@ const dark = {
 	heading: {
 		main: '#7f7f83',
 	},
+	light: {
+		main: '#e47272',
+	},
 };
 
 export default dark;

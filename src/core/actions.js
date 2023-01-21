@@ -18,6 +18,9 @@ const addTodo = (context) => ({
 	todos: TodoManager.addTodo(context),
 	input: '',
 });
+const changeColor = (context) => ({
+	remove: context.data,
+});
 const toggleTodo = (context) => ({
 	todos: TodoManager.toggleTodo(context),
 });
@@ -61,6 +64,7 @@ const actions = {
 	clearCompleted,
 	setFilter,
 	setEditing,
+	changeColor,
 	editTodo,
 	setTasks,
 	removeTask,

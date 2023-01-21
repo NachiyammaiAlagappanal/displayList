@@ -11,6 +11,7 @@ const seed = {
 	value: '1',
 	themeButton: false,
 	theme: 'dark',
+	remove: false,
 };
 
 export default seed;

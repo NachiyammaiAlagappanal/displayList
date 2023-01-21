@@ -35,6 +35,9 @@ const light = {
 	heading: {
 		main: '#919095',
 	},
+	light: {
+		main: '#e47272',
+	},
 };
 
 export default light;
