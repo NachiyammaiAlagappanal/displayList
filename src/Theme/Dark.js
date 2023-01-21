@@ -19,6 +19,9 @@ const dark = {
 	warning: {
 		main: '#795548',
 	},
+	border: {
+		main: '#174772',
+	},
 	text: {
 		main: '#334b63',
 		contrast: '#ADAEAE',

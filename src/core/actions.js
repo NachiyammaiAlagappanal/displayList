@@ -16,6 +16,7 @@ const toggleTheme = (context) => ({
 });
 const addTodo = (context) => ({
 	todos: TodoManager.addTodo(context),
+	input: '',
 });
 const toggleTodo = (context) => ({
 	todos: TodoManager.toggleTodo(context),

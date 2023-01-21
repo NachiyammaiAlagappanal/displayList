@@ -22,6 +22,12 @@ const light = {
 		paper: '#e4e8ec',
 		default: '#ffffff',
 	},
+	border: {
+		main: '#d3d3d3',
+	},
+	list: {
+		main: '#ebedef',
+	},
 	text: {
 		main: '#CFCFCF',
 		contrast: '#74737a',

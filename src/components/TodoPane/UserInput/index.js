@@ -16,7 +16,6 @@ const UserInputs = (context) => {
 			elevation={ 12 }
 			sx={ {
 				boxShadow: 'none', borderRadius: 'inherit',
-
 				borderBottom: `1px solid ${ themeColor }`,
 			} }
 		>

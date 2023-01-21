@@ -7,7 +7,7 @@ const TodoList = (context) => {
 	const filteredTodos = TodoManager.filterTodos(context);
 
 	return (
-		<Paper>
+		<Paper sx={ { backgroundColor: 'list.main' } }>
 			<Box
 				role="TodoList"
 				className="column"

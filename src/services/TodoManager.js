@@ -20,7 +20,9 @@ const TodoManager = {
 	},
 
 	addTodo: (context) =>
-		context.state.todos.concat(TodoManager.getTodo(context)),
+		(TodoManager.hasInput(context.state.input)
+			? context.state.todos
+			: context.state.todos.concat(TodoManager.getTodo(context))),
 
 	toggleTodo: ({ state: { todos }, data }) =>
 		todos.map((todo) => (todo.id !== data.id
