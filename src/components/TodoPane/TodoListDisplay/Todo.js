@@ -17,9 +17,8 @@ const Todo = (context) => {
 			role="Todo"
 			className="row sharedStyle"
 			sx={ { borderBottom: `1px solid ${ themeColor }` } }
-			onMouseOver={ () => actions.changeColor({ id: id, remove: true }) }
-			onMouseLeave={ () => actions.changeColor({ id: id,
-				remove: false }) }
+			onMouseOver={ () => actions.changeColor(todo) }
+			onMouseLeave={ () => actions.changeColor(todo) }
 		><CheckBox { ...context }/>
 			<Box
 				className={ `text ${ style }` }

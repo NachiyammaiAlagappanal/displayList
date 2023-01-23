@@ -25,7 +25,7 @@ const TodoManager = {
 			? todo
 			: {
 				...todo,
-				remove: data.remove,
+				remove: !data.remove,
 			}
 		)),
 	addTodo: (context) =>
