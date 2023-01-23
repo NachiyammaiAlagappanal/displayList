@@ -3,8 +3,8 @@ import { React } from 'react';
 import ClearRoundedIcon from '@mui/icons-material/ClearRounded';
 
 const RemoveButton = (context) => {
-	const { data: { todo }, state: { remove }} = context;
-	const removeColor = remove ? 'light' : 'text';
+	const { data: { todo }} = context;
+	const removeColor = todo.remove ? 'light' : 'text';
 
 	return (
 		<Button

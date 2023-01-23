@@ -19,7 +19,7 @@ const addTodo = (context) => ({
 	input: '',
 });
 const changeColor = (context) => ({
-	remove: context.data,
+	todos: TodoManager.changeColor(context),
 });
 const toggleTodo = (context) => ({
 	todos: TodoManager.toggleTodo(context),

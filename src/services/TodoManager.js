@@ -6,6 +6,7 @@ const TodoManager = {
 		id: rndString(config.idLength),
 		text: data,
 		completed: false,
+		remove: false,
 	}),
 
 	hasInput: (input) => input === '',
@@ -19,6 +20,14 @@ const TodoManager = {
 		completed: (todos) => todos.completed,
 	},
 
+	changeColor: ({ state: { todos }, data }) =>
+		todos.map((todo) => (todo.id !== data.id
+			? todo
+			: {
+				...todo,
+				remove: data.remove,
+			}
+		)),
 	addTodo: (context) =>
 		(TodoManager.hasInput(context.state.input)
 			? context.state.todos
