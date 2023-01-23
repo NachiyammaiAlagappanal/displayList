@@ -30,7 +30,7 @@ const light = {
 	},
 	text: {
 		main: '#CFCFCF',
-		contrast: '#74737a',
+		contrast: '#46454A',
 	},
 	heading: {
 		main: '#919095',

@@ -8,7 +8,8 @@ const TaskList = (context) => {
 	return (
 
 		<Box role="TaskList">
-			{ Tasks.map((task) => Task({ ...context, data: task })) } </Box>
+			{ Tasks.map((task, index) =>
+				<Task key={ index }{ ...{ ...context, data: task } }/>)}</Box>
 	);
 };
 

@@ -1,5 +1,6 @@
+/* eslint-disable max-lines-per-function */
 import { React } from 'react';
-import { Box, Button } from '@mui/material';
+import { Box, Button, Divider } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import ClearRoundedIcon from '@mui/icons-material/ClearRounded';
 
@@ -11,7 +12,10 @@ const AddTaskToTodo = (context) => {
 			role="AddButton"
 			onClick={ () => { context.actions.addTodo(task.text);	} }
 		>
-			<AddIcon sx={ { color: '#404040' } }/></Button>
+			<AddIcon
+				color="text"
+				sx={ { '&:hover': { color: 'success.main' }} }
+			/></Button>
 	);
 };
 
@@ -21,7 +25,8 @@ const RemoveButton = (context) => {
 	return (
 		<Button
 			role="removeButton"
-			sx={ { color: '#D21D2E' } }
+			color="text"
+			sx={ { '&:hover': { color: 'error.main' }} }
 			onClick={ () => context.actions.removeTask(task) }
 		>
 			<ClearRoundedIcon/></Button>
@@ -36,10 +41,13 @@ const Task = (context) => {
 			key={ id }
 			role="Task"
 		>	<Box component="span"><AddTaskToTodo { ...context }/></Box>
-			<Box component="span">{text}</Box>
+			<Box
+				component="span"
+				sx={ { width: '79%', display: 'inline-block' } }
+			>{text}</Box>
 			<Box component="span"><RemoveButton { ...context }/></Box>
-		</Box>
-	);
+			<Divider/>
+		</Box>);
 };
 
 export default Task;
