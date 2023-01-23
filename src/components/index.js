@@ -4,8 +4,8 @@ import TaskPaneFrame from './TaskPaneFrame';
 import TodoPaneFrame from './TodoPaneFrame';
 
 const Frame = (context) => <Grid container={ true } sx={ { height: '100vh' } }>
-	<TodoPaneFrame { ...context }/>
 	<TaskPaneFrame { ...context }/>
+	<TodoPaneFrame { ...context }/>
 </Grid>;
 
 export default Frame;

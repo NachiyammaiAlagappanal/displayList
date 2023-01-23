@@ -44,6 +44,7 @@ const Task = (context) => {
 			<Box
 				component="span"
 				sx={ { width: '79%', display: 'inline-block' } }
+				color="text.contrast"
 			>{text}</Box>
 			<Box component="span"><RemoveButton { ...context }/></Box>
 			<Divider/>
