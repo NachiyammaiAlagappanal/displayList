@@ -15,7 +15,9 @@ const TodoPaneFrame = (context) =>
 		xs={ 12 }
 		md={ 6 }
 		sm={ 6 }
-		sx={ { backgroundColor: 'background.default', rowGap: '20px' } }
+		sx={ { backgroundColor: 'background.default', rowGap: '20px',
+			height: '100vh' } }
+		overflow="scroll"
 	>
 		<Header { ...context }/>
 		<TodoPane { ...context }/>

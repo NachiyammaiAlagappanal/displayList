@@ -9,6 +9,7 @@ const TaskPaneFrame = (context) =>
 		md={ 6 }
 		sm={ 6 }
 		sx={ { backgroundColor: 'background.default', rowGap: '20px' } }
+		overflow="scroll"
 	>
 		<Toolbar
 			className="header"

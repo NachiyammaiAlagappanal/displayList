@@ -11,7 +11,7 @@ const App = (context) => {
 	useEffect(() => Ticker.start(context), []);
 	return (
 		<ThemeProvider theme={ Theme(context) }>
-			<Box role="App">
+			<Box role="App" overflow="hidden">
 				<GetSurface { ...context }/>
 			</Box>
 		</ThemeProvider>

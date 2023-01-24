@@ -9,7 +9,9 @@ const ControlBar = (context) => {
 
 	return (
 		<Box sx={ { display: 'flex',
-			justifyContent: 'space-between', alignItems: 'center' } }
+			justifyContent: 'space-between', alignItems: 'center',
+			position: ' sticky', top: '0',
+			backgroundColor: 'background.default' } }
 		>
 			<Box className="row">
 				{filters.map((filter, index) =>
