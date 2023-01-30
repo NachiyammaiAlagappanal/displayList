@@ -1,11 +1,9 @@
 import { React } from 'react';
 import { TabContext } from '@mui/lab';
 import TabPanel from '@mui/lab/TabPanel';
-import { Box } from '@mui/system';
 import MenuBar from './MenuBar';
-import { Grid } from '@mui/material';
+import { Box, Grid } from '@mui/material';
 import TodoPaneFrame from '../TodoPaneFrame';
-
 import TaskPaneFrame from '../TaskPaneFrame';
 
 const Menu = (context) => {

@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 /* eslint-disable max-lines-per-function */
-import { Button, Menu, MenuItem } from '@mui/material';
-import { Box } from '@mui/system';
+import { Box, Button, Menu, MenuItem } from '@mui/material';
 import { React } from 'react';
 import SettingsBrightnessIcon from '@mui/icons-material/SettingsBrightness';
 
