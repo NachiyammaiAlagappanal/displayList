@@ -1,7 +1,7 @@
 import { React } from 'react';
 import Todo from './Todo';
-import TodoManager from '../../../services/TodoManager';
 import { Box, Paper } from '@mui/material';
+import TodoManager from '../../../../services/TodoManager';
 
 const TodoList = (context) => {
 	const filteredTodos = TodoManager.filterTodos(context);

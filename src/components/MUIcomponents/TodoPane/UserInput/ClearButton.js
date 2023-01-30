@@ -1,6 +1,6 @@
 import { Button, Tooltip } from '@mui/material';
 import { React } from 'react';
-import TodoManager from '../../../services/TodoManager';
+import TodoManager from '../../../../services/TodoManager';
 
 const ClearButton = (context) => {
 	const { actions } = context;

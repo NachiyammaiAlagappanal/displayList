@@ -2,7 +2,7 @@ import FilterButtons from './FilterButtons';
 import { React } from 'react';
 import { Box } from '@mui/system';
 import ClearButton from './ClearButton';
-import ThemeButton from '../../../Theme/ThemeButton';
+import ThemeButton from '../../../../Theme/ThemeButton';
 
 const ControlBar = (context) => {
 	const { config: { filters }} = context;

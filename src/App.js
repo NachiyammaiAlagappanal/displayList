@@ -3,7 +3,7 @@ import './App.scss';
 import TaskManager from './services/TaskManager.js';
 import Ticker from './services/Ticker.js';
 import { Box, ThemeProvider } from '@mui/material';
-import GetSurface from './components/GetSurface';
+import Surface from './components/MUIcomponents/Surface';
 import Theme from './Theme/Theme';
 
 const App = (context) => {
@@ -12,7 +12,7 @@ const App = (context) => {
 	return (
 		<ThemeProvider theme={ Theme(context) }>
 			<Box role="App" overflow="hidden">
-				<GetSurface { ...context }/>
+				<Surface { ...context }/>
 			</Box>
 		</ThemeProvider>
 	);

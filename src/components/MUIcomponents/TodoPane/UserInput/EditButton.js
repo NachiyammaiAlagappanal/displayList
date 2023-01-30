@@ -1,7 +1,7 @@
 
 import { Button } from '@mui/material';
 import { React } from 'react';
-import TodoManager from '../../../services/TodoManager';
+import TodoManager from '../../../../services/TodoManager';
 import EditIcon from '@mui/icons-material/Edit';
 
 const EditButton = ({ actions, state: { input }}) =>

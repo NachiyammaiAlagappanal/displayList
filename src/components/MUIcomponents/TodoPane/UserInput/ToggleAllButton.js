@@ -1,6 +1,6 @@
 import { Checkbox, Tooltip } from '@mui/material';
 import { React } from 'react';
-import TodoManager from '../../../services/TodoManager';
+import TodoManager from '../../../../services/TodoManager';
 import CheckIcon from '@mui/icons-material/Check';
 
 const CheckBox = (context) => {
