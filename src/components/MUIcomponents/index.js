@@ -1,11 +1,13 @@
-import { Grid } from '@mui/material';
 import { React } from 'react';
-import TaskPaneFrame from './TaskPaneFrame';
-import TodoPaneFrame from './TodoPaneFrame';
+import { Box, ThemeProvider } from '@mui/material';
+import Theme from '../../Theme/Theme';
+import Surface from '../MUIcomponents/Surface';
 
-const Frame = (context) => <Grid container={ true } sx={ { height: '100vh' } }>
-	<TaskPaneFrame { ...context }/>
-	<TodoPaneFrame { ...context }/>
-</Grid>;
+const MuiIndex = (context) =>
+	<ThemeProvider theme={ Theme(context) }>
+		<Box role="App" overflow="hidden">
+			<Surface { ...context }/>
+		</Box>
+	</ThemeProvider>;
 
-export default Frame;
+export default MuiIndex;

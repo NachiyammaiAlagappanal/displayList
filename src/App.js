@@ -2,19 +2,17 @@ import { React, useEffect } from 'react';
 import './App.scss';
 import TaskManager from './services/TaskManager.js';
 import Ticker from './services/Ticker.js';
-import { Box, ThemeProvider } from '@mui/material';
-import Surface from './components/MUIcomponents/Surface';
-import Theme from './Theme/Theme';
+import { Box } from '@mui/material';
+import MuiIndex from './components/MUIcomponents/index';
 
 const App = (context) => {
 	useEffect(() => TaskManager.init(context), []);
 	useEffect(() => Ticker.start(context), []);
 	return (
-		<ThemeProvider theme={ Theme(context) }>
-			<Box role="App" overflow="hidden">
-				<Surface { ...context }/>
-			</Box>
-		</ThemeProvider>
+		<Box role="App" overflow="hidden">
+			<MuiIndex { ...context }/>
+		</Box>
+
 	);
 };
 

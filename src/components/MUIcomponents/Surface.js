@@ -1,5 +1,5 @@
 import { useMediaQuery } from '@mui/material';
-import Web from './index';
+import Web from './Web';
 import { React } from 'react';
 import Mobile from './mobileView';
 
