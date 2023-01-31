@@ -1,4 +1,3 @@
-/* eslint-disable max-lines-per-function */
 import { React } from 'react';
 import { Box, Button, Divider } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';

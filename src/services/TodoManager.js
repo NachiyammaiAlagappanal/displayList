@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { rndString } from '@laufire/utils/random';
 
 const TodoManager = {
@@ -29,7 +30,7 @@ const TodoManager = {
 			}
 		)),
 	addTodo: (context) =>
-		(TodoManager.hasInput(context.state.input)
+		(!context.data && TodoManager.hasInput(context.state.input)
 			? context.state.todos
 			: context.state.todos.concat(TodoManager.getTodo(context))),
 
