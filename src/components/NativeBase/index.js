@@ -1,14 +1,29 @@
+/* eslint-disable max-lines-per-function */
+/* eslint-disable no-console */
 import { React } from 'react';
+import { Button, Box, NativeBaseProvider, AddIcon, Input } from 'native-base';
 
-import { Box, ThemeProvider } from '@mui/material';
-import Surface from './components/MUIcomponents/Surface';
-import Theme from './Theme/Theme';
+const NativeBaseIndex = (context) => {
+	const { actions, state: { input }} = context;
 
-const NativeBaseIndex = (context) =>
-	<ThemeProvider theme={ Theme(context) }>
-		<Box role="App" overflow="hidden">
-			<Surface { ...context }/>
-		</Box>
-	</ThemeProvider>;
+	return <NativeBaseProvider><Box alignItems="center">
+		<Button
+			// isDisabled={ TodoManager.hasInput(input) }
+			onPress={ () => actions.addTodo(input) }
+			variant="unstyled"
+			_hover={ {
+				bg: 'primary.700',
+			} }
+			bg="primary.100"
+		>
+			<AddIcon name="add"/></Button>
+		<Input
+			placeholder="Add New Todo"
+			onPress={ (evt) => context.actions
+				.updateInput(evt.target.value) }
+			variant="unstyled"
+		/>
+	</Box></NativeBaseProvider>;
+};
 
 export default NativeBaseIndex;
