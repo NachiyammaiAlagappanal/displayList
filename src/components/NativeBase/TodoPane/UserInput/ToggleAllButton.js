@@ -16,8 +16,7 @@ const CheckBox = (context) => {
 				role="checkBox"
 				type="checkbox"
 				checked={ isSelected }
-				style={ available }
-				size="sm"
+				style={ { margin: '10px', ...available } }
 				onChange={ () => actions.toggleAll(!isSelected) }
 			/></Tooltip>
 	);

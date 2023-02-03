@@ -1,7 +1,8 @@
 import { React } from 'react';
 import Todo from './Todo';
-import { Box, Paper } from '@mui/material';
+import { Paper } from '@mui/material';
 import TodoManager from '../../../../services/TodoManager';
+import { Box } from 'native-base';
 
 const TodoList = (context) => {
 	const filteredTodos = TodoManager.filterTodos(context);
@@ -10,7 +11,8 @@ const TodoList = (context) => {
 		<Paper sx={ { backgroundColor: 'list.main' } }>
 			<Box
 				role="TodoList"
-				className="column"
+				display="flex"
+				flexDirection="column"
 			>
 				{ filteredTodos.map((todo, index) =>
 					<Todo

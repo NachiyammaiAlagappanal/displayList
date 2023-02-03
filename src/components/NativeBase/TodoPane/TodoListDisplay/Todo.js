@@ -1,31 +1,27 @@
 /* eslint-disable no-console */
 /* eslint-disable max-lines-per-function */
-import { Box } from '@mui/material';
+import { Box } from 'native-base';
 import { React } from 'react';
 import CheckBox from './CheckBox';
 import RemoveButton from './RemoveButton';
 
 const Todo = (context) => {
-	const { actions, data: { todo }, state: { theme }} = context;
-	const { id, text, completed } = todo;
-	const style = completed ? 'completedStyle' : 'activeStyle';
-	const themeColor = theme === 'dark' ? '#174772' : '#d3d3d3';
+	const { actions, data: { todo }} = context;
+	const { id, text } = todo;
 
 	return (
 		<Box
 			key={ id }
 			role="Todo"
-			className="row sharedStyle"
-			sx={ { borderBottom: `1px solid ${ themeColor }` } }
-			onMouseOver={ () => actions.changeColor(todo) }
-			onMouseLeave={ () => actions.changeColor(todo) }
+			style={ { borderBottom: '1px solid #174772', display: 'flex',
+				flexDirection: 'row' } }
 		><CheckBox { ...context }/>
 			<Box
-				className={ `text ${ style }` }
+				style={ { 'text-align': 'left',
+					'width': '43vw', 'justifyContent': 'center',
+					'marginLeft': '10px' } }
 				role="setEditing"
-				component="span"
-				onClick={ () => actions.setEditing(todo) }
-				color="text.contrast"
+				onPress={ () => actions.setEditing(todo) }
 			>{ text }</Box>
 			<RemoveButton { ...context }/></Box>
 	);
