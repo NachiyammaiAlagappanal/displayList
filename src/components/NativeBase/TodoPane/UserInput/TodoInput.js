@@ -1,4 +1,4 @@
-import { InputBase } from '@mui/material';
+import { Input } from 'native-base';
 import { React } from 'react';
 
 const getEnterKeyAction = (context) =>
@@ -14,12 +14,13 @@ const InputTextBox = (context) => {
 	const { state } = context;
 
 	return (
-		<InputBase
-			variant="standard"
+		<Input
+			variant="unstyled"
 			autoComplete="off"
 			role="textBox"
 			placeholder="Add New Todo"
-			sx={ { width: '42vw' } }
+			style={ { width: '42vw' } }
+			size="md"
 			value={ state.input }
 			onChange={ (evt) => context.actions
 				.updateInput(evt.target.value) }

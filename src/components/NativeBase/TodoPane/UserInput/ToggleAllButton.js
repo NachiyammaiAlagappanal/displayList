@@ -1,7 +1,6 @@
-import { Checkbox, Tooltip } from '@mui/material';
 import { React } from 'react';
 import TodoManager from '../../../../services/TodoManager';
-import CheckIcon from '@mui/icons-material/Check';
+import { Checkbox, Tooltip } from 'native-base';
 
 const CheckBox = (context) => {
 	const { actions } = context;
@@ -12,14 +11,13 @@ const CheckBox = (context) => {
 		: { visibility: 'hidden' };
 
 	return (
-		<Tooltip title="Toggle All">
+		<Tooltip label="Toggle All">
 			<Checkbox
 				role="checkBox"
 				type="checkbox"
 				checked={ isSelected }
-				sx={ available }
-				checkedIcon={ <CheckIcon color="success"/> }
-				icon={ <CheckIcon color="text.contrast"/> }
+				style={ available }
+				size="sm"
 				onChange={ () => actions.toggleAll(!isSelected) }
 			/></Tooltip>
 	);

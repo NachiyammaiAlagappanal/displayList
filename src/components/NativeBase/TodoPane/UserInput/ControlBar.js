@@ -1,7 +1,6 @@
 import FilterButtons from './FilterButtons';
 import { React } from 'react';
 import ClearButton from './ClearButton';
-import ThemeButton from '../../../../Theme/ThemeButton';
 import { Box } from '@mui/material';
 
 const ControlBar = (context) => {
@@ -20,8 +19,7 @@ const ControlBar = (context) => {
 						{ ...{ ...context, data: filter } }
 					/>)}</Box>
 			<Box className="row" sx={ { alignItems: 'center' } }>
-				<ClearButton { ...context }/>
-				<ThemeButton { ...context }/></Box>
+				<ClearButton { ...context }/></Box>
 		</Box>);
 };
 

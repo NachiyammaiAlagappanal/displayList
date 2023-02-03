@@ -1,14 +1,14 @@
 import { React } from 'react';
 import UserInput from './UserInput';
 import TodoList from './TodoListDisplay/TodoList';
-import { Box } from '@mui/material';
 import ControlBar from './UserInput/ControlBar';
+import { Box } from 'native-base';
 
 const TodoPane = (context) =>
 	<Box
 		role="TodoPane"
-		className="column"
-		sx={ { width: '100%', rowGap: '20px' } }
+		style={ { width: '100%', rowGap: '20px', display: 'flex',
+			flexDirection: 'column' } }
 	>
 		<ControlBar { ...context }/>
 		<Box><UserInput { ...context }/>
