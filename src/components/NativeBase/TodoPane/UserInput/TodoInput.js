@@ -19,7 +19,7 @@ const InputTextBox = (context) => {
 			autoComplete="off"
 			role="textBox"
 			placeholder="Add New Todo"
-			style={ { width: '43vw' } }
+			style={ { width: '43.5vw' } }
 			value={ state.input }
 			onChange={ (evt) => context.actions
 				.updateInput(evt.target.value) }

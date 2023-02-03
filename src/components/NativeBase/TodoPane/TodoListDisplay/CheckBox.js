@@ -6,6 +6,7 @@ const CheckBox = ({ actions, data: { todo: { completed }, todo }}) =>
 	<Checkbox
 		margin="10px"
 		role="CheckBox"
+		size="sm"
 		isDefaultChecked={ completed }
 		onChange={ () => actions.toggleTodo(todo) }
 	/>;

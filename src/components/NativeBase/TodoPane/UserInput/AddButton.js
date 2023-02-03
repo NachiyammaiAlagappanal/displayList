@@ -12,7 +12,7 @@ const AddButton = (context) => {
 			onPress={ () => actions.addTodo(input) }
 			variant="unstyled"
 		>
-			<Text fontSize="xl">+</Text>
+			<Text fontSize="lg">+</Text>
 		</Button>
 	);
 };

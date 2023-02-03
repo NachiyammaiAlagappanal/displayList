@@ -1,4 +1,5 @@
-import { Button } from '@mui/material';
+
+import { Button } from 'native-base';
 import { React } from 'react';
 import TodoManager from '../../../../services/TodoManager';
 
@@ -10,9 +11,9 @@ const FilterButton = (context) => {
 		<Button
 			key={ filter }
 			role="FilterButton"
-			onClick={ () => actions.setFilter(filter) }
-			variant={ isVariant ? 'contained' : 'text' }
-			sx={ { fontSize: '10px', height: '20px' } }
+			onPress={ () => actions.setFilter(filter) }
+			variant={ isVariant ? 'solid' : 'outline' }
+			size="sm"
 		>
 			{ filter }</Button>);
 };

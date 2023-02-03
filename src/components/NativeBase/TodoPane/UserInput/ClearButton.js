@@ -1,4 +1,4 @@
-import { Button, Tooltip } from '@mui/material';
+import { Button, Tooltip } from 'native-base';
 import { React } from 'react';
 import TodoManager from '../../../../services/TodoManager';
 
@@ -6,12 +6,12 @@ const ClearButton = (context) => {
 	const { actions } = context;
 	const hasCompletedTodos = TodoManager.hasCompletedTodos(context);
 
-	return hasCompletedTodos && <Tooltip title="clear">
+	return hasCompletedTodos && <Tooltip label="clear">
 		<Button
 			role="ClearCompleted"
 			onClick={ () => actions.clearCompleted() }
-			sx={ { fontSize: '10px', height: '20px' } }
-			variant="outlined"
+			variant="subtle"
+			size="sm"
 		>
 			Clear completed
 		</Button>

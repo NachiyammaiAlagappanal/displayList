@@ -1,25 +1,25 @@
 import FilterButtons from './FilterButtons';
 import { React } from 'react';
 import ClearButton from './ClearButton';
-import { Box } from '@mui/material';
+import { Box, Button } from 'native-base';
 
 const ControlBar = (context) => {
 	const { config: { filters }} = context;
 
 	return (
-		<Box sx={ { display: 'flex',
-			justifyContent: 'space-between', alignItems: 'center',
-			position: ' sticky', top: '0',
-			backgroundColor: 'background.default' } }
+		<Box style={ { display: 'flex',
+			justifyContent: 'space-between', flexDirection: 'row' } }
 		>
-			<Box className="row">
-				{filters.map((filter, index) =>
-					<FilterButtons
-						key={ index }
-						{ ...{ ...context, data: filter } }
-					/>)}</Box>
-			<Box className="row" sx={ { alignItems: 'center' } }>
-				<ClearButton { ...context }/></Box>
+			<Box style={ { display: 'flex',
+				flexDirection: 'row' } }
+			>
+				<Button.Group isAttached={ true }>
+					{filters.map((filter, index) =>
+						<FilterButtons
+							key={ index }
+							{ ...{ ...context, data: filter } }
+						/>)}</Button.Group></Box>
+			<ClearButton { ...context }/>
 		</Box>);
 };
 

@@ -10,7 +10,7 @@ const RemoveButton = (context) => {
 			variant="unstyled"
 			onPress={ () => context.actions.removeTodo(todo) }
 		>
-			X	</Button>
+			x</Button>
 	);
 };
 
