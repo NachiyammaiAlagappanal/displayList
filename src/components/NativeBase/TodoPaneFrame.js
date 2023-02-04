@@ -1,26 +1,21 @@
-import { Grid, Toolbar } from '@mui/material';
+import { Heading, VStack } from 'native-base';
 import { React } from 'react';
 import TodoPane from './TodoPane';
 
 const Header = () =>
-	<Toolbar
-		className="header"
-		sx={ { color: 'heading.main' } }
+	<Heading
+		size="2xl"
+		textAlign="center"
 	>
-		todos</Toolbar>;
+		todos</Heading>;
 
 const TodoPaneFrame = (context) =>
-	<Grid
-		item={ true }
-		xs={ 12 }
-		md={ 6 }
-		sm={ 6 }
-		sx={ { backgroundColor: 'background.default', rowGap: '20px',
-			height: '100vh' } }
-		overflow="scroll"
+	<VStack
+		space={ 10 }
+		style={ {	height: '100vh' } }
 	>
 		<Header { ...context }/>
 		<TodoPane { ...context }/>
-	</Grid>;
+	</VStack>;
 
 export default TodoPaneFrame;

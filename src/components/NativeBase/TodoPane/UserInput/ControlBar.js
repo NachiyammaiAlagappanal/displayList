@@ -7,8 +7,8 @@ const ControlBar = (context) => {
 	const { config: { filters }} = context;
 
 	return (
-		<Box style={ { display: 'flex',
-			justifyContent: 'space-between', flexDirection: 'row' } }
+		<Box style={ { display: 'flex', justifyContent: 'space-between',
+			flexDirection: 'row', height: '20px' } }
 		>
 			<Box style={ { display: 'flex',
 				flexDirection: 'row' } }
