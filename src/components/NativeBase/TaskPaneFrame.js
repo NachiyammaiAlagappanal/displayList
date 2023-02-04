@@ -1,21 +1,16 @@
-import { Grid, Toolbar } from '@mui/material';
+import { Heading, VStack } from 'native-base';
 import { React } from 'react';
 import TaskPane from './TaskPane';
 
 const TaskPaneFrame = (context) =>
-	<Grid
-		item={ true }
-		xs={ 12 }
-		md={ 6 }
-		sm={ 6 }
-		sx={ { backgroundColor: 'background.default', rowGap: '20px' } }
-		overflow="scroll"
+	<VStack
+		space={ 10 }
 	>
-		<Toolbar
-			className="header"
-			sx={ { color: 'heading.main' } }
-		>tasks</Toolbar>
+		<Heading
+			size="2xl"
+			textAlign="center"
+		>tasks</Heading>
 		<TaskPane { ...context }/>
-	</Grid>;
+	</VStack>;
 
 export default TaskPaneFrame;

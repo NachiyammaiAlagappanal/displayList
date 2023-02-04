@@ -1,8 +1,6 @@
 /* eslint-disable max-lines-per-function */
+import { Box, Button, Divider, HStack, Stack } from 'native-base';
 import { React } from 'react';
-import { Box, Button, Divider } from '@mui/material';
-import AddIcon from '@mui/icons-material/Add';
-import ClearRoundedIcon from '@mui/icons-material/ClearRounded';
 
 const AddTaskToTodo = (context) => {
 	const { data: task } = context;
@@ -10,12 +8,11 @@ const AddTaskToTodo = (context) => {
 	return (
 		<Button
 			role="AddButton"
-			onClick={ () => { context.actions.addTodo(task.text);	} }
+			onPress={ () => { context.actions.addTodo(task.text);	} }
+			variant="unstyled"
 		>
-			<AddIcon
-				color="text"
-				sx={ { '&:hover': { color: 'success.main' }} }
-			/></Button>
+			+
+		</Button>
 	);
 };
 
@@ -25,11 +22,10 @@ const RemoveButton = (context) => {
 	return (
 		<Button
 			role="removeButton"
-			color="text"
-			sx={ { '&:hover': { color: 'error.main' }} }
+			variant="unstyled"
 			onClick={ () => context.actions.removeTask(task) }
 		>
-			<ClearRoundedIcon/></Button>
+			x</Button>
 	);
 };
 
@@ -37,18 +33,17 @@ const Task = (context) => {
 	const { data: { id, text }} = context;
 
 	return (
-		<Box
-			key={ id }
-			role="Task"
-		>	<Box component="span"><AddTaskToTodo { ...context }/></Box>
-			<Box
-				component="span"
-				sx={ { width: '79%', display: 'inline-block' } }
-				color="text.contrast"
-			>{text}</Box>
-			<Box component="span"><RemoveButton { ...context }/></Box>
-			<Divider/>
-		</Box>);
+		<Stack>
+			<HStack
+				key={ id }
+				role="Task"
+			><Box><AddTaskToTodo { ...context }/></Box>
+				<Box
+					style={ { width: '79%', display: 'inline-block' } }
+					color="text.contrast"
+				>{text}</Box>
+				<Box component="span"><RemoveButton { ...context }/></Box>
+			</HStack><Divider/></Stack>);
 };
 
 export default Task;

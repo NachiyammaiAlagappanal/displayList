@@ -1,12 +1,13 @@
-import { Box, Paper } from '@mui/material';
+import { Paper } from '@mui/material';
+import { Box } from 'native-base';
 import { React } from 'react';
 import TaskList from './TaskList';
 
 const TaskPane = (context) =>
 	<Box
 		role="TaskPane"
-		className="column"
-		sx={ { width: '100%' } }
+		style={ { width: '100%', display: 'flex',
+			flexDirection: 'column' } }
 	>
 		<Paper elevation={ 12 } sx={ { boxShadow: 'inherit' } }>
 			<Box><TaskList { ...context }/></Box></Paper>
