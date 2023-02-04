@@ -4,7 +4,8 @@ import TaskPane from './TaskPane';
 
 const TaskPaneFrame = (context) =>
 	<VStack
-		space={ 10 }
+		space={ 6 }
+		width="50%"
 	>
 		<Heading
 			size="2xl"

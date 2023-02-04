@@ -8,7 +8,7 @@ const ControlBar = (context) => {
 
 	return (
 		<Box style={ { display: 'flex', justifyContent: 'space-between',
-			flexDirection: 'row', height: '20px' } }
+			flexDirection: 'row', height: '30px' } }
 		>
 			<Box style={ { display: 'flex',
 				flexDirection: 'row' } }

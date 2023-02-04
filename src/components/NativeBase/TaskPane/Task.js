@@ -1,5 +1,5 @@
 /* eslint-disable max-lines-per-function */
-import { Box, Button, Divider, HStack, Stack } from 'native-base';
+import { Box, Button, Divider, HStack, Stack, Text } from 'native-base';
 import { React } from 'react';
 
 const AddTaskToTodo = (context) => {
@@ -38,10 +38,10 @@ const Task = (context) => {
 				key={ id }
 				role="Task"
 			><Box><AddTaskToTodo { ...context }/></Box>
-				<Box
-					style={ { width: '79%', display: 'inline-block' } }
-					color="text.contrast"
-				>{text}</Box>
+				<Text
+					style={ { width: '79%', margin: '10px',
+						display: 'inline-block' } }
+				>{text}</Text>
 				<Box component="span"><RemoveButton { ...context }/></Box>
 			</HStack><Divider/></Stack>);
 };
