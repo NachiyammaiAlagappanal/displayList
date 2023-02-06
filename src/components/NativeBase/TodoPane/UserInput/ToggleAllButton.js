@@ -14,8 +14,7 @@ const CheckBox = (context) => {
 		<Tooltip label="Toggle All">
 			<Checkbox
 				role="checkBox"
-				type="checkbox"
-				checked={ isSelected }
+				isChecked={ isSelected }
 				style={ { margin: '10px', ...available } }
 				onChange={ () => actions.toggleAll(!isSelected) }
 			/></Tooltip>

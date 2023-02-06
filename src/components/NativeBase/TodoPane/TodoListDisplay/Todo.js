@@ -17,9 +17,9 @@ const Todo = (context) => {
 				flexDirection: 'row' } }
 		><CheckBox { ...context }/>
 			<Box
-				style={ { 'text-align': 'left',
-					'width': '43vw', 'justifyContent': 'center',
-					'marginLeft': '10px' } }
+				style={ { textAlign: 'left',
+					width: '43vw', justifyContent: 'center',
+					marginLeft: '10px' } }
 				role="setEditing"
 				onPress={ () => actions.setEditing(todo) }
 			>{ text }</Box>
