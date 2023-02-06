@@ -4,7 +4,10 @@ import config from './config.js';
 const seed = {
 	refreshID: rndString(config.refreshIDLength),
 	input: '',
-	todos: [],
+	todos: [{ id: rndString(config.idLength),
+		text: 'hello',
+		completed: false,
+		remove: false }],
 	filter: 'all',
 	editing: null,
 	Tasks: [],
