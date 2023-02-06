@@ -15,9 +15,9 @@ const Entry = () => {
 	return App(context);
 };
 
-ReactDOM.render(<React.StrictMode>
-	<Entry/>
-</React.StrictMode>,
+ReactDOM.render(
+	<Entry/>,
+
 document.getElementById('root'));
 
 // If you want to start measuring performance in your app, pass a function

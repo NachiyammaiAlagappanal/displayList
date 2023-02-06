@@ -7,8 +7,6 @@ const ToggleAllButton = (context) => {
 	const { actions } = context;
 	const isSelected = TodoManager.hasActiveTodo(context);
 
-	console.log(isSelected);
-
 	const available = TodoManager.hasTodo(context)
 		? { visibility: 'visible' }
 		: { visibility: 'hidden' };
