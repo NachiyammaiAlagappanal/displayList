@@ -23,7 +23,7 @@ const InputTextBox = (context) => {
 			value={ state.input }
 			onChange={ (evt) => context.actions
 				.updateInput(evt.target.value) }
-			onKeyUp={ (evt) => actionKeys[evt.code]
+			onKeyPress={ (evt) => actionKeys[evt.code]
 			&& actionKeys[evt.code]({ ...context, data: state.input }) }
 		/>);
 };

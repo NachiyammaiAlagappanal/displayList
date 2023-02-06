@@ -23,7 +23,7 @@ const RemoveButton = (context) => {
 		<Button
 			role="removeButton"
 			variant="unstyled"
-			onClick={ () => context.actions.removeTask(task) }
+			onPress={ () => context.actions.removeTask(task) }
 		>
 			x</Button>
 	);
