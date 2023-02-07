@@ -4,7 +4,7 @@ const seconds = 2;
 const config = {
 	refreshIDLength: 4,
 	idLength: 16,
-	filters: ['all', 'active', 'completed'],
+	filters: ['All', 'Active', 'Completed'],
 	TickerDelay: milliseconds * seconds,
 	tasks: ['Task1', 'Task2', 'Task3'],
 	modes: ['dark', 'light'],

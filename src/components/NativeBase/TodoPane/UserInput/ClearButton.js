@@ -10,8 +10,8 @@ const ClearButton = (context) => {
 		<Button
 			role="ClearCompleted"
 			onClick={ () => actions.clearCompleted() }
-			variant="subtle"
 			size="sm"
+			variant="outline"
 		>
 			Clear completed
 		</Button>

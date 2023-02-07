@@ -16,9 +16,9 @@ const TodoManager = {
 		todos.filter((todo) => todo.completed).length !== 0,
 
 	filters: {
-		all: () => true,
-		active: (todos) => !todos.completed,
-		completed: (todos) => todos.completed,
+		All: () => true,
+		Active: (todos) => !todos.completed,
+		Completed: (todos) => todos.completed,
 	},
 
 	changeColor: ({ state: { todos }, data }) =>

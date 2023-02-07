@@ -1,19 +1,21 @@
+import { Heading, VStack } from 'native-base';
 import { React } from 'react';
-import UserInput from './UserInput';
-import TodoList from './TodoListDisplay/TodoList';
-import ControlBar from './UserInput/ControlBar';
-import { Box, VStack } from 'native-base';
+import Body from './Body';
 
-const TodoPane = (context) =>
-	<VStack
-		role="TodoPane"
-		style={ { width: '100%', display: 'flex',
-			flexDirection: 'column' } }
-		space={ 10 }
+const Header = () =>
+	<Heading
+		size="2xl"
+		textAlign="center"
 	>
-		<ControlBar { ...context }/>
-		<Box><UserInput { ...context }/>
-			<TodoList { ...context }/></Box>
+		todos</Heading>;
+
+const TodoPaneFrame = (context) =>
+	<VStack
+		space={ 6 }
+		style={ {	height: '100vh' } }
+	>
+		<Header { ...context }/>
+		<Body { ...context }/>
 	</VStack>;
 
-export default TodoPane;
+export default TodoPaneFrame;

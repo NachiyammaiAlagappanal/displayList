@@ -3,8 +3,8 @@ import { TabContext } from '@mui/lab';
 import TabPanel from '@mui/lab/TabPanel';
 import MenuBar from './MenuBar';
 import { Box, Grid } from '@mui/material';
-import TodoPaneFrame from '../TodoPaneFrame';
-import TaskPaneFrame from '../TaskPaneFrame';
+import TodoPaneFrame from '../TodoPane/Body';
+import TaskPaneFrame from '../TaskPane';
 
 const Mobile = (context) => {
 	const { state: { value }} = context;

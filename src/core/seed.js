@@ -8,7 +8,7 @@ const seed = {
 		text: 'hello',
 		completed: false,
 		remove: false }],
-	filter: 'all',
+	filter: 'All',
 	editing: null,
 	Tasks: [],
 	value: '1',

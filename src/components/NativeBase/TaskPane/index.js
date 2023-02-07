@@ -1,16 +1,17 @@
-import { Paper } from '@mui/material';
-import { Box } from 'native-base';
+import { Heading, VStack } from 'native-base';
 import { React } from 'react';
-import TaskList from './TaskList';
+import Body from './Body.js';
 
 const TaskPane = (context) =>
-	<Box
-		role="TaskPane"
-		style={ { width: '100%', display: 'flex',
-			flexDirection: 'column' } }
+	<VStack
+		space={ 6 }
+		width="50%"
 	>
-		<Paper elevation={ 12 } sx={ { boxShadow: 'inherit' } }>
-			<Box><TaskList { ...context }/></Box></Paper>
-	</Box>;
+		<Heading
+			size="2xl"
+			textAlign="center"
+		>tasks</Heading>
+		<Body { ...context }/>
+	</VStack>;
 
 export default TaskPane;
