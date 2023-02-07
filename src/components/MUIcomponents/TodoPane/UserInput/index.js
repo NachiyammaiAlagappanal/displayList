@@ -21,7 +21,7 @@ const UserInputs = (context) => {
 		>
 			<Box
 				role="UserInput"
-				className="center"
+				className="row"
 			>{userInputs.map((Component, field) =>
 					renderItem({ ...context })(Component, field))}
 			</Box></Paper>);

@@ -6,7 +6,7 @@ import { Box, Grid } from '@mui/material';
 import TodoPaneFrame from '../TodoPaneFrame';
 import TaskPaneFrame from '../TaskPaneFrame';
 
-const Menu = (context) => {
+const Mobile = (context) => {
 	const { state: { value }} = context;
 
 	return <Box className="App">
@@ -26,4 +26,4 @@ const Menu = (context) => {
 	</Box>;
 };
 
-export default Menu;
+export default Mobile;

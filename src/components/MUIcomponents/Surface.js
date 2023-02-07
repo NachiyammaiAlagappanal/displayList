@@ -1,7 +1,7 @@
 import { useMediaQuery } from '@mui/material';
 import Web from './Web';
 import { React } from 'react';
-import Mobile from './mobileView';
+import Mobile from './Mobile';
 
 const Surface = (context) => {
 	const view = useMediaQuery('(min-width:600px)');

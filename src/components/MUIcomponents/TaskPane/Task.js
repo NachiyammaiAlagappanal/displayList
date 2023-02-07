@@ -39,13 +39,13 @@ const Task = (context) => {
 		<Box
 			key={ id }
 			role="Task"
-		>	<Box component="span"><AddTaskToTodo { ...context }/></Box>
+			className="row"
+		>	<Box><AddTaskToTodo { ...context }/></Box>
 			<Box
-				component="span"
 				sx={ { width: '79%', display: 'inline-block' } }
 				color="text.contrast"
 			>{text}</Box>
-			<Box component="span"><RemoveButton { ...context }/></Box>
+			<Box><RemoveButton { ...context }/></Box>
 			<Divider/>
 		</Box>);
 };

@@ -1,10 +1,10 @@
-/* eslint-disable max-lines-per-function */
-/* eslint-disable no-console */
-import { NativeBaseProvider } from 'native-base';
+import { Box, NativeBaseProvider } from 'native-base';
 import { React } from 'react';
-import Frame from './Web';
+import Surface from './Surface';
 
-const NativeBaseIndex = (context) =>
-	<NativeBaseProvider><Frame { ...context }/></NativeBaseProvider>;
+const NativeBase = (context) =>
+	<NativeBaseProvider><Box role="App" overflow="hidden">
+		<Surface { ...context }/>
+	</Box></NativeBaseProvider>;
 
-export default NativeBaseIndex;
+export default NativeBase;
