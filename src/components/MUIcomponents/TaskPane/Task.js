@@ -42,7 +42,7 @@ const Task = (context) => {
 			className="row"
 		>	<Box><AddTaskToTodo { ...context }/></Box>
 			<Box
-				sx={ { width: '79%', display: 'inline-block' } }
+				sx={ { width: '79%', display: 'inline-block', margin: '10px' } }
 				color="text.contrast"
 			>{text}</Box>
 			<Box><RemoveButton { ...context }/></Box>

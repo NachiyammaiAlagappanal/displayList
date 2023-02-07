@@ -1,10 +1,10 @@
 import { React } from 'react';
 import Tab from '@mui/material/Tab';
-import { Toolbar } from '@mui/material';
 import { TabList } from '@mui/lab';
+import { Heading } from 'native-base';
 
 const MenuBar = (context) =>
-	<Toolbar className="toolbar">
+	<Heading className="toolbar">
 		<TabList
 			orientation="horizontal"
 			onChange={ (event, tabIndex) => context.actions
@@ -14,7 +14,7 @@ const MenuBar = (context) =>
 			<Tab value="1" label="Todos"/>
 			<Tab value="2" label="Tasks"/>
 		</TabList>
-	</Toolbar>
+	</Heading>
 	;
 
 export default MenuBar;

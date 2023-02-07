@@ -3,8 +3,8 @@ import { TabContext } from '@mui/lab';
 import TabPanel from '@mui/lab/TabPanel';
 import MenuBar from './MenuBar';
 import { Box, Grid } from '@mui/material';
-import TodoPaneFrame from '../TodoPane';
-import TaskPaneFrame from '../TaskPane';
+import TodoPane from '../TodoPane';
+import TaskPane from '../TaskPane';
 
 const Mobile = (context) => {
 	const { state: { value }} = context;
@@ -15,11 +15,11 @@ const Mobile = (context) => {
 			<Box width="100%">
 				<TabPanel value="1">
 					<Grid container={ true } sx={ { height: '100vh' } }>
-						<TodoPaneFrame { ...context }/></Grid>
+						<TodoPane { ...context }/></Grid>
 				</TabPanel>
 				<TabPanel value="2">
 					<Grid container={ true } sx={ { height: '100vh' } }>
-						<TaskPaneFrame { ...context }/></Grid>
+						<TaskPane { ...context }/></Grid>
 				</TabPanel>
 			</Box>
 		</TabContext>

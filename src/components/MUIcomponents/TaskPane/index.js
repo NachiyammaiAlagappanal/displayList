@@ -1,8 +1,8 @@
 import { Grid, Toolbar } from '@mui/material';
 import { React } from 'react';
-import TaskPane from './Body';
+import Body from './Body';
 
-const TaskPaneFrame = (context) =>
+const TaskPane = (context) =>
 	<Grid
 		item={ true }
 		xs={ 12 }
@@ -15,7 +15,7 @@ const TaskPaneFrame = (context) =>
 			className="header"
 			sx={ { color: 'heading.main' } }
 		>tasks</Toolbar>
-		<TaskPane { ...context }/>
+		<Body { ...context }/>
 	</Grid>;
 
-export default TaskPaneFrame;
+export default TaskPane;

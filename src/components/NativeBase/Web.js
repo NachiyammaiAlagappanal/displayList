@@ -1,7 +1,7 @@
 import { HStack } from 'native-base';
 import { React } from 'react';
-import TaskPane from './TaskPane/index.js';
-import TodoPane from './TodoPane/index.js';
+import TaskPane from './TaskPane';
+import TodoPane from './TodoPane';
 
 const Web = (context) =>
 	<HStack

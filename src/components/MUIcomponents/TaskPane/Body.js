@@ -2,7 +2,7 @@ import { Box, Paper } from '@mui/material';
 import { React } from 'react';
 import TaskList from './TaskList';
 
-const TaskPane = (context) =>
+const Body = (context) =>
 	<Box
 		role="TaskPane"
 		className="column"
@@ -12,4 +12,4 @@ const TaskPane = (context) =>
 			<Box><TaskList { ...context }/></Box></Paper>
 	</Box>;
 
-export default TaskPane;
+export default Body;

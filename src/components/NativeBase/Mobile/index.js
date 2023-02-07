@@ -2,9 +2,9 @@ import { React } from 'react';
 import { TabContext } from '@mui/lab';
 import TabPanel from '@mui/lab/TabPanel';
 import MenuBar from './MenuBar';
-import { Box, Grid } from '@mui/material';
-import TodoPaneFrame from '../TodoPane/Body';
-import TaskPaneFrame from '../TaskPane';
+import TodoPane from '../TodoPane';
+import TaskPane from '../TaskPane';
+import { Box, Stack } from 'native-base';
 
 const Mobile = (context) => {
 	const { state: { value }} = context;
@@ -14,12 +14,12 @@ const Mobile = (context) => {
 			<MenuBar { ...context }/>
 			<Box width="100%">
 				<TabPanel value="1">
-					<Grid container={ true } sx={ { height: '100vh' } }>
-						<TodoPaneFrame { ...context }/></Grid>
+					<Stack>
+						<TodoPane { ...context }/></Stack>
 				</TabPanel>
 				<TabPanel value="2">
-					<Grid container={ true } sx={ { height: '100vh' } }>
-						<TaskPaneFrame { ...context }/></Grid>
+					<Stack>
+						<TaskPane { ...context }/></Stack>
 				</TabPanel>
 			</Box>
 		</TabContext>
