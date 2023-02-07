@@ -9,7 +9,7 @@ const Header = () =>
 	>
 		todos</Heading>;
 
-const TodoPaneFrame = (context) =>
+const TodoPane = (context) =>
 	<VStack
 		space={ 6 }
 		style={ {	height: '100vh' } }
@@ -18,4 +18,4 @@ const TodoPaneFrame = (context) =>
 		<Body { ...context }/>
 	</VStack>;
 
-export default TodoPaneFrame;
+export default TodoPane;

@@ -1,15 +1,21 @@
-import { Box, Paper } from '@mui/material';
+import { Grid, Toolbar } from '@mui/material';
 import { React } from 'react';
-import TaskList from './TaskList';
+import TaskPane from './Body';
 
-const TaskPane = (context) =>
-	<Box
-		role="TaskPane"
-		className="column"
-		sx={ { width: '100%' } }
+const TaskPaneFrame = (context) =>
+	<Grid
+		item={ true }
+		xs={ 12 }
+		md={ 6 }
+		sm={ 6 }
+		sx={ { backgroundColor: 'background.default', rowGap: '20px' } }
+		overflow="scroll"
 	>
-		<Paper elevation={ 12 } sx={ { boxShadow: 'inherit' } }>
-			<Box><TaskList { ...context }/></Box></Paper>
-	</Box>;
+		<Toolbar
+			className="header"
+			sx={ { color: 'heading.main' } }
+		>tasks</Toolbar>
+		<TaskPane { ...context }/>
+	</Grid>;
 
-export default TaskPane;
+export default TaskPaneFrame;

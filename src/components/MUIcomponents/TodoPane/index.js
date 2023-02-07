@@ -1,18 +1,26 @@
+import { Grid, Toolbar } from '@mui/material';
 import { React } from 'react';
-import UserInput from './UserInput';
-import TodoList from './TodoListDisplay/TodoList';
-import { Box } from '@mui/material';
-import ControlBar from './UserInput/ControlBar';
+import Body from './Body';
+
+const Header = () =>
+	<Toolbar
+		className="header"
+		sx={ { color: 'heading.main' } }
+	>
+		todos</Toolbar>;
 
 const TodoPane = (context) =>
-	<Box
-		role="TodoPane"
-		className="column"
-		sx={ { width: '100%', rowGap: '20px' } }
+	<Grid
+		item={ true }
+		xs={ 12 }
+		md={ 6 }
+		sm={ 6 }
+		sx={ { backgroundColor: 'background.default', rowGap: '20px',
+			height: '100vh' } }
+		overflow="scroll"
 	>
-		<ControlBar { ...context }/>
-		<Box><UserInput { ...context }/>
-			<TodoList { ...context }/></Box>
-	</Box>;
+		<Header { ...context }/>
+		<Body { ...context }/>
+	</Grid>;
 
 export default TodoPane;
