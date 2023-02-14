@@ -8,7 +8,7 @@ const AddButton = (context) => {
 	return (
 		<Button
 			role="AddButton"
-			disabled={ TodoManager.hasInput(input) }
+			isDisabled={ TodoManager.hasInput(input) }
 			onPress={ () => actions.addTodo(input) }
 			variant="unstyled"
 		>

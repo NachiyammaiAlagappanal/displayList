@@ -12,7 +12,7 @@ const Header = () =>
 const TodoPane = (context) =>
 	<VStack
 		space={ 6 }
-		style={ {	height: '100vh' } }
+		style={ {	height: '100vh', width: '50%' } }
 	>
 		<Header { ...context }/>
 		<Body { ...context }/>

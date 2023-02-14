@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-/* eslint-disable max-lines-per-function */
 import { Box } from 'native-base';
 import { React } from 'react';
 import CheckBox from './CheckBox';
@@ -18,12 +16,12 @@ const Todo = (context) => {
 		><CheckBox { ...context }/>
 			<Box
 				style={ { textAlign: 'left',
-					width: '43vw', justifyContent: 'center',
+					justifyContent: 'center',
 					marginLeft: '10px' } }
+				flexGrow="1"
 				role="setEditing"
-				onPress={ () => actions.setEditing(todo) }
-			>{ text }</Box>
-			<RemoveButton { ...context }/></Box>
+				onClick={ () => actions.setEditing(todo) }
+			>{ text }</Box><RemoveButton { ...context }/></Box>
 	);
 };
 
