@@ -40,7 +40,7 @@ const operations = {
 };
 
 const genClientFn = ({ action, client, name }) =>
-	(props) => operations[action]({ client, name, action, ...props });
+	(props) => operations[action]({ ...props, client, name, action });
 
 const resource = ({ name, client }) => ({
 	create: genClientFn({ client: client, name: name, action: 'create' }),
