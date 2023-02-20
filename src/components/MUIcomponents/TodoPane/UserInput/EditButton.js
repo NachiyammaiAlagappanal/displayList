@@ -8,7 +8,7 @@ const EditButton = ({ actions, state: { input }}) =>
 	<Button
 		role="editButton"
 		disabled={ TodoManager.hasInput(input) }
-		onClick={ () => actions.editTodo() }
+		onClick={ () => actions.editTodo(input) }
 	><EditIcon/></Button>;
 
 export default EditButton;
